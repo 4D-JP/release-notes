@@ -7,6 +7,6 @@
 
 * ACI0090520 **R4以降**，4D Viewコマンドにポインターを渡すことができなくなりました。例: ```$textPtr->:=PV Get cell text value ($areaPtr->;$colPtr->;$rowPtr->)```
 
-* ACI0090496 Pictures are displayed 'shifted' in a form since v14 R4
+* ACI0090496 **R4以降**，Windows版のみ，フォームに貼り付けられたスタティックイメージの表示される位置が，フォームエディターとフォーム実行時では少し違うようになりました。ペイントから直接ペーストしたものなど，直接フォームエディターに貼り付けたEMF形式の画像で問題が発生します。BMPやPNGでは問題ありません。
 
 * ACI0089846 4D may crash upon quitting because of some plugins load.
