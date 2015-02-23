@@ -1,4 +1,5 @@
-http://forums.4d.fr/Post/FR/15929684/1/15929685
+[4D v13.5 Hotfix 3](http://forums.4d.fr/Post/FR/15929684/1/15929685)
+---
 
 * ACI0090575 [MSG_Extract](http://doc.4d.com/4Dv13/4D/13.2/MSG-Extract.301-1086702.ja.html)は，RFCエンコード（例: U%CC%88berarbeitete%20Offerte.pdf）されたUnicodeファイル名を正しく展開しませんでした。
 
