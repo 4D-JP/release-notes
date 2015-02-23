@@ -1,6 +1,6 @@
 Release Notes
 -------------
-* v14 RR
+* v14 R4
 
 ```2015-01-15.175730``` [4D v14 R4 Hotfix 1](https://github.com/4D-JP/release-notes/blob/master/v14/r4/hf1/README.md) 
 http://forums.4d.fr/Post/EN/15756910/1/15756911
