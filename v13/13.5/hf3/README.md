@@ -1,3 +1,5 @@
+http://forums.4d.fr/Post/FR/15929684/1/15929685
+
 * ACI0090575 [MSG_Extract](http://doc.4d.com/4Dv13/4D/13.2/MSG-Extract.301-1086702.ja.html)は，RFCエンコード（例: U%CC%88berarbeitete%20Offerte.pdf）されたUnicodeファイル名を正しく展開しませんでした。
 
 * ACI0090444 ピクチャフィールドが『[プリント時可変](http://doc.4d.com/4Dv13/4D/13.4/Printing-areas-of-variable-size.300-1226584.ja.html)』に設定されていた場合，イメージが印刷されませんでした。
