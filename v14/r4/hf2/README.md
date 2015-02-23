@@ -1,4 +1,4 @@
-4D v14 R4 Hotfix 2
+[4D v14 R4 Hotfix 2](http://forums.4d.fr/Post/FR/15925866/1/15925867)
 ---
 
 * ACI0091293 **R4以降**，コンボボックスにテキストを入力中，On After Edit, On Before Keystroke, On After Keystrokeイベントに続けて発生したOn Data Changeイベントをトレースした場合，デバッガが即座に閉じられるようになりました。（On Data Changeと前述したイベント群が両方とも設定されていなければ大丈夫です。）
