@@ -1,3 +1,17 @@
+* ACI0090575 [MSG_Extract](http://doc.4d.com/4Dv13/4D/13.2/MSG-Extract.301-1086702.ja.html)は，RFCエンコード（例: U%CC%88berarbeitete%20Offerte.pdf）されたUnicodeファイル名を正しく展開しませんでした。
+
+* ACI0090444 ピクチャフィールドが『[プリント時可変](http://doc.4d.com/4Dv13/4D/13.4/Printing-areas-of-variable-size.300-1226584.ja.html)』に設定されていた場合，イメージが印刷されませんでした。
+
+* ACI0090378 HTTPヘッダーの『accept』フィールドに『compress, gzip, identify』が含まれていた場合，[On Web Connection](http://doc.4d.com/4Dv13/4D/13.5/On-Web-Connection-Database-Method.300-1457408.ja.html)に制御が渡らず，406エラーが返されました。
+
+* ACI0090363 Mac版のみ，fill属性が『none』に設定されているSVGイメージを印刷すると，その部分は黒く塗りつぶされたように出力されました。
+
+* ACI0090343 Windows版のみ，サブレコード追加のキーボードショートカットを『control+<』に設定した場合，一度の入力でレコードが2件，追加されました。WM_KEYDOWNメッセージをWM_CHARに変換するための例外的な処理（control+<で必要だった）がいまでは必要ないようです。
+
+* ACI0090259 Webサービスで公開されたメソッドの入力パラメーターにローカル変数が使用できませんでした。（コンパイルモードで『EXECUTEメソッドのパラメータが不正』ランタイムエラーが返されました。）プロセス変数（Compiler_WEBで宣言）であれば問題ありません。
+
+* ACI0087679 リストボックスに非表示の列が含まれている場合，その列よりも右側の列をドラッグしたときに表示される列の挿入ポイントが間違っていました。
+* 
 * ACI0091096 Windows版のみ，**13.5 HF1以降**，『[プリント時可変](http://doc.4d.com/4Dv13/4D/13.4/Printing-areas-of-variable-size.300-1226584.ja.html)』が設定された変数またはフィールドを印刷した場合のオブジェクトの高さが間違っていました。
 
 * ACI0090847 Windows版のみ，[タブコントロール](http://doc.4d.com/4Dv13/4D/13.4/Tab-Controls.300-1226566.ja.html)は必要に応じてタブがスクロールするようになっていますが，v13以降，表示されていないタブをコマンドで選択した場合，v11のようにタブコントロールが自動的にスクロールしませんでした。
