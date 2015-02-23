@@ -1,4 +1,4 @@
-4D v14 R4 Hotfix 1
+[4D v14 R4 Hotfix 1](http://forums.4d.fr/Post/EN/15756910/1/15756911)
 ---
 
 * ACI0090599 [Popup menu](http://doc.4d.com/4Dv14R4/4D/14-R4/Pop-up-menu.301-1708614.ja.html)は，何も項目が選択されなかった場合，0が返されるはずですが，**R4以降**，-1が返されるようになりました。
