@@ -56,9 +56,17 @@
 
 * ACI0090259 Webサービスで公開されたメソッドの入力パラメーターにローカル変数が使用できませんでした。（コンパイルモードで『EXECUTEメソッドのパラメータが不正』ランタイムエラーが返されました。）プロセス変数（Compiler_WEBで宣言）であれば問題ありません。
 
-ACI0090258 Program hangs after using SMTP_SEND without optional parameter
-ACI0090116 Updating an application by itself : deletion of application
-ACI0090115 Incomplete printing of a styled text with variable frame on Windows
+* ACI0090258 Program hangs after using SMTP_SEND without optional parameter
+
+SSL2/SSL3サポートが取り除かれて以来，[SMTP_SEND](http://doc.4d.com/4Dv14/4D-Internet-Commands/14/SMTP-Send.301-1237778.ja.html)のSSL引数に0を指定するか，省略すると，実行したプロセスが無反応になりました。
+
+【参考】Internet Commandsは，ソケットのエラーを処理(WSAGetLastError)していましたが，OpenSSLのエラー(SSL_get_error)はチェックしていませんでした。さらに，読み書き操作にタイムアウトが適用されていませんでした。もっとも，SSLエラーを正しく処理するようになったため，タイムアウトに到達することは滅多にないはずです。最後に，SSLの接続/アップグレードエラーも処理されるようになりました。以前は，最初の読み書きエラーを処理していただけでしたが，修正により，SSLの接続/アップグレードが失敗した時点で（SSL読み書きの失敗を待つことなく）制御が返されるようになりました。
+
+* ACI0090116 [SET UPDATE FOLDER](http://doc.4d.com/4Dv14/4D/14.3/SET-UPDATE-FOLDER.301-1696590.ja.html)がストラクチャーの置かれているフォルダーを指定している場合，[RESTART 4D](http://doc.4d.com/4Dv14/4D/14.3/RESTART-4D.301-1696588.ja.html)
+自動アップグレードを実行すると，ストラクチャーが消去されてしまい，アップグレードは失敗しました。
+
+* ACI0090115 Windows版のみ，『プリント時可変』が有効にされたマルチスタイルテキストを印刷した場合，ページに収まらないテキストの残りが続きのページに印刷されませんでした。v13では，そのような場合，印刷が無限に続きました(ACI0089753)。
+ 
 ACI0090094 'SET PRINT OPTION' to a PDF not working
 ACI0089899 After a signed merged application updated, Gatekeeper it not triggered
 ACI0089704 Web Area doesn't work correctly when displayed in a form page that is not page 1
