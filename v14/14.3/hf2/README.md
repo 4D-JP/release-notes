@@ -67,10 +67,17 @@ SSL2/SSL3サポートが取り除かれて以来，[SMTP_SEND](http://doc.4d.com
 
 * ACI0090115 Windows版のみ，『プリント時可変』が有効にされたマルチスタイルテキストを印刷した場合，ページに収まらないテキストの残りが続きのページに印刷されませんでした。v13では，そのような場合，印刷が無限に続きました(ACI0089753)。
  
-ACI0090094 'SET PRINT OPTION' to a PDF not working
-ACI0089899 After a signed merged application updated, Gatekeeper it not triggered
-ACI0089704 Web Area doesn't work correctly when displayed in a form page that is not page 1
+* ACI0090094 Mac版のみ，[SET PRINT OPTION](http://doc.4d.com/4Dv14/4D/14.3/SET-PRINT-OPTION.301-1697062.ja.html)でPDF文書に出力した場合，ドキュメント名が"print.pdf"に名称になりました。プリントプレビューを実行すれば，設定したドキュメント名になりました。
+
+* ACI0089899 署名されたスタオンドアロン版アプリケーションを初めて起動したときにはGateKeeperのダイアログが表示されますが，RESTART 4Dで自動アップグレードを実行した場合，更新された新しいアプリケーションではGateKeeperのダイアログが表示されませんでした。ドキュメントをコピーする過程で拡張されたファイル属性情報（GateKeeperが参照する『検疫』属性など）が取り除かれているためです。
+
+【参考】この修正に伴い，[COPY DOCUMENT](http://doc.4d.com/4Dv14/4D/14.3/COPY-DOCUMENT.301-1697481.ja.html)コマンドの仕様も変更されました。
+
+* ACI0089704 ページ2以降に配置されたWebエリアは，ページに内容によっては，うまく動作しませんでした。Windows版では，コードが正しく実行されず，Mac版ではアプリケーションがクラッシュしました。
+
 ACI0089335 PK Wizard not loading in C/S mode
+クライアント側のストラクチャエディターで[プライマリーキー管理](http://doc.4d.com/4Dv14/4D/14.3/Primary-key-manager.300-1705581.ja.html)』ボタンをクリックすると，SQLエラーが返されました。
+
 ACI0089184 4D Write menu not shown with 'Movable dialog box' window type
 ACI0089145 Remote 4D link proposed in the submenu local databases.
 ACI0089113 '.4DC' does not open the adjacent '.4DD' by default
