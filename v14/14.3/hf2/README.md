@@ -50,7 +50,11 @@ ACI0087352 PRINT LABEL (l([table];>) or PRINT LABEL (>) : Syntax error
 ACI0087312 Synchronous sorting of arrays object
 ACI0087252 In 4D View tabulating from cell to cell does not work
 ACI0086913 Quick Report: No numeric format for calculated column
-ACI0082468 The type-ahead popup window too small in certain cases on Japanese system
-ACI0080790 Bad copy/paste of apicture from 'Paint' application to 4D
-ACI0080677 Undo/Redo of Japanese in Code Editor multiplies text
-ACI0072111 Configuring IP port number for 4D engined client
+
+* ACI0082468 Windows版のみ，メソッドエディターの候補ウィンドウに不要な横スクロールバーが表示されるために高さが不十分になり，最後の補完候補が隠れてしまいました。
+
+* ACI0080790 Windows版のみ，ペイント（mspaint.exe）から画像をピクチャエリアにコピー＆ペーストした場合，イメージが縮小されました。
+
+* ACI0080677 Mac版のみ，コードエディターにいくらかの日本語を入力した後，それ以上は戻れなくなるところまで『取り消し』（command+Z）した後に『やり直し』（command+shift+Z）した場合，元のテキストが複製されました。
+
+* ACI0072111 アプリケーションサーバーのポート番号を19813以外に設定してサーバー/クライアントアプリケーションをビルドした場合，ビルドしたクライアントの『サーバーに接続』ダイアログにはビルドしたサーバーの名前が表示されませんでした。
