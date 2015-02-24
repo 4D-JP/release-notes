@@ -16,10 +16,16 @@
 
 * ACI0090990 [クイックレポートエディター](http://doc.4d.com/4Dv14/4D/14.3/Sorting-report-records.300-1705505.ja.html)で追加したフィールドの並び替え条件を設定することができますが，昇順/降順を示す三角形のアイコンが表示されませんでした。
 
-ACI0090951 SVG referenced by interface objects will be printed Black
-ACI0090881 'Get External data path' for empty field return bad value
-ACI0090865 Localization in Web area contextual menu is wrong
-ACI0090853 Deployed dropdown list area is too small in v14
+* ACI0090951 Mac版のみ，3Dボタン・ラジオボタン・チェックボックス・ピクチャボタン・ピクチャポップアップメニューで参照されたSVG画像を印刷すると，真っ黒に出力されました。変数やフィールドでは問題ありません。
+
+* ACI0090881 空のテキスト・BLOB・ピクチャフィールドに対して[Get External data path](http://doc.4d.com/4Dv14/4D/14.3/Get-external-data-path.301-1697422.ja.html)を発行すると，空の文字列を返す代わりに『ExternalData:Table-1 Field-1』といった無効なパスが返されました。
+
+* ACI0090865 Windows版のみ，統合WebKit版の[Webエリア](http://doc.4d.com/4Dv14/4D/14.3/Web-areas.300-1705532.ja.html)は，コンテキストメニューに『LOCALIZED STRING NOT FOUND』と表示されました。
+
+* ACI0090853 Windows版のみ，ポップアップメニューにスクロールバーが表示されるときの高さが足りませんでした。
+
+* ACI0090847 Windows版のみ，タブコントロールは必要に応じてタブがスクロールするようになっていますが，v13以降，表示されていないタブをコマンドで選択した場合，v11のようにタブコントロールが自動的にスクロールしませんでした。
+
 ACI0090847 In case of change of current tab, 4D does not always make it visible.
 ACI0090828 Build Application very slow when copying files on mac
 ACI0090753 'Get picture file name' fails under certain conditions
