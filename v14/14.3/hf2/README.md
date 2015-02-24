@@ -1,10 +1,13 @@
 [4D v14.3 Hotfix 2](http://forums.4d.fr/Post/FR/15945962/1/15945963)
 ---
-Fixed Bugs for v14.3 hotfix 2:
+* ACI0091348 Windows版のみ，配列型のタブコントロールの最後の要素が選択されている場合，[DELETE FROM ARRAY](http://doc.4d.com/4Dv14/4D/14.3/DELETE-FROM-ARRAY.301-1697569.ja.html)でそのタブを削除するとアプリケーションがクラッシュしました。
 
-ACI0091348 Deleting the last tab in a tab control can crash 4D
-ACI0091172 'QUERY IN SELECTION': the search type popup is not set to 'Search in selection'
-ACI0091143 Memory leak issue with 'SVG_SET_FONT_FAMILY' of SVG Component
+* ACI0091172 [QUERY SELECTION](http://doc.4d.com/4Dv14/4D/14.3/QUERY-SELECTION.301-1697129.ja.html)で表示したクエリエディターのクエリタイプメニューは，デフォルトで「絞り込み」にセットされていませんでした。
+
+* ACI0091143 コンポーネントメソッドSVG_SET_FONT_FAMILYを使用した場合，SVG_CLEARでメモリーが完全に解放されませんでした（メモリーリーク）がありました。
+
+【参考】メモリーリークは[GET MEMORY STATISTICS](http://doc.4d.com/4Dv14/4D/14.3/GET-MEMORY-STATISTICS.301-1696594.ja.html)で確認することができます。
+
 ACI0091090 Risk of division by zero while printing a variable size text
 ACI0091086 Printing a list will show unexpected gray colored fields on Yosemite
 ACI0091082 Design mode: Listbox with locked column crashes if shown in an subform
