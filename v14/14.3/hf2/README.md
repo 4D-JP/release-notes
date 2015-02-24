@@ -8,10 +8,14 @@
 
 【参考】メモリーリークは[GET MEMORY STATISTICS](http://doc.4d.com/4Dv14/4D/14.3/GET-MEMORY-STATISTICS.301-1696594.ja.html)で確認することができます。
 
-ACI0091090 Risk of division by zero while printing a variable size text
-ACI0091086 Printing a list will show unexpected gray colored fields on Yosemite
-ACI0091082 Design mode: Listbox with locked column crashes if shown in an subform
-ACI0090990 The icons showing the sort order in the QR Editor are no more displayed
+* ACI0091090 『プリント時可変』オブジェクトが設定されたテキストを印刷した場合，0による除算が発生することにより，アプリケーションがクラッシュすることがありました。
+
+* ACI0091086 Mac版のみ，OS X 10.10でPRINT SELECTIONを実行すると，入力可フィールドの背景色がランダムにグレーでプリントアウトされました。
+
+* ACI0091082 Mac版のみ，リストボックスに[スクロールしない列](http://doc.4d.com/4Dv14/4D/14.3/List-box-specific-properties.300-1705526.ja.html)が設定されており，そのリストボックスがサブフォームに含まれている場合，デザインモードでそのフォームを開くとアプリケーションがクラッシュしました。
+
+* ACI0090990 [クイックレポートエディター](http://doc.4d.com/4Dv14/4D/14.3/Sorting-report-records.300-1705505.ja.html)で追加したフィールドの並び替え条件を設定することができますが，昇順/降順を示す三角形のアイコンが表示されませんでした。
+
 ACI0090951 SVG referenced by interface objects will be printed Black
 ACI0090881 'Get External data path' for empty field return bad value
 ACI0090865 Localization in Web area contextual menu is wrong
