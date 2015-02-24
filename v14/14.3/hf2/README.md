@@ -38,7 +38,7 @@ ACI0090527 When editing form, 'undo' about font settings not working properly
 
 * ACI0090448 Mac版のみ，フォームエディター上でボタンやテキスト入力オブジェクトを選択し，ペーストボードにコピーしたBLOBを後でペーストボードに再現しても，ペーストしたときにはスタティックピクチャーとして貼り付けられました。
 
-【参考】Mac版のAPPEND DATA TO PASTEBOARDは，すでにペーストボードに存在するデータを追加（上書き）しようとした場合，ペーストボード全体の内容をクリアするようになっています。加えて，com.apple.pictをペーストボードに追加すると，自動的にpublic.jpegやpublic.pngも追加されます。そのため，ペーストボートにデータを追加する順序次第では，先に追加したフォームオブジェクトなどのデータが消去されてしまいます。すでに格納されているデータを消さずにペーストボードデータを追加するためには，そのタイプが存在するかどうかを確認しなければなりません。ペーストボードにデータが存在しなければ```Pasteboard data size```が-102を返します。
+【参考】Mac版のAPPEND DATA TO PASTEBOARDは，すでにペーストボードに存在するデータを追加（上書き）しようとした場合，ペーストボード全体の内容をクリアするようになっています。加えて，com.apple.pictをペーストボードに追加すると，自動的にpublic.jpegやpublic.pngも追加されます。そのため，ペーストボートにデータを追加する順序次第では，先に追加したフォームオブジェクトなどのデータが消去されてしまいます。すでに格納されているデータを消さずにペーストボードデータを追加するためには，そのタイプが存在するかどうかを確認しなければなりません。ペーストボードにデータが存在しなければ[Pasteboard data size](http://doc.4d.com/4Dv14/4D/14.3/Pasteboard-data-size.301-1697028.ja.html)が-102を返します。
 
 * ACI0090378 HTTPヘッダーの『accept』フィールドに『compress, gzip, identify』が含まれていた場合，[On Web Connection](http://doc.4d.com/4Dv14/4D/14.3/On-Web-Connection-Database-Method.300-1697689.ja.html)に制御が渡らず，406エラーが返されました。
 
