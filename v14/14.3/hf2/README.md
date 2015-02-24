@@ -54,7 +54,8 @@
 
 * ACI0090319 Mac版のみ，リストフォームのOn Headerイベントでは[SET WINDOW TITLE](http://doc.4d.com/4Dv14/4D/14.3/SET-WINDOW-TITLE.301-1697737.ja.html)が効きませんでした。
 
-ACI0090259 Runtime Error "Invalid parameters" in Web Service method
+* ACI0090259 Webサービスで公開されたメソッドの入力パラメーターにローカル変数が使用できませんでした。（コンパイルモードで『EXECUTEメソッドのパラメータが不正』ランタイムエラーが返されました。）プロセス変数（Compiler_WEBで宣言）であれば問題ありません。
+
 ACI0090258 Program hangs after using SMTP_SEND without optional parameter
 ACI0090116 Updating an application by itself : deletion of application
 ACI0090115 Incomplete printing of a styled text with variable frame on Windows
