@@ -69,12 +69,22 @@ ACI0088790 Some strings cut in label editor in spanish version
 ACI0088470 Blinking cursor becomes invisible because of a right justification
 ACI0088360 Entering decimal separator does not work in a listbox
 ACI0088262 External data path damaged for picture field.
-ACI0087679 Listbox: column insertion position marker is badly calculated
-ACI0087370 Using 'WEB SEND RAW DATA(data;*)' on a very bad network can hang 4D
-ACI0087352 PRINT LABEL (l([table];>) or PRINT LABEL (>) : Syntax error
-ACI0087312 Synchronous sorting of arrays object
-ACI0087252 In 4D View tabulating from cell to cell does not work
-ACI0086913 Quick Report: No numeric format for calculated column
+
+* ACI0087679 リストボックスに非表示の列が含まれている場合，その列よりも右側の列をドラッグしたときに表示される列の挿入ポイントが間違っていました。
+
+* ACI0087370 [14.3 Hotfix 1](http://www.4d.com/jp/blog/about-14-3-hf1.html)で改善された問題がさらに修正されました。
+
+* ACI0087352 ```PRINT LABEL ([Table];>)```または```PRINT LABEL (>)```でシンタックスエラーが返されました。```PRINT LABEL ("";>)```であれば問題ありません。
+
+* ACI0087312 ARRAY OBJECTがマルチソートで並び替えられませんでした。
+
+【参考】オブジェクト配列を単独で並び替えることはできませんので，マルチソートの第1配列にはARRAY OBJECTを指定することはできません。
+
+* ACI0087252 Tabキーで4D Viewのセルから隣接するセルに移動することができませんでした。ただし，矢印キーは，それまでに入力されたTabキーの位置を反映しました。
+
+* ACI0086913 クイックレポートの計算カラムに表示フォーマットを適用することができませんでした。
+
+【参考】[ACI0079908](http://www.4d.com/jp/blog/about-13-2-hotfix-2.html)『カラムに式が設定されたクイックレポートは，開いた直後にカラムのコードが実行される』が修正されたことに伴い，計算カラムを評価した値のタイプがエディターには分からないようになりました。今回の修正により，実際に使用されるかどうかに関係なく，表示フォーマットが設定できるようになりました。
 
 * ACI0082468 Windows版のみ，メソッドエディターの候補ウィンドウに不要な横スクロールバーが表示されるために高さが不十分になり，最後の補完候補が隠れてしまいました。
 
