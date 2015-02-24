@@ -24,7 +24,7 @@
 
 * ACI0090853 Windows版のみ，ポップアップメニューにスクロールバーが表示されるときの高さが足りませんでした。
 
-* ACI0090847 Windows版のみ，タブコントロールは必要に応じてタブがスクロールするようになっていますが，v13以降，表示されていないタブをコマンドで選択した場合，v11のようにタブコントロールが自動的にスクロールしませんでした。
+* ACI0090847 Windows版のみ，タブコントロールは必要に応じてタブがスクロールするようになっていますが，v13以降，表示されていないタブをコマンドで選択した場合，v11のようにタブコントロールが自動的にスクロールしませんでした。
 
 ACI0090847 In case of change of current tab, 4D does not always make it visible.
 ACI0090828 Build Application very slow when copying files on mac
