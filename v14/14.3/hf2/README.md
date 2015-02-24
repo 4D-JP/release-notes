@@ -26,15 +26,25 @@
 
 * ACI0090847 Windows版のみ，タブコントロールは必要に応じてタブがスクロールするようになっていますが，v13以降，表示されていないタブをコマンドで選択した場合，v11のようにタブコントロールが自動的にスクロールしませんでした。
 
-ACI0090847 In case of change of current tab, 4D does not always make it visible.
-ACI0090828 Build Application very slow when copying files on mac
-ACI0090753 'Get picture file name' fails under certain conditions
-ACI0090654 Listbox: Default alignment is ignored when printing listbox for numeric column
-ACI0090575 'MSG_EXTRACT' can't decode properly UTF8 encoded file names.
-ACI0090567 Build Application: Master license column not updated when removing license
-ACI0090556 Build Dialog: Master column is empty for expansion licences
-ACI0090541 In client/server mode, "METHOD SET CODE" can unexpectedly quit 4D Server
-ACI0090527 When editing form, 'undo' about font settings not working properly
+* ACI0090828 Build Application very slow when copying files on mac
+
+Mac版のアプリケーションビルドはWindows版の2倍ほど時間がかかりました。
+
+【参考】アプリケーションビルドのコードはこれまで非同期のファイルコピ−APIを使用していました。同期APIを使用することにより，3~4倍の速さでビルドが完了できるようになりました。
+
+* ACI0090753 ピクチャオブジェクトのコンテキストメニューまたは[READ PICTURE FILE](http://doc.4d.com/4Dv14/4D/14.3/READ-PICTURE-FILE.301-1697053.ja.html)でインポートしたイメージ，あるいは [SET PICTURE FILE NAME](http://doc.4d.com/4Dv14/4D/14.3/SET-PICTURE-FILE-NAME.301-1697034.ja.html)で名前を設定したイメージのファイル名を[Get picture file name](http://doc.4d.com/4Dv14/4D/14.3/Get-picture-file-name.301-1697031.ja.html)で参照した場合，最初は名前が返されますが，4D Remoteでレコードを再ロードした後は空の文字列が返されました。シングルユーザー版または4D Server（ストアドプロシージャー）では問題ありません。
+
+* ACI0090654 Windows版のみ，数値型のリストボックス列を印刷した場合，横揃えが『デフォルト』または『右』であっても，左揃えになりました。
+
+* ACI0090575 [MSG_Extract](http://doc.4d.com/4Dv14/4D-Internet-Commands/14/MSG-Extract.301-1237863.ja.html)は，RFCエンコード（例: U%CC%88berarbeitete%20Offerte.pdf）されたUnicodeファイル名を正しく展開しませんでした。
+
+* ACI0090567 アプリケーションビルド画面で『マスター』番号を削除しても『Expansion#』が取り除かれませんでした。
+
+* ACI0090556 アプリケーションビルド画面で『Expansion#』を選択しても『マスター』番号が空のままでした。
+
+* ACI0090541 クライアント/サーバー版で[METHOD SET CODE](http://doc.4d.com/4Dv14/4D/14.3/METHOD-SET-CODE.301-1696574.ja.html)を実行すると，サーバーがクラッシュすることがありました。
+
+* ACI0090527 フォームエディターでフィールドのフォント名を変更した場合，Control+Zで『取り消し』ができませんでした。
 
 * ACI0090448 Mac版のみ，フォームエディター上でボタンやテキスト入力オブジェクトを選択し，ペーストボードにコピーしたBLOBを後でペーストボードに再現しても，ペーストしたときにはスタティックピクチャーとして貼り付けられました。
 
