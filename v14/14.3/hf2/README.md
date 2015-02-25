@@ -78,13 +78,21 @@ SSL2/SSL3サポートが取り除かれて以来，[SMTP_SEND](http://doc.4d.com
 ACI0089335 PK Wizard not loading in C/S mode
 クライアント側のストラクチャエディターで[プライマリーキー管理](http://doc.4d.com/4Dv14/4D/14.3/Primary-key-manager.300-1705581.ja.html)』ボタンをクリックすると，SQLエラーが返されました。
 
-ACI0089184 4D Write menu not shown with 'Movable dialog box' window type
-ACI0089145 Remote 4D link proposed in the submenu local databases.
-ACI0089113 '.4DC' does not open the adjacent '.4DD' by default
-ACI0088790 Some strings cut in label editor in spanish version
-ACI0088470 Blinking cursor becomes invisible because of a right justification
-ACI0088360 Entering decimal separator does not work in a listbox
-ACI0088262 External data path damaged for picture field.
+* ACI0089184 Windows版のみ，ウィンドウタイプが```Movable dialog box```の場合，4D Writeのメニューが表示されませんでした。
+
+* ACI0089145 『最近使用したデータベース』メニューをクリアした後，4Dを終了し，起動後，4Dサーバーに接続した場合，接続したリモートデータベースの名前が『ローカルデータベース』のリストに表示されました。
+
+* ACI0089113 コンパイルアプリケーション（.4DC）をビルドした場合，初回の起動時にストラクチャファイルに隣接した同名のデータファイル（.4DD）およびジャーナルファイル（.journal）が自動的に選択されませんでした。
+
+【参考】v13までは問題ありませんでした。
+
+* ACI0088790 スペイン語版のみ，ラベルエディター画面に表示される文字列（ラジオボタンのタイトルなど）の一部が欠けていました。
+
+* ACI0088470 テキスト入力オブジェクトの横整列が『右揃え』に設定されている場合，点滅するキャレットがオブジェクトの右側に接すると，見えなくなってしまいました。
+
+* ACI0088360 地域と言語の設定により，小数点にカンマ記号が割り当てられている場合，リストボックスのセルに小数が入力できませんでした。
+
+* ACI0088262 [SET EXTERNAL DATA PATH](http://doc.4d.com/4Dv14/4D/14.3/SET-EXTERNAL-DATA-PATH.301-1697423.ja.html)により，カスタマイズされた外部データ保存パスが設定されているピクチャーフィールドは，その外部ファイルがみつからない場合，レコード保存時に『ExternalData:Table-1 Field-1』といった無効なパスが記録されました。BLOBやテキストでは問題ありません。
 
 * ACI0087679 リストボックスに非表示の列が含まれている場合，その列よりも右側の列をドラッグしたときに表示される列の挿入ポイントが間違っていました。
 
