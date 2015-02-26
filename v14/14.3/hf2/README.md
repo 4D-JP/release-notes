@@ -112,6 +112,14 @@ ACI0089335 PK Wizard not loading in C/S mode
 
 * ACI0082468 Windows版のみ，メソッドエディターの候補ウィンドウに不要な横スクロールバーが表示されるために高さが不十分になり，最後の補完候補が隠れてしまいました。
 
+修正前
+
+![1](https://cloud.githubusercontent.com/assets/10509075/6392573/67c3aca6-be05-11e4-8fec-a6ef5450e990.png)
+
+修正後
+
+![2](https://cloud.githubusercontent.com/assets/10509075/6392575/6aeaef3e-be05-11e4-80b9-e80bf59b3028.png)
+
 * ACI0080790 Windows版のみ，ペイント（mspaint.exe）から画像をピクチャエリアにコピー＆ペーストした場合，イメージが縮小されました。
 
 * ACI0080677 Mac版のみ，コードエディターにいくらかの日本語を入力した後，それ以上は戻れなくなるところまで『取り消し』（command+Z）した後に『やり直し』（command+shift+Z）した場合，元のテキストが複製されました。
