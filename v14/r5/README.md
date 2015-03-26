@@ -150,4 +150,4 @@
 
 **ACI0090166** 4D Viewのセルのフォーミュラに設定されたメソッドの第1引数には，エリアの参照が代入されているはずですが，そうではありませんでした。
 
-**ACI0090094** [SET PRINT OPTION](http://doc.4d.com/4Dv14/4D/14.3/SET-PRINT-OPTION.301-1697062.ja.html)の定数```Spooler document name option```でPDF文書名を設定しても，ダイアログの《PDFとして保存...》を選択すると，Print.PDFまたはPrint.PS（PostScriptの場合）というファイル名になりました。プレビューで開いた場合，ウィンドウのタイトルに設定した文書名が反映されます。続けて文書をPDFとして保存すれば，その名前が採用されました。
+**ACI0090094** [SET PRINT OPTION](http://doc.4d.com/4Dv14/4D/14.3/SET-PRINT-OPTION.301-1697062.ja.html)の定数```Spooler document name option```でPDF文書名を設定しても，ダイアログの《PDFとして保存...》を選択すると，Print.PDFまたはPrint.PS（PostScriptの場合）というファイル名になりました。対照的に，文書をプレビューで開いた場合，ウィンドウのタイトルに設定した文書名が反映されます。続けて文書をPDFとして保存すれば，その名前が採用されました。
