@@ -187,3 +187,20 @@
 **ACI0089750** マルチスタイルテキストのブロックが標準テキストの場合，[ST Get content type](http://doc.4d.com/4Dv14R5/4D/14-R5/ST-Get-content-type.301-1851217.ja.html)から返されるブロックの開始位置と終了位置が正しくありませんでした。
 
 **ACI0089747** [ST Get text](http://doc.4d.com/4Dv14R5/4D/14-R5/ST-Get-text.301-1851229.ja.html)に同一の値を開始位置また終了位置として渡した場合，それは不正な指示なのでOK変数には0が返されるはずですが，1が返されました。
+
+**ACI0087601** クライアント/サーバーで4D Viewを使用した場合，数値フォーマットは各クライアントのローカル設定を反映しませんでした。
+
+**ACI0087588** Windows版のみ。フォームエディターで[ビュー](http://doc.4d.com/4Dv14R5/4D/14-R5/Using-object-views.300-1880797.ja.html)の名前を入力しようとした場合，ハイライトとエリアの色が酷似しているために判別が困難でした。
+
+**ACI0087535** 
+4D Web ServerのフロントエンドにApacheが置かれ，下記のように```mod_proxy```が有効にされている場合，POSTされたXMLデータが[WEB GET HTTP BODY](http://doc.4d.com/4Dv14R5/4D/14-R5/WEB-GET-HTTP-BODY.301-1852214.ja.html)で完全に受け取れませんでした。HTTPSポートでは，プロキシを使用しても問題ありません。HTTPだけの問題です。
+
+```xml
+<IfModule mod_proxy.c>
+    ProxyPreserveHost On
+    ProxyPass / http://127.0.0.1:8080/
+    ProxyPassReverse / http://127.0.0.1:8080/
+</IfModule>
+```
+
+**ACI0087353** [IDウィンドウのアイコンのカスタマイズ](http://doc.4d.com/4Dv14R5/4D/14-R5/Access-system-overview.300-1880659.ja.html)に指示どおりに```LoginImage.png```ファイルを配置した場合，《サーバーに接続》ダイアログに正しく表示されませんでした。透明度の関係で，《ユーザー認証》という文字列の背面にピクチャが表示されました。
