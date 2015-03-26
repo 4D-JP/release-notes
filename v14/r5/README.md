@@ -53,7 +53,9 @@
 
 *R2以降で発生した問題*
 
-**ACI0089956** **R2（Mac:Yosemite）** OS X Yosemiteで[GET SYSTEM FORMAT](http://doc.4d.com/4Dv14R5/4D/14-R5/GET-SYSTEM-FORMAT.301-1851207.ja.html)から期待される日付フォーマットが返されませんでした。```dd/MM/yy```の代わりに```d/M/yy```が返されました。
+**ACI0089956** **R2（Mac:Yosemite）** OS X Yosemiteで[GET SYSTEM FORMAT](http://doc.4d.com/4Dv14/4D/14.3/GET-SYSTEM-FORMAT.301-1697509.ja.html)から期待される日付フォーマットが返されませんでした。```dd/MM/yy```の代わりに```d/M/yy```が返されました。
+
+**ACI0089219** **R2** *AreaList Pro*プラグインのセルを編集中に```Tab```キーを入力しても，次のセルに移動しませんでした。
 
 ---
 
@@ -212,3 +214,9 @@
 **ACI0089382** **R3（Mac）** ODBCアドミニストレーターにデータソース名（DSN）を入力した場合，ODBCドライバーDSNダイアログが表示される代わりに，キー/値を入力するODBCアドミニストレーターの画面が表示されました。
 
 **ACI0089338** Windows版のみ。システムWebエリアが表示されているフォームで[Select document](http://doc.4d.com/4Dv14R5/4D/14-R5/Select-document.301-1852057.ja.html)を使用した場合，アプリケーションがクラッシュすることがありました。特に，ファイル選択ダイアログをフォーム上でドラッグすると危険でした。
+
+**ACI0089397** Windows版のみ。印刷中，または```On Load```イベントでテキスト入力エリアに[OBJECT GET BEST SIZE](http://doc.4d.com/4Dv14/4D/14.3/OBJECT-GET-BEST-SIZE.301-1696991.ja.html)を使用した場合，返される高さの最適値が正しくないことがありました。
+
+**ACI0089328** Mac版のみ。垂直スクロールバーが表示されたテキスト入力エリアは，[ワードラップ](http://doc.4d.com/4Dv14/4D/14.3/List-box-column-specific-properties.300-1705525.ja.html)が正常に働かないことがありました。
+
+**ACI0089238** Windows版のみ。階層ポップアップメニューをクリックした後，何もしないまま，テキスト入力エリアに移動すると，ポップアップは固まり，エリアには何も入力できませんでした。
