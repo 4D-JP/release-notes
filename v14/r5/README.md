@@ -15,6 +15,8 @@
 
 **ACI0091039** **R5** [SELECT LIST ITEMS BY POSITION](http://doc.4d.com/4Dv14/4D/14.3/SELECT-LIST-ITEMS-BY-POSITION.301-1696757.ja.html)で階層リストの項目を選択することができませんでした。
 
+**ACI0087708** **R5（Mac）** 4D Server v13が起動しているマシンで[新しいServerNetネットワークレイヤー](http://doc.4d.com/4Dv14R5/4D/14-R5/New-ServerNet-Network-Layer.300-1736906.ja.html)が有効にされたサーバーを起動した場合，クラッシュすることがありました。
+
 ---
 
 *R4以降で発生した問題*
