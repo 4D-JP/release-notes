@@ -324,9 +324,8 @@ ALERT(String($check)) //結果は2.0《正》
 
 **ACI0089105** MS SQL Serverのリンクサーバーから```OPENQUERY```ステートメントを発行した場合，SQLエラーが返されました。
 
-**ACI0089090** MS QueryからパラメーターのあるSQLを発行した場合，SQLエラーが返されました。
+**ACI0089090** MS QueryからパラメーターのあるSQLを発行した場合，SQLエラーが返されました。たとえば，下記のようなSQLです。
 
 ```sql
-this does not work:-
 SELECT Contacts.CompanyID, Contacts.SurnameFROM Contacts ContactsWHERE (Contacts.CompanyID=[param])
 ```
