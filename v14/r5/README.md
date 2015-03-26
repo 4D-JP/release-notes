@@ -17,6 +17,8 @@
 
 **ACI0087708** **R5（Mac）** 4D Server v13が起動しているマシンで[新しいServerNetネットワークレイヤー](http://doc.4d.com/4Dv14R5/4D/14-R5/New-ServerNet-Network-Layer.300-1736906.ja.html)が有効にされたサーバーを起動した場合，クラッシュすることがありました。
 
+**ACI0087829** **R5（Mac）** ピクチャポップアップメニューをクリックすると，直後にアプリケーションがクラッシュしました。
+
 ---
 
 *R4以降で発生した問題*
@@ -220,3 +222,24 @@
 **ACI0089328** Mac版のみ。垂直スクロールバーが表示されたテキスト入力エリアは，[ワードラップ](http://doc.4d.com/4Dv14/4D/14.3/List-box-column-specific-properties.300-1705525.ja.html)が正常に働かないことがありました。
 
 **ACI0089238** Windows版のみ。階層ポップアップメニューをクリックした後，何もしないまま，テキスト入力エリアに移動すると，ポップアップは固まり，エリアには何も入力できませんでした。
+
+**ACI0088323** [ウィンドウの配置の記憶](http://doc.4d.com/4Dv14/4D/14.3/Memorization-of-window-geometry.300-1705389.ja.html)を有効にしても，第2ページ以降に置かれたリストボックスの配置は記憶されませんでした。
+
+**ACI0088274** [外部PHPインタープリター](http://doc.4d.com/4Dv14/4D/14.3/Executing-PHP-scripts-in-4D.300-1697860.ja.html)をセットアップしても，関数をコールするPHPスクリプトが実行できませんでした。
+
+```sh
+auto_prepend_file = "C:/Program Files (x86)/4D/4D v14.3/4D/Resources/php/Windows/_4D_Execute_PHP.php"
+
+display_errors = "stderr"
+
+```
+
+上記のように設定した場合，4Dの[PHP Execute](http://doc.4d.com/4Dv14/4D/14.3/PHP-Execute.301-1697861.ja.html)だけでなく，コマンドラインからもPHPが実行できません。対照的に```auto_prepend_file```をコメントアウトすれば，少なくともコマンドラインからはPHPが実行できました。4Dは，環境変数を使用してデータを```_4D_Execute_PHP.php```に渡していますが，これが```$_ENV```では読めないことがありました。なお，```$_ENV```を有効にするためには，```php.ini```に下記の内容を追加する必要があります。
+
+```sh
+variables_order = "EGPCS"
+```
+
+修正により，```$_ENV```の代わりに```getenv()```が使用されるようになったので，```php.ini```に```variables_order```を追加しなくても，外部PHPインタープリターが使用できるようになりました。
+
+**ACI0087976** コードで作成した新規リストを階層ポップアップメニューに代入しても，オブジェクトに表示される内容が更新されませんでした。
