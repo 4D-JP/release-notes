@@ -31,3 +31,20 @@
 * ACI0090491 On Startupで[SET WINDOW TITLE](http://doc.4d.com/4Dv14/4D/14.3/SET-WINDOW-TITLE.301-1697737.ja.html)を実行しても，アプリケーションプロセスのウィンドウタイトルを変更することができませんでした。
 
 * ACI0090840 バージョン14.3でも[IT_Version](http://doc.4d.com/4Dv14/4D-Internet-Commands/14/IT-Version.301-1237739.ja.html)からは《14.2》が返されました。
+
+* ACI0090165 ツールボックスでメニューの項目名を変更せずに並び順だけを変更した場合，新しい並び順が保存されませんでした。
+
+* ACI0088208 空のピクチャを[SVG_New_embedded_image](http://doc.4d.com/4Dv14/4D/14/SVG-New-embedded-image.301-1382577.ja.html)でSVGに挿入した場合，```image```要素が追加されませんでした。
+
+* ACI0091546 [PV Get picture ](http://doc.4d.com/4Dv14/4D-View/14/PV-Get-picture.301-1377864.ja.html)にメモリーリークがありました。たとえば，4D Viewに挿入されたQuickTime画像を標準的なフォーマットに変換している途中でメモリが不足してしまい，処理が継続できなくなることがありました。
+
+* ACI0091051 Mac版のみ，コンボボックスが使用された場合，[HIDE PROCESS ](http://doc.4d.com/4Dv14/4D/14.3/HIDE-PROCESS.301-1697098.ja.html)が効きませんでした。
+
+* ACI0091525 必須入力フィールドの値が空のまま，レコード編集を確定しようとすると，警告ダイアログが表示されますが，そのダイアログを確定すると，アプリケーションがクラッシュしました。
+
+* ACI0091727 Windows版のみ，[RESTART 4D](http://doc.4d.com/4Dv14/4D/14.3/RESTART-4D.301-1696588.ja.html)で4D Serverを再起動した後《Updater.exe》起動時にユーザーアクセス制御のダイアログが表示されました。ビルド版サーバーおよびスタンドアロン版では問題ありません。
+
+* ACI0092061 Mac版のみ，[GET PRINT OPTION ](http://doc.4d.com/4Dv14/4D/14.3/GET-PRINT-OPTION.301-1697064.ja.html)でファイル出力の場所 (```Destination option```) がHFS形式で返されませんでした。
+
+* ACI0092073 Mac版のみ，フォーカス表示のあるボタンを[OBJECT SET ENTERABLE](http://doc.4d.com/4Dv14/4D/14.3/OBJECT-SET-ENTERABLE.301-1696980.ja.html)で入力不可に変更した場合，フォーカスの残骸が画面に残されました。
+* 
