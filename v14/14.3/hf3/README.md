@@ -99,3 +99,15 @@ Windows版では，ネイティブWebエリアを使用してください。**Wi
 * ACI0091411 Mac版のみ，[WR FONTS TO ARRAY](http://doc.4d.com/4Dv14/4D-Write/14/WR-FONTS-TO-ARRAY.301-1373401.ja.html)で返されるフォント名が正しくありませんでした。[FONT LIST](http://doc.4d.com/4Dv14/4D/14.3/FONT-LIST.301-1697499.ja.html)は問題ありません。
 
 * ACI0091401 プラグインエリアがフォーカスを得ているときに[POST KEY](http://doc.4d.com/4Dv14/4D/14.3/POST-KEY.301-1697637.ja.html)を実行すると，アプリケーションがクラッシュしました。
+
+* ACI0089183 ```Tab```キーでポップアップメニューに移動し，矢印キーで値を変更した場合，矢印キーを入力する度に```On Data Change```イベントが発生する一方，```On Clicked```は発生しませんでした。
+
+* ACI0089130 MS SQL ServerのリンクサーバーからODBC経由で4Dのテキストフィールドに```DATALENGTH```でアクセスした場合，テキストの文字数が8000を超えているとエラーが返されました。
+
+* ACI0089018 DBFファイルをインポートした場合，Mac版ではアクセント記号が失われ，Windows版ではクラッシュしました。
+
+* ACI0087977 リストボックスがページ2以降に配置されていた場合，[LISTBOX INSERT ROW](http://doc.4d.com/4Dv14/4D/14.3/LISTBOX-INSERT-ROWS.301-1696842.ja.html)で間違った位置に行が挿入されました。
+
+* ACI0084902 Windows版のみ，[FORM SCREENSHOT](http://doc.4d.com/4Dv14/4D/14.3/FORM-SCREENSHOT.301-1696719.ja.html)でAreaList Pro 9.0が配置されたフォームを撮影した場合，AreaListの領域は黒く塗りつぶされたようになりました。
+
+* ACI0082795 Mac版のみ，フォントサイズが20よりおおきい場合，ポップアップメニューの選択されたアイテムに表示されるチェックマークが《...》になりました。
