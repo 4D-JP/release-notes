@@ -114,7 +114,7 @@ Windows版では，ネイティブWebエリアを使用してください。**Wi
 
 * ACI0091050 ウィンドウを作成せずに[MESSAGE](http://doc.4d.com/4Dv14/4D/14.3/MESSAGE.301-1696910.ja.html)を実行した場合，最前面にあるウィンドウの内容が上書きされました。問題は修正されましたが，**MESSAGEは開発者向けのコマンドであることに留意してください**。通常は[Open form window](http://doc.4d.com/4Dv14/4D/14.3/Open-form-window.301-1697744.ja.html)や[DIALOG](http://doc.4d.com/4Dv14/4D/14.3/DIALOG.301-1697854.ja.html)を使用し，エンドユーザー向けの良質のユーザーインタフェースを用意するように心がけてください。
 
-* ACI0091039 階層リストに対して[SELECT LIST ITEMS BY POSITION](http://doc.4d.com/4Dv14/4D/14.3/SELECT-LIST-ITEMS-BY-POSITION.301-1696757.ja.html)を実行しても目的のアイテムが選択されませんでした。
+* ACI0091039 階層ポップアップメニューに対して[SELECT LIST ITEMS BY POSITION](http://doc.4d.com/4Dv14/4D/14.3/SELECT-LIST-ITEMS-BY-POSITION.301-1696757.ja.html)を実行しても目的のアイテムが選択されませんでした。
 
 * ACI0090971 Mac版のみ，HelveticaフォントはOS X 10.7, 10.8, 10.9では第1行の印刷と表示位置が上に寄りました。10.10では問題ありません。なお，**Helvetica Neueであれば**，どのバージョンのOS Xでも同じように表示されます。
 
