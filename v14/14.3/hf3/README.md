@@ -59,3 +59,25 @@
 * ACI0091379 3Dボタンの上でマウスポインターを動かしていると，次第にフォーカス表示が濃くなってゆきました。
 
 * ACI0091928 フィールドがひとつもないテーブルが存在する場合，クエリエディターを表示するとシンタックスエラーになりました。 
+
+* ACI0091573 WebエリアにJavaScriptをインジェクションしてページをプリントすることができませんでした。
+
+```
+$error:=WA Evaluate javascript(*;"Area";"window.print()")
+```
+
+**注記**: OS X 10.10 Yosemiteでは，[WA SET PAGE CONTENT](http://doc.4d.com/4Dv14/4D/14.3/WA-SET-PAGE-CONTENT.301-1697890.ja.html)の後に```On End URL loading```イベントが発生しないため，[DELAY PROCESS](http://doc.4d.com/4Dv14/4D/14.3/DELAY-PROCESS.301-1697115.ja.html)でタイミングを調節する必要があるかもしれません。
+
+```
+WA SET PAGE CONTENT(*;"Area";"<html><body>Test</body></html>";"")
+DELAY PROCESS(Current process;30)
+$error:=WA Evaluate javascript(*;"Area";"window.print()")
+```
+
+Windows版では，ネイティブWebエリアを使用してください。Windows版のWebKitは印刷をサポートしていません。
+
+* ACI0091941 クエリエディターでFloat型のフィールドを指定した場合，値のエリアに少数点が入力できませんでした。
+
+* ACI0087191 [OB Get](http://doc.4d.com/4Dv14/4D/14.3/OB-Get.301-1696531.ja.html)の第3引数はメソッドエディターの候補ウィンドウに有効な定数12個中の7個だけが表示されず，重複して表示されるものがありました。
+
+* ACI0089325 大量（60個以上）のフィールドが配置されたサブフォームは，素早くスクロールできませんでした。修正により，マウスホイールおよびスクロールボタンの動作はかなり改善されました。スクロールバーの操作は若干の遅れがあるかもしれません。
