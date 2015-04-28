@@ -112,7 +112,7 @@ Windows版では，ネイティブWebエリアを使用してください。**Wi
 
 * ACI0082795 Mac版のみ，フォントサイズが20よりおおきい場合，ポップアップメニューの選択されたアイテムに表示されるチェックマークが《...》になりました。
 
-* ACI0091050 ウィンドウを作成せずに[MESSAGE](http://doc.4d.com/4Dv14/4D/14.3/MESSAGE.301-1696910.ja.html)を実行した場合，最前面にあるウィンドウの内容が上書きされました。問題は修正されましたが，**```MESSAGE```は開発者向けのコマンドであることに留意してください**。通常は[Open form window](http://doc.4d.com/4Dv14/4D/14.3/Open-form-window.301-1697744.ja.html)や[DIALOG](http://doc.4d.com/4Dv14/4D/14.3/DIALOG.301-1697854.ja.html)を使用し，エンドユーザー向けの良質のユーザーインタフェースを用意するように心がけてください。
+* ACI0091050 ウィンドウを作成せずに[MESSAGE](http://doc.4d.com/4Dv14/4D/14.3/MESSAGE.301-1696910.ja.html)を実行した場合，最前面にあるウィンドウの内容が上書きされました。問題は修正されましたが，**MESSAGEは開発者向けのコマンドであることに留意してください**。通常は[Open form window](http://doc.4d.com/4Dv14/4D/14.3/Open-form-window.301-1697744.ja.html)や[DIALOG](http://doc.4d.com/4Dv14/4D/14.3/DIALOG.301-1697854.ja.html)を使用し，エンドユーザー向けの良質のユーザーインタフェースを用意するように心がけてください。
 
 * ACI0091039 階層リストに対して[SELECT LIST ITEMS BY POSITION](http://doc.4d.com/4Dv14/4D/14.3/SELECT-LIST-ITEMS-BY-POSITION.301-1696757.ja.html)を実行しても目的のアイテムが選択されませんでした。
 
