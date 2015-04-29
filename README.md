@@ -12,7 +12,7 @@ Release Notes
 
 * v14.3
 
-```2015-04-30.183401``` [4D v14.3 Hotfix 3](https://github.com/4D-JP/release-notes/blob/master/v14/14.3/hf3/README.md) 
+```2015-04-29.183401``` [4D v14.3 Hotfix 3](https://github.com/4D-JP/release-notes/blob/master/v14/14.3/hf3/README.md) 
 
 ```2015-02-23.179546``` [4D v14.3 Hotfix 2](https://github.com/4D-JP/release-notes/blob/master/v14/14.3/hf2/README.md) 
 
