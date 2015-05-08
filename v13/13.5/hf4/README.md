@@ -6,7 +6,7 @@
 $error:=WA Evaluate javascript(*;"Area";"window.print()")
 ```
 
-**注記**: OS X 10.10 Yosemiteでは，[WA SET PAGE CONTENT](http://doc.4d.com/4Dv14/4D/14.3/WA-SET-PAGE-CONTENT.301-1697890.ja.html)の後に```On End URL loading```イベントが発生しないため，[DELAY PROCESS](http://doc.4d.com/4Dv14/4D/14.3/DELAY-PROCESS.301-1697115.ja.html)でタイミングを調節する必要があるかもしれません。
+**注記**: OS X 10.10 Yosemiteでは，[WA SET PAGE CONTENT](http://doc.4d.com/4Dv13/4D/13.5/WA-SET-PAGE-CONTENT.301-1457208.ja.html)の後に```On End URL loading```イベントが発生しないため，[DELAY PROCESS](http://doc.4d.com/4Dv13/4D/13.5/DELAY-PROCESS.301-1457966.ja.html)でタイミングを調節する必要があるかもしれません。
 
 ```
 WA SET PAGE CONTENT(*;"Area";"<html><body>Test</body></html>";"")
