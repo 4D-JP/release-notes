@@ -18,6 +18,6 @@ Release Notes
 
 * v13.5
 
-```2015-05-08.xxxxxx``` [4D v13.5 Hotfix 4](https://github.com/4D-JP/release-notes/blob/master/v13/13.5/hf4/README.md) 
+```2015-05-08.183726``` [4D v13.5 Hotfix 4](https://github.com/4D-JP/release-notes/blob/master/v13/13.5/hf4/README.md) 
 
 ```2015-02-19.178495``` [4D v13.5 Hotfix 3](https://github.com/4D-JP/release-notes/blob/master/v13/13.5/hf3/README.md) 
