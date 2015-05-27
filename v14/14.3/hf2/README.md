@@ -56,9 +56,7 @@
 
 * ACI0090259 Webサービスで公開されたメソッドの入力パラメーターにローカル変数が使用できませんでした。（コンパイルモードで『EXECUTEメソッドのパラメータが不正』ランタイムエラーが返されました。）プロセス変数（Compiler_WEBで宣言）であれば問題ありません。
 
-* ACI0090258 Program hangs after using SMTP_SEND without optional parameter
-
-SSL2/SSL3サポートが取り除かれて以来，[SMTP_SEND](http://doc.4d.com/4Dv14/4D-Internet-Commands/14/SMTP-Send.301-1237778.ja.html)のSSL引数に0を指定するか，省略すると，実行したプロセスが無反応になりました。
+* ACI0090258 SSL2/SSL3サポートが取り除かれて以来，[SMTP_SEND](http://doc.4d.com/4Dv14/4D-Internet-Commands/14/SMTP-Send.301-1237778.ja.html)のSSL引数に0を指定するか，省略すると，実行したプロセスが無反応になりました。
 
 【参考】Internet Commandsは，ソケットのエラーを処理(WSAGetLastError)していましたが，OpenSSLのエラー(SSL_get_error)はチェックしていませんでした。さらに，読み書き操作にタイムアウトが適用されていませんでした。もっとも，SSLエラーを正しく処理するようになったため，タイムアウトに到達することは滅多にないはずです。最後に，SSLの接続/アップグレードエラーも処理されるようになりました。以前は，最初の読み書きエラーを処理していただけでしたが，修正により，SSLの接続/アップグレードが失敗した時点で（SSL読み書きの失敗を待つことなく）制御が返されるようになりました。
 
