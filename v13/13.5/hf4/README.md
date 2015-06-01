@@ -61,3 +61,7 @@ Unicodeが内部的に[正規化](http://ja.wikipedia.org/wiki/Unicode%E6%AD%A3%
 * ACI0086794 4D Writeのズーム率を200%に変更した場合，カーソルが間違った位置に表示されました。
 
 * ACI0082110 クライアント/サーバー版でSQL [REPLICATE](http://doc.4d.com/4Dv13/4D/13.4/REPLICATE.300-1225617.ja.html)のWHERE句にプロセス変数を使用した場合，アプリケーションがクラッシュしました。リテラル値であれば，問題ありません。
+
+* ACI0086913 クイックレポートの計算カラムに表示フォーマットを適用することができませんでした。
+
+* ACI0087122 ```DOCUMENT LIST```をWindowsからMavericks上のSMB共有ネットワークボリュームに対して実行した場合，ファイル数が正確に返されませんでした（99個を超える場合）。問題は修正されましたが，正常な動作にはWindows 7またはWindows Server 2008 R2以降が必要です。
