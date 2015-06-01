@@ -74,7 +74,7 @@
 * ACI0089704 ページ2以降に配置されたWebエリアは，ページに内容によっては，うまく動作しませんでした。Windows版では，コードが正しく実行されず，Mac版ではアプリケーションがクラッシュしました。
 
 ACI0089335 PK Wizard not loading in C/S mode
-クライアント側のストラクチャエディターで[プライマリーキー管理](http://doc.4d.com/4Dv14/4D/14.3/Primary-key-manager.300-1705581.ja.html)』ボタンをクリックすると，SQLエラーが返されました。
+クライアント側のストラクチャエディターで『[プライマリーキー管理](http://doc.4d.com/4Dv14/4D/14.3/Primary-key-manager.300-1705581.ja.html)』ボタンをクリックすると，SQLエラーが返されました。
 
 * ACI0089184 Windows版のみ，ウィンドウタイプが```Movable dialog box```の場合，4D Writeのメニューが表示されませんでした。
 
