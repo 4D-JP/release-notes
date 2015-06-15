@@ -19,19 +19,21 @@ Fixed bugs v13.5 build 185736 (Released on 2015-05-26)
 -----------------------------------------------------
 ACI0091616 : [130902] http request (The PROFIND method is not set in the HTTP request)
 
-Fixed bugs v13.5 build 185419 (Released on 2015-05-21)
------------------------------------------------------
-ACI0092077 : LOG EVENT no longer writes to Mac Console.LOG
 
-Fixed bugs v13.5 build 184944 (Released on 2015-05-13)
------------------------------------------------------
-ACI0069136 : Import not seeing RTF files
 
-Fixed bugs v13.5 build 184319 (Released on 2015-05-01)
------------------------------------------------------
-ACI0087028 : [128895] bug repeat lines and printing
 
-Fixed bugs v13.5 build 184216 (Released on 2015-04-30)
------------------------------------------------------
-ACI0091207 : [130685] SQL LEFT JOIN
-ACI0091687 : [130929] LEFT OUTER JOIN 2 criteria do not work
+* ACI0091207 ```LEFT JOIN```の```WHERE```句に2個目の条件が```OR```または```IN```で渡され，それが存在しないレコードを指している場合，結果が正しくありませんでした。その場合，返されるはずのレコードも返されませんでした。
+
+```sql
+SELECT OrderDetails.OrderDetailID, Orders.CustomerID
+FROM OrderDetails 
+LEFT JOIN Orders ON (OrderDetails.OrderID = Orders.OrderID) 
+WHERE ((Orders.CustomerID = 1) OR (Orders.CustomerID = 9))
+INTO :OrderLinesID_al, :OrdersCustomerID_al
+```
+
+* ACI0087028 4D Viewの印刷オブションで行の繰り返しが有効に設定されている場合，セルの内容が印刷されませんでした。
+
+* ACI0069136 4D Writeエリア上でコンテキストメニューを表示し，『ハイパーリンクを挿入』ダイアログで『ドキュメントを開く』で文書タイプを『RTF』に変更しても，ファイル選択画面でRTFファイルを選択することができませんでした。***修正が有効になるためには，4Dとプラグイン，両方のバージョンを14.4に上げる必要があります。***
+
+* ACI0092077 Mac版で，[LOG EVENT](http://doc.4d.com/4Dv13/4D/13.5/LOG-EVENT.301-1457583.ja.html)の```Into 4D Debug Message```を使用しても，コンソールにメッセージが書き込まれませんでした。 
