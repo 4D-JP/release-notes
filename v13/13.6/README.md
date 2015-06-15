@@ -11,15 +11,6 @@
  
 * ACI0091680 [XSLT GET ERROR](http://doc.4d.com/4Dv13/4D/13.5/XSLT-GET-ERROR.301-1457286.ja.html)を実行した後，```OK```変数に```1```が代入されませんでした。
 
-
-
-
-
-Fixed bugs v13.5 build 186028(Released on 2015-05-30)
------------------------------------------------------
-ACI0090668 : [130510] FORM SCREEN CAPTURE PROBLEM
-ACI0091680 : OK variable is not set to 1 after an correct execution of XSLT GET ERROR
-
 Fixed bugs v13.5 build 185995 (Released on 2015-05-29)
 -----------------------------------------------------
 ACI0092244 : [131131] 4D crash if OS language is Luxembourgish
