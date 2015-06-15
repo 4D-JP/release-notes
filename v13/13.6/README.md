@@ -34,3 +34,7 @@ INTO :OrderLinesID_al, :OrdersCustomerID_al
 **注記**: 4Dとプラグイン，両方のバージョンを13.6に上げる必要があります。
 
 * ACI0092077 Mac版で，[LOG EVENT](http://doc.4d.com/4Dv13/4D/13.5/LOG-EVENT.301-1457583.ja.html)の```Into 4D Debug Message```を使用しても，コンソールにメッセージが書き込まれませんでした。 
+
+* ACI0090668 [FORM SCREENSHOT](http://doc.4d.com/4Dv13/4D/13.5/FORM-SCREENSHOT.301-1458325.ja.html)を使用した場合，Webエリアの配置された領域が黒く塗りつぶされて出力されました。
+
+**注記**: 修正されたのは，Windows版だけです。Mac版は，v14以降で修正されました。いずれにしても，Webエリアのオフスクリーンレンダリングはサポートされていません。修正とは，Webエリアの配置された領域が黒く塗りつぶされない，ということであり，ビットマップ画像が出力されるように改良された，ということではありません。
