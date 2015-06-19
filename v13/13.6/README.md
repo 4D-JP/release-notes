@@ -194,10 +194,6 @@ LEFT JOIN Orders ON (OrderDetails.OrderID = Orders.OrderID)
 WHERE ((Orders.CustomerID = 1) OR (Orders.CustomerID = 9))
 INTO :OrderLinesID_al, :OrdersCustomerID_al
 ```
-
-* ACI0092077 Mac版で，``` LOG EVENT```の```Into 4D Debug Message```を使用しても，コンソールにメッセージが書き込まれませんでした。
- 
-* ACI0069136 4D Writeエリア上でコンテキストメニューを表示し，『ハイパーリンクを挿入』ダイアログで『ドキュメントを開く』で文書タイプを『RTF』に変更しても，ファイル選択画面でRTFファイルを選択することができませんでした。***修正が有効になるためには，4Dとプラグイン，両方のバージョンを13.6に上げる必要があります。***
  
 * ACI0087128 [LOG EVENT](http://doc.4d.com/4Dv14R5/4D/14-R5/LOG-EVENT.301-1851206.ja.html)で出力したメッセージがイベントビューアに表示されませんでした。
 
