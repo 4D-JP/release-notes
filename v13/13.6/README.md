@@ -145,7 +145,7 @@ Unicodeが内部的に[正規化](http://ja.wikipedia.org/wiki/Unicode%E6%AD%A3%
 
 * ACI0090035 XMLスキーマ定義（XSD）の中には，```xsd:import```要素を使用し，他のXMLスキーマ定義を参照するようなものが少なくありません。4Dの[DOM Parse XML source](http://doc.4d.com/4Dv13/4D/13.5/DOM-Parse-XML-source.301-1457319.ja.html)は，そのようなスキーマ定義を使用してXMLを検証した場合，すべてのスキーマ定義の名前空間が同一であるとみなされ，エラーが返されました。```xsd:include```とは違い，```xsd:inport```は異なる名前空間のスキーマ定義が参照できるはずです。
 
-**参考** [http://msdn.microsoft.com/ja-jp/library/ms256237(v=vs.110).aspx](http://msdn.microsoft.com/ja-jp/library/ms256237(v=vs.110).aspx)
+**参考**: [http://msdn.microsoft.com/ja-jp/library/ms256237(v=vs.110).aspx](http://msdn.microsoft.com/ja-jp/library/ms256237(v=vs.110).aspx)
 
 * ACI0090049 セレクション型のリストボックスが含まれるプロジェクトフォームをドラッグ＆ドロップ操作により他のストラクチャに移動した場合，テーブルが一緒にコピーされませんでした。テーブルが定義されていないリストボックス，あるいは間違ったテーブルに関連づけられたリストボックスが作成されました。
 
@@ -160,4 +160,53 @@ Unicodeが内部的に[正規化](http://ja.wikipedia.org/wiki/Unicode%E6%AD%A3%
 * ACI0088901 スケジュール設定されたバックアップをユーザーがキャンセルした場合，以後，スケジュールされたバックアップが実行されませんでした。スケジュールを設定した直後のバックアップは，『中止』ボタンをクリックしたとしても，すぐに再開されますが，スケジュールにより実行されたバップアップをユーザーが中止した場合，バックアップログには『 (1406) バックアップはユーザーによりキャンセルされました』という記録が追加され，『次回バックアップ予定』もスケジュールどおりに更新され続けますが，サーバーの再起動・BACKUPコマンドやマニュアルバックアップ実行・スケジュールの変更等をしない限り，スケジュールされたバックアップは実行されませんでした。
 
 * ACI0088762 ビルドされたクライアントは，一般的なサーバーにも接続することができました，修正により，そのようなサーバーに対する接続を試みたビルドクライアントでは，『自動アップデート』画面ではなく，『バージョンが違います』エラーが表示されるようになりました。なお，同一マシンで複数のサーバーが起動しているような環境では，hardlinkキーを使用することが推奨されています。
+
+* ACI0088645 Microsoft Accessから4Dの実数フィールドにODBC経由でアクセスした場合，指数表示となりますが，精度が足りませんでした。FLOATフィールドであれば問題ありません。実数フィールドはMicrosoft AccessのSINGLEに，FLOATはDOUBLEに変換されるためです。
+
+**注記**: 修正されたODBCドライバーのDSN設定ページ『MSAccess』オプションを有効にする必要があります。
+
+* ACI0089090 MS QueryでパラメーターのあるSQL文を実行すると，"Server rejected the connection:Failed to execute statement"というエラーが返されました。
+
+エラーが返されるSQLの例
+
+```
+SELECT Contacts.CompanyID, Contacts.SurnameFROM Contacts ContactsWHERE (Contacts.CompanyID=[param])
+```
+
+* ACI0089105 MS SQL Serverのリンクサーバーから```OPENQUERY```ステートメントを実行すると，エラーが返されました。
+
+エラーが返されるSQLの例
+
+```
+SELECT * FROM OPENQUERY(TAOW128909_Main, 'SELECT * from Table_1')
+```
+
+* ACI0041745 ODBC Proの```ODBC_SQLBindParameter```でOracleのストアドプロシージャーを実行した場合，戻り値が正しく返されないことがありました。
+
+エラーが返されるSQLの例
+
+```
+$result:=ODBC_SQLBindParameter ($iCursorID;4;$iIO;SQL_INTEGER ;0;0;->myResult;- >vIndic)
+```
+
+* ACI0088718 Microsoft IIS7 FTPサーバーでMSDOSモードが有効にされている場合，```FTP_GetDirList```でディレクトリの一覧を取得することができませんでした。IIS7では，"200 MSDOS-like directory output is off/on"というメッセージが"200 MSDOS-like directory output is off/on."（ピリオドに注目）に変更されたためです。　
+
+* ACI0078522 ```IT_GetPort```でSSL系の新しいプロトコル設定  (12=SMTP SSL; 13=POP3 SSL; 14=IMAP SSL) が指定できませんでした。
+
+* ACI0071389 プラグインAPIの```PA_ExecuteCommandByID```に配列を渡すことができませんでした。
+
+* ACI0091207 ```LEFT JOIN```の```WHERE```句に2個目の条件が```OR```または```IN```で渡され，それが存在しないレコードを指している場合，結果が正しくありませんでした。その場合，返されるはずのレコードも返されませんでした。
+
+```
+SELECT OrderDetails.OrderDetailID, Orders.CustomerID
+FROM OrderDetails 
+LEFT JOIN Orders ON (OrderDetails.OrderID = Orders.OrderID) 
+WHERE ((Orders.CustomerID = 1) OR (Orders.CustomerID = 9))
+INTO :OrderLinesID_al, :OrdersCustomerID_al
+```
+
+* ACI0092077 Mac版で，``` LOG EVENT```の```Into 4D Debug Message```を使用しても，コンソールにメッセージが書き込まれませんでした。
+ 
+* ACI0069136 4D Writeエリア上でコンテキストメニューを表示し，『ハイパーリンクを挿入』ダイアログで『ドキュメントを開く』で文書タイプを『RTF』に変更しても，ファイル選択画面でRTFファイルを選択することができませんでした。***修正が有効になるためには，4Dとプラグイン，両方のバージョンを13.6に上げる必要があります。***
+ 
 
