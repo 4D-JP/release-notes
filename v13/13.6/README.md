@@ -181,7 +181,7 @@ $result:=ODBC_SQLBindParameter ($iCursorID;4;$iIO;SQL_INTEGER ;0;0;->myResult;- 
 
 * ACI0088718 Microsoft IIS7 FTPサーバーでMSDOSモードが有効にされている場合，```FTP_GetDirList```でディレクトリの一覧を取得することができませんでした。IIS7では，"200 MSDOS-like directory output is off/on"というメッセージが"200 MSDOS-like directory output is off/on."（ピリオドに注目）に変更されたためです。　
 
-* ACI0078522 ```IT_GetPort```でSSL系の新しいプロトコル設定  (12=SMTP SSL; 13=POP3 SSL; 14=IMAP SSL) が指定できませんでした。
+* ACI0078522 [IT_GetPort](http://doc.4d.com/4Dv13/4D/13.2/IT-GetPort.301-1086836.ja.html)でSSL系の新しいプロトコル設定  (12=SMTP SSL; 13=POP3 SSL; 14=IMAP SSL) が指定できませんでした。
 
 * ACI0071389 プラグインAPIの```PA_ExecuteCommandByID```に配列を渡すことができませんでした。
 
