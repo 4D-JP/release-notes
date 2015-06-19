@@ -17,16 +17,6 @@
 
 **注記**: 4D Writeと4D Viewのバージョンも13.6に上げる必要があります。
 
-* ACI0091207 ```LEFT JOIN```の```WHERE```句に2個目の条件が```OR```または```IN```で渡され，それが存在しないレコードを指している場合，結果が正しくありませんでした。その場合，返されるはずのレコードも返されませんでした。
-
-```sql
-SELECT OrderDetails.OrderDetailID, Orders.CustomerID
-FROM OrderDetails 
-LEFT JOIN Orders ON (OrderDetails.OrderID = Orders.OrderID) 
-WHERE ((Orders.CustomerID = 1) OR (Orders.CustomerID = 9))
-INTO :OrderLinesID_al, :OrdersCustomerID_al
-```
-
 * ACI0087028 4D Viewの印刷オブションで行の繰り返しが有効に設定されている場合，セルの内容が印刷されませんでした。
 
 * ACI0069136 4D Writeエリア上でコンテキストメニューを表示し，『ハイパーリンクを挿入』ダイアログで『ドキュメントを開く』で文書タイプを『RTF』に変更しても，ファイル選択画面でRTFファイルを選択することができませんでした。
