@@ -187,7 +187,7 @@ $result:=ODBC_SQLBindParameter ($iCursorID;4;$iIO;SQL_INTEGER ;0;0;->myResult;- 
 
 * ACI0091207 ```LEFT JOIN```の```WHERE```句に2個目の条件が```OR```または```IN```で渡され，それが存在しないレコードを指している場合，結果が正しくありませんでした。その場合，返されるはずのレコードも返されませんでした。
 
-```
+```sql
 SELECT OrderDetails.OrderDetailID, Orders.CustomerID
 FROM OrderDetails 
 LEFT JOIN Orders ON (OrderDetails.OrderID = Orders.OrderID) 
