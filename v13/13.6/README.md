@@ -230,7 +230,7 @@ INTO :OrderLinesID_al, :OrdersCustomerID_al
 
 * ACI0086830 WEB SEND BLOBコマンドがSSLモードでは10秒でタイムアウトしてしまうため，低速のネットワークでは，おおきなBLOBが完全に送信できないことがありました。HTTP，WEB SEND FILE，WEB SEND RAW DATAでは問題ありませんが，（ファイルサイズに応じて[WEB SEND BLOB](http://doc.4d.com/4Dv13/4D/13.5/WEB-SEND-BLOB.301-1457398.ja.html)と[WEB SEND FILE](http://doc.4d.com/4Dv13/4D/13.5/WEB-SEND-FILE.301-1457395.ja.html)を使い分けている）スタティックWebサーバーでは同じ問題が10MB以下のファイルで発生しました。
  
-参考：低速ネットワークの再現には，[Network Link Conditioner](https://developer.apple.com/library/ios/documentation/NetworkingInternetWeb/Conceptual/NetworkingOverview/WhyNetworkingIsHard/WhyNetworkingIsHard.html)が便利です。
+**参考**: 低速ネットワークの再現には，[Network Link Conditioner](https://developer.apple.com/library/ios/documentation/NetworkingInternetWeb/Conceptual/NetworkingOverview/WhyNetworkingIsHard/WhyNetworkingIsHard.html)が便利です。
 
 * ACI0086904 一部のテーブルでOrphan（リンク切れ）BLOBエラーが発生した場合，MSCで修復することもできず（[SEND RECORD](http://doc.4d.com/4Dv13/4D/13.5/SEND-RECORD.301-1457277.ja.html)-[TRUNCATE TABLE](http://doc.4d.com/4Dv13/4D/13.5/TRUNCATE-TABLE.301-1457732.ja.html)-[RECEIVE RECORD](http://doc.4d.com/4Dv13/4D/13.5/RECEIVE-RECORD.301-1457276.ja.html)であれば修復することができます），それどころか他のテーブルからもエラーが返されるようになりました。
 
