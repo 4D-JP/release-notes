@@ -46,7 +46,7 @@
 4D Internet Commands
 ---
 
-* ACI0090575
+* ACI0090575 ```MSG_Extract```は，RFCエンコード（例: U%CC%88berarbeitete%20Offerte.pdf）されたUnicodeファイル名を正しく展開しませんでした。
 
 4D for OCI
 ---
