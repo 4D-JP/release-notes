@@ -17,16 +17,12 @@
 1. patient
 2. patient_alias
 3. patientExData
-4. patientMatchQueue
-5. patientMatchRule
 
 *メソッドエディターに表示される順序*
 
 1. patient_alias
 2. patient
 3. patientExData
-4. patientMatchQueue
-5. patientMatchRule
 
 * ACI0085624 ジャーナルの統合中にエラー#1277が発生した場合，メッセージにひとつ前のオペレーション番号が表示されました。
 
