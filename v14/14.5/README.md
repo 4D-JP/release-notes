@@ -57,3 +57,51 @@
 * ACI0093225 特定の条件で[QUERY SELECTION](http://doc.4d.com/4Dv14/4D/14.4/QUERY-SELECTION.301-2511501.ja.html)を実行すると，キャッシュにパージできないオブジェクトが残ってしまい，次第にキャッシュが断片化して，データベースが遅くなったり，不可解なシンタックスエラーが発生するようになりました。たとえば，20,000件のテーブルでカレントセレクションが50件，130,000件のテーブルでカレントセレクションが600件，といった比率で問題は発生します。
 
 * ACI0092892 [HTTP Get](http://doc.4d.com/4Dv14/4D/14.4/HTTP-Get.301-2510926.ja.html)を[Digest認証](http://doc.4d.com/4Dv14/4D/14.4/HTTP-AUTHENTICATE.301-2510927.ja.html)で実行した場合，不正なopaqueヘッダー（閉じる二重引用符がない）が送信されました。
+
+* ACI0091083 ロックされたカラムのあるリストボックスに[LISTBOX SET LOCKED COLUMNS](http://doc.4d.com/4Dv14/4D/14.4/LISTBOX-SET-LOCKED-COLUMNS.301-2511191.ja.html)に負のカラム番号を渡すと，ロックされたカラムがなくなり，カラムを動かすとアプリケーションがクラッシュしました。
+
+* ACI0092583 レコードとインデックスを圧縮した後，データファイルが破損（圧縮前の検査ではレポートされなかったエラーが発生）するケースがありました。
+
+* ACI0093288 一部のSVG画像要素（matrix scalingがゼロかつshearがゼロではない）はピクチャエリアに表示されませんでした。Webエリアでは問題ありません。
+
+* ACI0092803 カレントレコードを変更した後，入力エリアの取り消し（Control+Z）履歴がクリアされませんでした。
+
+* ACI0093129 [XML GET ERROR](http://doc.4d.com/4Dv14/4D/14.4/XML-GET-ERROR.301-2512184.ja.html)に不正な引数を渡してもOKシステム変数に0が代入されませんでした。
+
+* ACI0093093 [ADD RECORD](http://doc.4d.com/4Dv14/4D/14.4/ADD-RECORD.301-2512225.ja.html)または[MODIFY RECORD](http://doc.4d.com/4Dv14/4D/14.4/MODIFY-RECORD.301-2512226.ja.html)でパレットウインドウを表示した場合，閉じるボタンが動作しませんでした。
+
+* ACI0093130 [SVG_SET_SHAPE_RENDERING](http://doc.4d.com/4Dv14/4D/14/SVG-SET-SHAPE-RENDERING.301-1382636.ja.html)に```optimizeSpeed```を渡すとエラーが返されました。
+
+* ACI0081512 ラベルエディターでオブジェクトを水平に連結した場合，フィールド間に空白が自動的に挿入されるはずですが，そうはなりませんでした。
+
+* ACI0090169 オブジェクト型のローカル変数を別プロセスに引数で渡した場合，相手プロセス側でその変数を更新すると，呼び出し側のローカル変数も更新されました。オブジェクト型は参照型なので，代入されたローカル変数が同じオブジェクトを参照するのは正常ですが，プロセスを超えてローカル変数が同じオブジェクトを参照するのは間違いでした。
+
+例:
+
+```
+C_OBJECT($1)
+C_OBJECT($object)
+C_LONGINT($psn)
+
+Case of 
+: (Count parameters=0)
+TRACE
+$object:=JSON Parse("{}")
+If (OB Is defined($object))
+$psn:=New process(Current method name;0;Current method name;$object)
+End if 
+
+TRACE
+
+: (Count parameters=1)
+
+TRACE
+$object:=$1
+
+OB set($1;"test";"coucou")
+  // 呼び出し元の$objectに注目。（本プロセスの$objectが更新されるのは正常）
+TRACE
+
+End case 
+```
+
