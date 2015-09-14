@@ -153,3 +153,56 @@ End case
 
 * ACI0092460 『データファイルが更新された場合のみバックアップを行う』の動作に問題がありました。データファイルが更新されていない場合にバックアップが実行されないのは良いのですが，その後，新規レコードを追加した途端，スケジュールにないバックアップが開始されました。
  
+* ACI0092515 4D ServerにAccessからODBCで接続した場合，WHERE句にANDまたはOR述語が含まれていると，エラーが返されました。
+
+**注記**: 4D ODBC Driverが修正されました。
+
+```
+Dim ws As Workspace
+Dim db As Database
+Set ws = DBEngine.Workspaces(0)
+Set db = ws.OpenDatabase("stxtst", False, True, "ODBC;")
+
+//NG
+Select shrs.SHR_ValidTo, shrs.SHR_ValidFrom, shrs.Numberofshares 
+Into OldShares
+From [ODBC;DSN=stxtst;].[Shares] as shrs 
+Where ((shrs.Numberofshares>=1000000) AND (shrs.Numberofshares<=9000000))
+
+//OK
+Select shrs.SHR_ValidTo, shrs.SHR_ValidFrom, shrs.Numberofshares 
+Into OldShares
+From [ODBC;DSN=stxtst;].[Shares] as shrs 
+Where (shrs.Numberofshares>=1000000)
+```
+
+* ACI0092557 システムDSNをサーバー名で作成した場合，接続ができませんでした。IPアドレスを入力すれば問題ありません。
+
+* ACI0092564 データファイルの名前にピリオドが含まれている場合，バックアップファイル（4BK）に連番が付けられず，常に最新のバックアップで上書きされてしまいました。
+
+* ACI0092643 4D ServerにAccessからODBCで接続した場合，CDate（日付の文字列）を使用するとAccessがクラッシュしました。
+
+**注記**: 4D ODBC Driverが修正されました。
+
+* ACI0092679 SVGで『4State』バーコードフォントが使用できませんでした。
+
+* ACI0092681 BLOB配列に対して[VARIABLE TO BLOB](http://doc.4d.com/4Dv14/4D/14.4/VARIABLE-TO-BLOB.301-2511977.ja.html)が使用できませんでした。
+
+* ACI0092735 Mac版のみ。[READ ONLY](http://doc.4d.com/--14.4/-/READ-ONLY.301-2511556.ja.html)で表示されたフォーム上の数値フィールドは，編集ができるような印象を与えました。数字部分をクリックすれば問題ありませんが，空白部分をクリックすると，フィールドが編集できそうな表示になりました。
+
+* ACI0092858 ツールボックスのリソースページで，ファイルを選択して『名称変更』を選択した場合，現在のファイル名が表示されませんでした。また，『ディスク上に表示する』を選択しても，何も起きませんでした。
+
+* ACI0092859 Mac版のみ。PDF文書を[READ PICTURE FILE](http://doc.4d.com/4Dv14/4D/14.4/READ-PICTURE-FILE.301-2511425.ja.html)で読み込んで[TRANSFORM PICTURE](http://doc.4d.com/4Dv14/4D/14.4/TRANSFORM-PICTURE.301-2511407.ja.html)で左右を反転した場合，[WRITE PICTURE FILE](http://doc.4d.com/4Dv14/4D/14.4/WRITE-PICTURE-FILE.301-2511426.ja.html)で書き出すと空のPDFになりました。
+
+* ACI0092871 Webサービスの出力タイプがXML型で，そのXMLが空（```<root/>```）だった場合，不正なSOAPエンベロープが生成されました。
+
+* ACI0092894 [SQL SET OPTION](http://doc.4d.com/4Dv14/4D/14.4/SQL-SET-OPTION.301-2511742.ja.html)で接続タイムアウトを変更することができませんでした。
+
+* ACI0092914 ライセンス登録画面のメールアドレス入力欄で『.website』『.berlin』といったドメイン名は無効であるとして，退けられました。
+
+* ACI0092956 [OBJECT SET TITLE](http://doc.4d.com/4Dv14/4D/14.4/OBJECT-SET-TITLE.301-2511364.ja.html)で[XLIFF](http://doc.4d.com/4Dv15/4D/15/Appendix-C-XLIFF-architecture.300-2045562.ja.html)の『オブジェクト名』シンタックスで設定された3Dボタンのラベルを変更することができませんでした。 
+
+* ACI0092962 Mac版のみ。Yosemiteプラットフォームで非アクティブウインドウのデフォルトボタンは，グレーに表示されるべきですが，ブルーに表示されました。
+
+* ACI0093127 Windows版のみ。Windows 8.1プラットフォームでフォームまたはオブジェクトのプラットフォームプロパティが『印刷』ではない場合，ラジオボタンやチェックボックスのラベルがプリントアウトされませんでした。Windows 7では問題ありません。
+
