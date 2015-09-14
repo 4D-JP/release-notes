@@ -277,7 +277,7 @@ $result=String(-1;"&$")
 SET DATABASE PARAMETER(JSON use local time;0) 
 C_OBJECT($oTest) 
 C_DATE($testDate) 
-$testDate:=!1965/12/02! 
+$testDate:=!1965/2/12! 
 OB SET($oTest;"Date1";$testDate) 
  //期待値: "1965-02-12T00:00:00Z" 
  //結果値: "1965-02-11T15:00:00Z" 
