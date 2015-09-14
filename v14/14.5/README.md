@@ -259,7 +259,7 @@ Where (shrs.Numberofshares>=1000000)
 
 **備考**: リストボックスの選択行を配列の添字で判別するべきではありません。これは悪いコーディングの例です。
 
-*ACI0090825 Windows版のみ。[String](http://doc.4d.com/4Dv14/4D/14.4/String.301-2511773.ja.html)の16進数フォーマットは負の値が正しくありませんでした。
+* ACI0090825 Windows版のみ。[String](http://doc.4d.com/4Dv14/4D/14.4/String.301-2511773.ja.html)の16進数フォーマットは負の値が正しくありませんでした。
  
 ```
 $result=String(-1;"&x")
