@@ -99,7 +99,7 @@ TRACE
 $object:=$1
 
 OB set($1;"test";"coucou")
-  // 呼び出し元の$objectに注目。（本プロセスの$objectが更新されるのは正常）
+  // 呼び出し元の$objectに注目。（本プロセスの$objectが更新されるのは正常）
 TRACE
 
 End case 
