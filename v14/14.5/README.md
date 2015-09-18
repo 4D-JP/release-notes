@@ -329,7 +329,7 @@ OB SET($oTest;"Date1";$testDate)
 
 * ACI0092174 Windows版のみ。デフォルトプリンターが設定されていない環境で[PRINTERS LIST ](http://doc.4d.com/4Dv14/4D/14.4/PRINTERS-LIST.301-2511456.ja.html)を使用した場合，空の配列が返されました。
 
-**参考**: デフォルトプリンターが設定されていない環境では，下記のレジストリキーで```Device```が空です。
+**参考**: デフォルトプリンターが設定されていない環境では，下記のレジストリキーで```Device```が空です。
 
 HKEYCU\Software\Microsoft\WindowsNT\CurrentVersion\Windows
 
