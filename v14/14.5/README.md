@@ -331,7 +331,9 @@ OB SET($oTest;"Date1";$testDate)
 
 **参考**: デフォルトプリンターが設定されていない環境では，下記のレジストリキーで```Device```が空です。
 
+```
 HKEYCU\Software\Microsoft\WindowsNT\CurrentVersion\Windows
+```
 
 * ACI0092127 Mac版のみ。Yosemiteでフルスクリーンモードから復帰した場合，デザインモードツールバーが本来の位置（メニューバーのすぐ下）に表示されませんでした。
 
@@ -352,3 +354,5 @@ HKEYCU\Software\Microsoft\WindowsNT\CurrentVersion\Windows
 * ACI0092000 クエリエディターで日付フィールドの『~日以内の過去/未来』を選択した場合，ダイアログに入力された数値ではなく，最後に表示された数値またはデフォルト値でクエリが実行されました。
 
 * ACI0091868 Mac版のみ。Yosemiteで，ストラクチャをドラッグ＆ドロップで開き，メソッドエディターの点滅カーソルが1回目の点滅を完了する前に入力を開始した場合，日本語入力ができない状態になりました。ファイルメニューからストラクチャを開いた場合，あるいは少しの『間』を置いてからタイプ入力を始めた場合は問題ありません。
+
+**参考**: [Yosemite日本語入力の対応を改善](http://www.4d.com/jp/blog/yosemite-japanese-input.html)
