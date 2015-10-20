@@ -26,7 +26,7 @@ WEB START SERVER
 Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/7.0)
 ```
 
-JavaScriptの```navigator.userAgent```を実行しても，似たような結果が返されます。
+JavaScriptの```navigator.userAgent```を実行しても，似たような結果が返されました。
 
 **注記**: システムWebエリアが使用しているWeb Browserコントロールは，Windows 10の標準ブラウザであるEdgeモードをサポートしていません。したがって，Windows 10で使用した場合，WebエリアはIE11互換モードで動作することになります。
 
