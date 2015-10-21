@@ -1,6 +1,75 @@
 4D v14.5
 ---
 
+* ACI0088416 ビルドされたデスクトップ版アプリケーションの『ユーザー認証』ダイアログで『パスワードを保存』オプションを有効にしても，次回の起動で再び『ユーザー認証』ダイアログが表示されました。
+
+http://doc.4d.com/4Dv14/4D/14.4/Access-system-overview.300-2604083.ja.html
+
+* ACI0091789 Windows版のみ。フランス語版の4D Viewまたは4D Writeプラグインの著作権情報が英語でエクスプローラーに表示されました。
+
+* ACI0093412 [PV Copy to blob](http://doc.4d.com/4Dv14/4D-View/14/PV-Copy-to-blob.301-1377956.ja.html)および[PV PASTE FROM BLOB](http://doc.4d.com/4Dv14/4D-View/14/PV-PASTE-FROM-BLOB.301-1377955.ja.html)で背面に配置された画像が処理しませんでした。
+
+* ACI0093419 クライアント/サーバー版のみ。[エクスターナルデータベース](http://doc.4d.com/4Dv14/4D/14/USE-DATABASE.300-1198442.ja.html)から```SQL_INTERNAL```にスイッチした後，トランザクション内で実行されたSQLが失敗しました。トランザクションを開始しなければ問題ありません。
+
+* ACI0093587 [ユーザー設定](http://doc.4d.com/4Dv15/4D/15/Using-user-settings.300-2045482.ja.html)を使用したときに表示されるサブメニューが英語でした。
+
+* ACI0093633 Windows版のみ。モーダルダイアログからアラートを表示した場合，アラートを閉じた後にオブジェクトのフォーカスが失われました。つまり，タブキーでフォーカスを移動することができなくなりました。標準ウインドウであれば問題ありません。
+
+* ACI0092449 4D Internet Commandは，UTF-8以外のエンコーディングで電子メールを送信することができませんでした。[SMTP_SetPrefs](http://doc.4d.com/4Dv14/4D-Internet-Commands/14/SMTP-SetPrefs.301-1237783.ja.html)や[SMTP_Charset](http://doc.4d.com/4Dv14/4D-Internet-Commands/14/SMTP-Charset.301-1237763.ja.html)は効力がありませんでした。
+
+* ACI0093608 スプリッターを右クリックすると，以降，動かすことができなくなりました。
+
+* ACI0093648 変換された[サブテーブル](http://doc.4d.com/4Dv14/4D/14.4/Subrecords.201-2510849.ja.html)を参照するとクエリエディターでエラーが発生しました。
+
+* ACI0088808 [SQL LOGIN](http://doc.4d.com/4Dv14/4D/14.4/SQL-LOGIN.301-2511762.ja.html)は接続が失敗してもシステム変数```OK```に```1```が代入されました。
+
+* ACI0093075 [SVG SET ATTRIBUTE ](http://doc.4d.com/4Dv14/4D/14.4/SVG-SET-ATTRIBUTE.301-2512238.ja.html)に対してピクチャ変数をポインター経由で渡した場合，メモリーリークが発生しました。
+
+```
+If (IDelementSelected=1)
+  //問題なし
+SVG SET ATTRIBUTE(*;"viZonePunch";"punch"+String(IDelementSelected)+"_circle";"cx";$x;"cy";$y;*)
+Else 
+  //実行するたびに数MGのメモリーリークが発生
+SVG SET ATTRIBUTE($vpZonePunch->;"punch"+String(IDelementSelected)+"_circle";"cx";$x;"cy";$y;*)
+End if 
+```
+
+* ACI0078353 配列型リストボックスのセルが編集中のとき，[FORM GET OBJECTS](http://doc.4d.com/4Dv14/4D/14.4/FORM-GET-OBJECTS.301-2511080.ja.html)を使用すると，変数ポインターの配列に誤った値が返されました。つまり，リストボックス本体の配列ではなく，編集されている列の配列に対するポインターが返されました。
+
+* ACI0090464 Mac版のみ。ポルトガル語版の4D Viewまたは4D Writeプラグインのメニューが正しくローカライズされていませんでした。"en"ローカライズが存在する場合，"pt-BR"はOSに認識されないようです。修正により，XLIFFファイルの言語識別子は"pt"に変更されました。Appleのドキュメントには，ポルトガル（ブラジル）語を"pt"，ポルトガル（ポルトガル）語を"pt-PT"で指定する，という記述があります。
+
+* ACI0093032 Mac版のみ。リストボックスは，改行コードで区切られた2文字単語の表示が不自然でした。
+
+**正**
+
+```
+ab
+ab
+```
+
+**誤**
+
+```
+a...
+b
+```
+
+* ACI0093533 おおきなストラクチャで[EXPORT DATA](http://doc.4d.com/4Dv14/4D/14.4/EXPORT-DATA.301-2511133.ja.html)を繰り返し使用した場合，かなりのメモリーリークが発生しました。テーブルが指定されておらず，またエクスポート設定が再利用されない場合に問題が発生します。
+
+```
+//Method1
+$ref:=""
+EXPORT DATA("";$ref;*)
+
+C_LONGINT($i) 
+For ($i;1;100) 
+  EXECUTE METHOD("Method1")
+End for 
+```
+ 
+* ACI0088819 エクスプローラーの『ホーム』タブで，メソッドを複製した場合，新しいメソッドは同じフォルダー内に作成されますが，フォームを複製した場合，新しいフォームはトップレベルに作成されました。
+
 * ACI0090771 4D Remoteのストラクチャエディターからプライマリーキーアシスタントを起動し，閉じた後，クライアント側の実行メニュー『インタープリター再起動』を選択してサーバーを再起動すると，READ ONLYモードでストラクチャファイルが開かれるという警告が表示され，続けてサーバーがクラッシュしました。
 
 * ACI0092821 アプリケーションビルドXMLプロジェクトファイルの[DataPathFile](http://doc.4d.com/4Dv15/4D/15/DataFilePath.300-2400037.ja.html)キーに相対パスを指定した場合に問題がありました。たとえば，ストラクチャファイルの名前が"application.4DC"でデータファイルの名前が"data.4DD"だった場合，データファイルがストラクチャと同じフォルダーに存在するのであれば，プロジェクトファイルは下記のようになるはずです。
