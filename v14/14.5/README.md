@@ -5,7 +5,7 @@
 
 * ACI0091789 Windows版のみ。フランス語版の4D Viewまたは4D Writeプラグインの著作権情報が英語でエクスプローラーに表示されました。
 
-* ACI0093412 [PV Copy to blob](http://doc.4d.com/4Dv14/4D-View/14/PV-Copy-to-blob.301-1377956.ja.html)および[PV PASTE FROM BLOB](http://doc.4d.com/4Dv14/4D-View/14/PV-PASTE-FROM-BLOB.301-1377955.ja.html)で背面に配置された画像が処理しませんでした。
+* ACI0093412 [PV Copy to blob](http://doc.4d.com/4Dv14/4D-View/14/PV-Copy-to-blob.301-1377956.ja.html)および[PV PASTE FROM BLOB](http://doc.4d.com/4Dv14/4D-View/14/PV-PASTE-FROM-BLOB.301-1377955.ja.html)で背面に配置された画像が処理されませんでした。
 
 * ACI0093419 クライアント/サーバー版のみ。[エクスターナルデータベース](http://doc.4d.com/4Dv14/4D/14/USE-DATABASE.300-1198442.ja.html)から```SQL_INTERNAL```にスイッチした後，トランザクション内で実行されたSQLが失敗しました。トランザクションを開始しなければ問題ありません。
 
