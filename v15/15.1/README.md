@@ -95,76 +95,126 @@ Fixed bugs v15.0 build 191000 (Released on 2015-09-26)
 
 Fixed bugs v15.0 build 190946 (Released on 2015-09-25)
 --------------------------------------------------------------------------------
-ACI0088897 : [131734 ] The command "PV Get Picture"  causes 4D to crash if it throws an error.
-ACI0092449 : [131233] Since v14, it is impossible to send email in an encoding other than UTF-8
-ACI0092629 : 4D issue when creating a form using the Form Wizard.
-ACI0092788 : Issu with underline style in listbox
-ACI0093419 : [131703] USE REMOTE DATABASE in C/S in Transaction fail
-ACI0093480 : Can not restart in compiled or in interpreted for C/S databases running with new network layer.
-ACI0093593 : [131792] Modifier key missing from pop-up menu
-ACI0093608 : [131799] Right click on Splitter kills it
-ACI0093633 : Lose focus with Modal Form dialog after display alert
-ACI0093648 : [131830] Converted subtables cause problems if used in the query editor.
+* ACI0088897 : [131734 ] The command "PV Get Picture"  causes 4D to crash if it throws an error.
+* ACI0092449 4D Internet Commandは，UTF-8以外のエンコーディングで電子メールを送信することができませんでした。[SMTP_SetPrefs](http://doc.4d.com/4Dv14/4D-Internet-Commands/14/SMTP-SetPrefs.301-1237783.ja.html)や[SMTP_Charset](http://doc.4d.com/4Dv14/4D-Internet-Commands/14/SMTP-Charset.301-1237763.ja.html)は効力がありませんでした。
+* ACI0092629 非常に古いバージョンから変換されたデータベースの場合，フォームウィザードで新規フォームを作成しようとすると，アプリケーションがクラッシュすることがありました。
+* ACI0092788 : Issu with underline style in listbox
+* ACI0093419 クライアント/サーバー版のみ。[エクスターナルデータベース](http://doc.4d.com/4Dv14/4D/14/USE-DATABASE.300-1198442.ja.html)から```SQL_INTERNAL```にスイッチした後，トランザクション内で実行されたSQLが失敗しました。トランザクションを開始しなければ問題ありません。
+* ACI0093480 : Can not restart in compiled or in interpreted for C/S databases running with new network layer.
+* ACI0093593 : [131792] Modifier key missing from pop-up menu
+* ACI0093608 スプリッターを右クリックすると，以降，動かすことができなくなりました。
+* ACI0093633 Windows版のみ。モーダルダイアログからアラートを表示した場合，アラートを閉じた後にオブジェクトのフォーカスが失われました。つまり，タブキーでフォーカスを移動することができなくなりました。標準ウインドウであれば問題ありません。
+* ACI0093648 変換された[サブテーブル](http://doc.4d.com/4Dv14/4D/14.4/Subrecords.201-2510849.ja.html)を参照するとクエリエディターでエラーが発生しました。
 
 Fixed bugs v15.0 build 190774 (Released on 2015-09-23)
 --------------------------------------------------------------------------------
-ACI0088808 : [129686][131437] Incorrect OK value of SQL Login.
-ACI0093075 : [131493] Memory leak using SVG SET ATTRIBUTE with a pointer as pictureObject
+* ACI0088808 [SQL LOGIN](http://doc.4d.com/4Dv14/4D/14.4/SQL-LOGIN.301-2511762.ja.html)は接続が失敗してもシステム変数```OK```に```1```が代入されました。
+* ACI0093075 [SVG SET ATTRIBUTE ](http://doc.4d.com/4Dv14/4D/14.4/SVG-SET-ATTRIBUTE.301-2512238.ja.html)に対してピクチャ変数をポインター経由で渡した場合，メモリーリークが発生しました。
 
 Fixed bugs v15.0 build 190695 (Released on 2015-09-21)
 --------------------------------------------------------------------------------
-ACI0078353 : [126275] FORM GET OBJECTS returns wrong variable pointer for listbox in edit mode.
-ACI0090464 : Menus and plugins localization problem with Portuguese version.
-ACI0093032 : [131463] Incorrect display of the listbox contents.
-ACI0093368 : IMAP_GetMessage command returns error code on Mac 64 bits.
-ACI0093389 : [131836] Dialog on Quit Merged.
-ACI0093533 : [131707] Export editor has memory leak if called in a loop without table selected.
-ACI0093621 : [131834][Build App v15] xliff not resolved (was: crash at startup.
+* ACI0078353 配列型リストボックスのセルが編集中のとき，[FORM GET OBJECTS](http://doc.4d.com/4Dv14/4D/14.4/FORM-GET-OBJECTS.301-2511080.ja.html)を使用すると，変数ポインターの配列に誤った値が返されました。つまり，リストボックス本体の配列ではなく，編集されている列の配列に対するポインターが返されました。
+* ACI0090464 Mac版のみ。ポルトガル語版の4D Viewまたは4D Writeプラグインのメニューが正しくローカライズされていませんでした。"en"ローカライズが存在する場合，"pt-BR"はOSに認識されないようです。修正により，XLIFFファイルの言語識別子は"pt"に変更されました。Appleのドキュメントには，ポルトガル（ブラジル）語を"pt"，ポルトガル（ポルトガル）語を"pt-PT"で指定する，という記述があります。
+* ACI0093032 Mac版のみ。リストボックスは，改行コードで区切られた2文字単語の表示が不自然でした。
+
+**正**
+
+```
+ab
+ab
+```
+
+**誤**
+
+```
+a...
+b
+```
+* ACI0093368 : IMAP_GetMessage command returns error code on Mac 64 bits.
+* ACI0093389 : [131836] Dialog on Quit Merged.
+* ACI0093533 おおきなストラクチャで[EXPORT DATA](http://doc.4d.com/4Dv14/4D/14.4/EXPORT-DATA.301-2511133.ja.html)を繰り返し使用した場合，かなりのメモリーリークが発生しました。テーブルが指定されておらず，またエクスポート設定が再利用されない場合に問題が発生します。
+
+```
+//Method1
+$ref:=""
+EXPORT DATA("";$ref;*)
+
+C_LONGINT($i) 
+For ($i;1;100) 
+  EXECUTE METHOD("Method1")
+End for 
+```
+
+* ACI0093621 : [131834][Build App v15] xliff not resolved (was: crash at startup.
 
 Fixed bugs v15.0 build 190555 (Released on 2015-09-18)
 --------------------------------------------------------------------------------
-ACI0093191 : [131434] "Unique" property lost after repairing data.
+* ACI0093191 『重複不可』属性が設定されたフィールドのデータに重複する値が保存されていた場合，MSCの標準データ修復を実行すると，該当するフィールドの『重複不可』属性が外されました。そのため，圧縮後の運用で重複チェックが実施されないようになりました。『レコードの強制更新』や『アドレステーブル圧縮』が適用されたデータ圧縮の場合，新しいインデックスは圧縮後の再起動時に作成されるため，重複不可違反の警告は特に表示されません。対照的に，標準の圧縮では既存のインデックスが圧縮されるだけなので，重複不可違反は再作成されたインデックスにも継承されることになり，そのために，重複不可チェックが実施されていました。修正により，重複不可チェックは，データベース起動後のインデックス再構築時にだけ実施され，MSCの標準データ修復では実行されないようになりました。
+
+**注記**: データベース起動時後のインデックス再構築は，下記の場合に実行されます。
+
+1. ストラクチャでインデックスが定義されているのにインデックスが存在しない
+1. インデックスは存在するが別のアルゴリズム（異なるICUのバージョンまたはフラグ設定）で作成された
+
+将来のバージョンでは，データベース起動後のインデックス再構築時に検出されたフィールド名および違反の内容が詳細にレポートされるようになる予定です。レコード更新時やインポート時にも詳細な違反情報が表示されるようになります。今回の修正　は，『重複不可』属性が不意に解除される問題に関するものです。
 
 Fixed bugs v15.0 build 190539 (Released on 2015-09-17)
 --------------------------------------------------------------------------------
-ACI0091977 : [131064] Issue with SET TABLE TITLES. 
-ACI0092751 : [Query Editor]Popup menu is too small on Windows
-ACI0093352 : [131529] Failed to execute INSERT command in External Database
-ACI0093546 : Option "do not create log" is ignored in compact date file command
-ACI0093630 : String( -0.99999999999999534) produces "1" instead of "-1"
+* ACI0091977 [SET TABLE TITLES](http://doc.4d.com/4Dv14/4D/14.4/SET-TABLE-TITLES.301-2512001.ja.html)は，ユーザー/デザインモードの『書き出し』ダイアログにも作用しました。このコマンドは，アプリケーションモードだけに適用されるはずです。修正により，ユーザー/デザインモードの『書き出し』ダイアログはテーブルの実名を使用するようになりました。
+* ACI0092751 : [Query Editor]Popup menu is too small on Windows
+* ACI0093352 エクスターナルデータベースに[CREATE TABLE](http://doc.4d.com/4Dv14/4D/14/CREATE-TABLE.300-1198460.ja.html)でテーブルを作成した後，すぐに[USE DATABASE DATAFILE](http://doc.4d.com/4Dv14/4D/14/USE-DATABASE.300-1198442.ja.html)で参照し，[INSERT](http://doc.4d.com/4Dv14/4D/14/INSERT.300-1198463.ja.html)を実行しようとすると，エラーが返されました。作成したテーブルにアクセスするためには，データベースを再起動することが必要でした。
+
+**注記**: 実際には，ローカルデータベースでも同じ問題が発生します。作成直後のINSERTコマンドで『インデックスが無効または未設定です』エラーが返されました。
+
+```
+Begin SQL
+  CREATE TABLE IF NOT EXISTS T2
+  (ID INT32 AUTO_INCREMENT, 
+  name TEXT,
+  PRIMARY KEY (ID));
+End SQL
+
+TRACE
+
+Begin SQL
+  INSERT INTO T2 (name) VALUES ('Henry');
+End SQL
+```
+* ACI0093546 : Option "do not create log" is ignored in compact date file command
+* ACI0093630 : String( -0.99999999999999534) produces "1" instead of "-1"
 
 Fixed bugs v15.0 build 190428 (Released on 2015-09-16)
 --------------------------------------------------------------------------------
-ACI0088819 : Location problem when duplicating a form.
+* ACI0088819 エクスプローラーの『ホーム』タブで，メソッドを複製した場合，新しいメソッドは同じフォルダー内に作成されますが，フォームを複製した場合，新しいフォームはトップレベルに作成されました。
 
 Fixed bugs v15.0 build 190414 (Released on 2015-09-15)
 --------------------------------------------------------------------------------
-ACI0085614 : Internet Commands work wrong with relative path
-ACI0087196 : 4D Stops Responding on Mac with "Picture Properties" When File is Corrupted
-ACI0091224 : Transfer Time in web log shows confusing values
-ACI0093442 : 4D Documentation Links
+* ACI0085614 : Internet Commands work wrong with relative path
+* ACI0087196 Mac版のみ。[PICTURE PROPERTIES](http://doc.4d.com/4Dv14/4D/14.4/PICTURE-PROPERTIES.301-2511415.ja.html)に壊れたピクチャ（例: 高さと幅がゼロ）が渡された場合，アプリケーションがフリーズしました。
+* ACI0091224 : Transfer Time in web log shows confusing values
+* ACI0093442 : 4D Documentation Links
 
 Fixed bugs v15.0 build 190312 (Released on 2015-09-11)
 --------------------------------------------------------------------------------
-ACI0093121 : Mistake in Japanese localisation of form editor; vertical instead horizontal
-ACI0093462 : [131718] Export a report to 4D View does not work anymore.
-ACI0093586 : List Box not scrolling to offscreen area when dragging column (user mod)
+* ACI0093121 日本語版のみ。フォームエディターの『オブジェクト』メニューの『縦中央揃え』と『横中央揃え』が逆でした。またコンテキストメニューの『縦均等配置』とあるべきところが『整列...』となっていました。
+* ACI0093462 クイックレポートから4D Viewの出力に問題がありました。レコードの数が正しくありませんでした。HTML出力は問題ありません。
+* ACI0093586 フォームエディター上でリストボックスのヘッダーをドラッグすると表示しきれていなかった列がスクロールするはずですが，v13以降，スクロールはせずに列だけが移動しました。
 
 Fixed bugs v15.0 build 190179 (Released on 2015-09-10)
 --------------------------------------------------------------------------------
-ACI0088594 : Changing form name without validation. 
+* ACI0088594 エクスプローラーでフォームの名前を編集中，入力を確定せずにトリプルクリックすると，フォーム名が元に戻ってしまいました。
 
 Fixed bugs v15.0 build 190137 (Released on 2015-09-09)
 --------------------------------------------------------------------------------
-ACI0089641 : [130456] Breakpoint in a "On display detail" list form event freezes.
-ACI0092734 : Resizing width of listbox array
-ACI0092779 : [131359] Xliff in a listbox
-ACI0092792 : Style of units button or lllipsis is modify when enter in edit mode.
-ACI0092980 : Scrolling is very slow in Hierarchical Lists.
-ACI0093008 : [131627] The subform window content disappears.
-ACI0093336 : Issu when move locked column
-ACI0093339 : Listbox footer ignores font colour settings
-ACI0093594 : Spelling error in french on information pop-up.
+* ACI0089641 : [130456] Breakpoint in a "On display detail" list form event freezes.
+* ACI0092734 : Resizing width of listbox array
+* ACI0092779 リストボックスのブール型カラム（チェックボックス）ラベルをXLIFFまたはリソースで定義することができませんでした。
+* ACI0092792 : Style of units button or lllipsis is modify when enter in edit mode.
+* ACI0092980 Mac版のみ。階層リストのスクロール速度が遅すぎました。
+* ACI0093008 リスト型サブフォームが画面に表示できる行数またはそれよりも後の位置にレコードを追加した場合，サブフォームに表示されていたレコードの値が画面から消えました。
+* ACI0093336 リストボックスのロックされたカラムを移動すると，ロックされていないカラムの水平スクロールが逆方向に動きました。
+* ACI0093339 : Listbox footer ignores font colour settings
+* ACI0093594 : Spelling error in french on information pop-up.
 
 Fixed bugs v15.0 build 190021 (Released on 2015-09-08)
 --------------------------------------------------------------------------------
