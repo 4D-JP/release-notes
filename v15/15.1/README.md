@@ -1,6 +1,62 @@
 4D v15.1
 ---
 
+* ACI0092792 : Style of units button or lllipsis is modify when enter in edit mode.
+* ACI0093546 : Option "do not create log" is ignored in compact date file command
+* ACI0093630 : String( -0.99999999999999534) produces "1" instead of "-1"
+* ACI0091224 : Transfer Time in web log shows confusing values
+* ACI0093442 : 4D Documentation Links
+* ACI0089641 : [130456] Breakpoint in a "On display detail" list form event freezes.
+* ACI0092734 : Resizing width of listbox array
+* ACI0093339 : Listbox footer ignores font colour settings
+* ACI0093594 : Spelling error in french on information pop-up.
+* ACI0092137 : Export data editor - double click adds field twice
+* ACI0093044 : Missing plugins icon in the explorer
+* ACI0093396 : [131690] Listbox, Data Source Undefined leads the crash of 4D
+* ACI0093459 : No SVG created if only a part of styled text is styled by context menu
+* ACI0093546 : Option "do not create log" is ignored in compact date file command
+* ACI0093459 : No SVG created if only a part of styled text is styled by context menu
+* ACI0093072 : Service isn't relaunch after update 4D server v14  32bits with 4D server v15 32bits
+* ACI0093073 : Update 4D server 64 bits doesn't work in service
+* ACI0093467 : QR Execute Command can return error No 9852 in 4D v15
+* ACI0093196 : In a built Client/Server application the Server is not being populated with a version number
+* ACI0093073 : Update 4D server 64 bits doesn't work in service
+* ACI0087268 : [128955] Freeze of 4D with incorrect formula in the Quick Report
+* ACI0093044 : Missing plugins icon in the explorer
+* ACI0093281 : Crash after drag & drop of a picture in a form on Design mode
+* ACI0093470 : Explorer Menu not working
+* ACI0093510 : MSC - Verify structure crash in Volume Desktop
+* ACI0084755 : "Current method path" does no more return object path Compiled
+* ACI0090925 : SQL Month and Year functions can return incorrect results
+* ACI0092691 : Connection is broken when using new network layer with On Server Close Connection
+* ACI0092692 : [Servernet] On Server Close Connection reports network error
+* ACI0093237 : [131602] BASIC web authentication takes 15 seconds using Safari or FireFox 
+* ACI0093359 : Dereferenced field pointer from method fails  
+* ACI0089383 : The expiration date of the license is always 00.00.0000 in the MCS Information window.
+* ACI0093245 : [131609] MSC crashes while repairing structure
+* ACI0093195 : 4D Mac 64-bits Memory leak with SQL statement
+* ACI0092533 : [131302] Http SET OPTION on setting HTTP timeout does not change
+* ACI0093137 : [131560] [v15 regression] Constants with umlauts cannot be compiled
+* ACI0093138 : Custom Constants, Method Editor: 'resname xxxx not found'
+* ACI0092966 : SVG_GET_ATTRIBUTES : tspan font-family, simple quote-> double quote
+* ACI0092969 : An error is displayed when trying to reconnect to 4D server.
+* ACI0092990 : QUERY BY ATTRIBUTE with null value as parameter does'nt return the same think in sequential or indexed
+* ACI0092991 : Engined OEM Server : License or privilege error.
+* ACI0093006 : QUERY BY ATTRIBUTE, bad results when using the operator # in Client/Server
+* ACI0093010 : Difference in behavior on QUERY BY ATTRIBUTE with and without index, in one case it is not diacritical in the other it is.
+* ACI0093013 : OEM Application with Mobile Expansions can use unlimited mobile connexions
+* ACI0093030 : Action not dispay in "Action" column of Moving dialogue
+* ACI0093076 : Text Fields in Quick Reports Are Cut Off
+* ACI0093042 : Malfunction in the menu editor
+* ACI0093341 : 4DIC Mac64 failures
+* ACI0093318 : Memory leak for new cooperative processes with a window 
+* ACI0091906 : Print listbox elipsis button and unit button are not print
+* ACI0091907 : Create and replacing a database
+* ACI0091920 : Since R5, it is impossible to select a size-zero object in the Form Editor
+* ACI0091608 : [130913] 4D crashes when opening HTML file with 4D Write
+* ACI0092047 : [131090] Variable is unenterable if web area on the same form (with PDF or website loaded)
+* ACI0092071 : [131101] Cursor in 4D Write disappears
+
 * ACI0093946 v12のデータファイルを変換した場合，自動UUIDタイプのプライマリーキーに存在するNULLが自動的に新しい値で更新されませんでした。本来であれば，自動タイプのプライマリーキーは，NULLが含まれていたとしても，データベース起動時に新しいキー値が自動的に発行されるはずです。整数/自動インクリメント型のプライマリーキーであれば，問題ありません。ACI0087170やACI0093762（後述）が修正されたことに関連があります。
 
 * ACI0093773 Mac版のみ。ピクチャポップアップメニューをクリックしたときに表示されるポップアップメニューの画像は，Retinaディスプレイに対応していませんでした。メニュー項目がSVG画像であれば，高解像度でピクチャが表示されるべきです。
@@ -211,17 +267,12 @@ Begin SQL
   INSERT INTO T2 (name) VALUES ('Henry');
 End SQL
 ```
-* ACI0093546 : Option "do not create log" is ignored in compact date file command
-* ACI0093630 : String( -0.99999999999999534) produces "1" instead of "-1"
 
 * ACI0088819 エクスプローラーの『ホーム』タブで，メソッドを複製した場合，新しいメソッドは同じフォルダー内に作成されますが，フォームを複製した場合，新しいフォームはトップレベルに作成されました。
 
 * ACI0085614 Windows版のみ。v13以降，4D Internet Commandsは相対パスの処理に問題がありました。``SMTP_ATTACHMENT``のようなコマンドに相対パスが渡された場合，ストラクチャファイルと同じ階層にあるファイルが使用されませんでした。
 
 * ACI0087196 Mac版のみ。[PICTURE PROPERTIES](http://doc.4d.com/4Dv14/4D/14.4/PICTURE-PROPERTIES.301-2511415.ja.html)に壊れたピクチャ（例: 高さと幅がゼロ）が渡された場合，アプリケーションがフリーズしました。
-
-* ACI0091224 : Transfer Time in web log shows confusing values
-* ACI0093442 : 4D Documentation Links
 
 * ACI0093121 日本語版のみ。フォームエディターの『オブジェクト』メニューの『縦中央揃え』と『横中央揃え』が逆でした。またコンテキストメニューの『縦均等配置』とあるべきところが『整列...』となっていました。
 
@@ -231,12 +282,7 @@ End SQL
 
 * ACI0088594 エクスプローラーでフォームの名前を編集中，入力を確定せずにトリプルクリックすると，フォーム名が元に戻ってしまいました。
 
-* ACI0089641 : [130456] Breakpoint in a "On display detail" list form event freezes.
-* ACI0092734 : Resizing width of listbox array
-
 * ACI0092779 リストボックスのブール型カラム（チェックボックス）ラベルをXLIFFまたはリソースで定義することができませんでした。
-
-* ACI0092792 : Style of units button or lllipsis is modify when enter in edit mode.
 
 * ACI0092980 Mac版のみ。階層リストのスクロール速度が遅すぎました。
 
@@ -244,120 +290,64 @@ End SQL
 
 * ACI0093336 リストボックスのロックされたカラムを移動すると，ロックされていないカラムの水平スクロールが逆方向に動きました。
 
-* ACI0093339 : Listbox footer ignores font colour settings
-* ACI0093594 : Spelling error in french on information pop-up.
-
-Fixed bugs v15.0 build 190021 (Released on 2015-09-08)
---------------------------------------------------------------------------------
-* ACI0092137 : Export data editor - double click adds field twice
 * ACI0092560 4D RemoteのWebサーバーで『[一時的なコンテキストを再利用する](http://doc.4d.com/4Dv15/4D/15/Web-Server-Settings.300-2006441.ja.html)』オプションが有効にされている場合，pendingステータスのAJAXリクエストで4D Remoteがクラッシュすることがありました。
-* ACI0093044 : Missing plugins icon in the explorer
-* ACI0093396 : [131690] Listbox, Data Source Undefined leads the crash of 4D
+
 * ACI0093415 自動セッション管理が有効にされている場合，最後に返されたHTTPステータスコードが500（内部サーバーエラー）だったときは，次のリクエストでOn Web Connectionが実行されず，404が返されました。
-* ACI0093459 : No SVG created if only a part of styled text is styled by context menu
-* ACI0093546 : Option "do not create log" is ignored in compact date file command
+
 * ACI0093580 Windows版のみ。チェコ語版のインストーラーを実行すると，エラーが発生しました。
 
-Fixed bugs v15.0 build 189972 (Released on 2015-09-05)
---------------------------------------------------------------------------------
 * ACI0093297 コンパイラー画面で『変数定義を生成』した場合，リストボックスのヘッダー変数がCompiler_Variablesに追加されませんでした。
-* ACI0093459 : No SVG created if only a part of styled text is styled by context menu
+
 * ACI0093504 ラジオボタンやチェックボックスを右クリックした場合，値は変わらないはずですが，通常のクリックと同じように値がトグルされました。
 
-Fixed bugs v15.0 build 189937 (Released on 2015-09-04)
---------------------------------------------------------------------------------
 * ACI0087170 AUTO_GENERATE属性が設定されているプライマリーキーではないフィールドは，既存のレコードであっても，```NULL```の代わりに新しい値が自動的に発行されてしまうため，[QUERY](http://doc.4d.com/4Dv14/4D/14.4/QUERY.301-2511498.ja.html)やSELECTで```NULL```を検索できませんでした。
+
 * ACI0090953 巨大なトランザクション（1000万件のレコードを作成）を実行すると，-9999エラー（ディスクに空きスペースがない）が返されてしまい，処理を完了することができませんでした。キャッシュサイズが少なめに設定されているため，一時フォルダーにはxxxxx.transファイルが作成され，サイズがおおきくなりますが，ディスクサイズにはまだまだ余裕があります。トランザクションがキャッシュだけで完結すれば問題ありません。トランザクション中に作成されるテンポラリファイルの問題です。
+
 * ACI0091497 [CHANGE CURRENT USER](http://doc.4d.com/4Dv14/4D/14.4/CHANGE-CURRENT-USER.301-2512039.ja.html)をOn Startupで実行すると，4D Write/4D Viewプラグインライセンスを占有しました。
+
 * ACI0092116 スクロールバー・矢印キー・ クリックなどの操作に対する4D Viewの反応が以前のバージョンと比較して遅くなりました。
-* ACI0093072 : Service isn't relaunch after update 4D server v14  32bits with 4D server v15 32bits
-* ACI0093073 : Update 4D server 64 bits doesn't work in service
-* ACI0093467 : QR Execute Command can return error No 9852 in 4D v15
 
-Fixed bugs v15.0 build 189829 (Released on 2015-09-03)
---------------------------------------------------------------------------------
 * ACI0081921 Mac版のみ。Webエリアが表示されているページに移動すると同時に[WA OPEN URL](http://doc.4d.com/4Dv14/4D/14.4/WA-OPEN-URL.301-2512246.ja.html)でページを読み込んだ場合，Webエリアの垂直スクロールバーが効きませんでした。
-* ACI0093196 : In a built Client/Server application the Server is not being populated with a version number
-* ACI0093073 : Update 4D server 64 bits doesn't work in service
 
-Fixed bugs v15.0 build 189717 (Released on 2015-09-01)
---------------------------------------------------------------------------------
 * ACI0075500 並び替えが定義されているクイックレポートを実行した場合，直後の[ORDER BY](http://doc.4d.com/4Dv14/4D/14.4/ORDER-BY.301-2511496.ja.html)が効きませんでした。
-* ACI0076615 削除されたフィールドを含むクイックレポートは開くことができませんでした。
-* ACI0082378 リストボックスのヘッダをドラッグすることにより，表示されていないカラムを引き出すことができませんでした。
-* ACI0087268 : [128955] Freeze of 4D with incorrect formula in the Quick Report
-* ACI0092786 リストフォーム上でポップアップドラップダウンリストを表示した場合，リストの項目をキーボード入力で選択することができませんでした。
-* ACI0092994 Windows版のみ。ポップアップドラップダウンリストをクリックしたとき，カレント項目が選択された状態で表示されませんでした。14.2では問題ありませんでした。
-* ACI0093044 : Missing plugins icon in the explorer
-* ACI0093281 : Crash after drag & drop of a picture in a form on Design mode
-* ACI0093470 : Explorer Menu not working
-* ACI0093510 : MSC - Verify structure crash in Volume Desktop
 
-Fixed bugs v15.0 build 189616 (Released on 2015-08-28)
---------------------------------------------------------------------------------
+* ACI0076615 削除されたフィールドを含むクイックレポートは開くことができませんでした。
+
+* ACI0082378 リストボックスのヘッダをドラッグすることにより，表示されていないカラムを引き出すことができませんでした。
+
+* ACI0092786 リストフォーム上でポップアップドラップダウンリストを表示した場合，リストの項目をキーボード入力で選択することができませんでした。
+
+* ACI0092994 Windows版のみ。ポップアップドラップダウンリストをクリックしたとき，カレント項目が選択された状態で表示されませんでした。14.2では問題ありませんでした。
+
 * ACI0068730 SQL関数の[MONTH](http://doc.4d.com/4Dv14/4D/14/MONTH.300-1198486.ja.html)と[YEAR](http://doc.4d.com/4Dv14/4D/14/YEAR.300-1198483.ja.html)を月の1日に対して使用した場合，コンピューターのシステム時間帯によっては，前月の値が返されました。
-* ACI0084755 : "Current method path" does no more return object path Compiled
+ 
 * ACI0090862 SQLで[CREATE TABLE](http://doc.4d.com/4Dv14/4D/14/CREATE-TABLE.300-1198460.ja.html)の直後に[_USER_COLUMNS](http://doc.4d.com/4Dv14/4D/14/System-Tables.300-1352230.ja.html)を[SELECT](http://doc.4d.com/4Dv14/4D/14/SELECT.300-1198464.ja.html)した場合，作成したばかりのテーブルに関する情報が返されませんでした。
-* ACI0090925 : SQL Month and Year functions can return incorrect results
-* ACI0092691 : Connection is broken when using new network layer with On Server Close Connection
-* ACI0092692 : [Servernet] On Server Close Connection reports network error
+
 * ACI0093361 Windows版のみ。かな入力（ローマ字ではない）モードが使用されており，クリップボードが空の場合，編集ショートカット（Control+X, C, V, etc.）を入力すると半角カナの ｻ, ｿ, ﾋといった文字が入力されました。
 
-Fixed bugs v15.0 build 189460 (Released on 2015-08-26)
---------------------------------------------------------------------------------
-* ACI0093237 : [131602] BASIC web authentication takes 15 seconds using Safari or FireFox
-
-Fixed bugs v15.0 build 189423 (Released on 2015-08-25)
---------------------------------------------------------------------------------
 * ACI0093225 特定の条件で[QUERY SELECTION](http://doc.4d.com/4Dv14/4D/14.4/QUERY-SELECTION.301-2511501.ja.html)を実行すると，キャッシュにパージできないオブジェクトが残ってしまい，次第にキャッシュが断片化して，データベースが遅くなったり，不可解なシンタックスエラーが発生するようになりました。たとえば，20,000件のテーブルでカレントセレクションが50件，130,000件のテーブルでカレントセレクションが600件，といった比率で問題は発生します。
 
-Fixed bugs v15.0 build 189396 (Released on 2015-08-22)
---------------------------------------------------------------------------------
 * ACI0092892 [HTTP Get](http://doc.4d.com/4Dv14/4D/14.4/HTTP-Get.301-2510926.ja.html)を[Digest認証](http://doc.4d.com/4Dv14/4D/14.4/HTTP-AUTHENTICATE.301-2510927.ja.html)で実行した場合，不正なopaqueヘッダー（閉じる二重引用符がない）が送信されました。
 
-Fixed bugs v15.0 build 189364 (Released on 2015-08-21)
---------------------------------------------------------------------------------
 * ACI0091083 ロックされたカラムのあるリストボックスに[LISTBOX SET LOCKED COLUMNS](http://doc.4d.com/4Dv14/4D/14.4/LISTBOX-SET-LOCKED-COLUMNS.301-2511191.ja.html)に負のカラム番号を渡すと，ロックされたカラムがなくなり，カラムを動かすとアプリケーションがクラッシュしました。
-* ACI0093359 : Dereferenced field pointer from method fails  
 
-Fixed bugs v15.0 build 189325 (Released on 2015-08-20)
---------------------------------------------------------------------------------
-* ACI0089383 : The expiration date of the license is always 00.00.0000 in the MCS Information window.
 * ACI0092583 レコードとインデックスを圧縮した後，データファイルが破損（圧縮前の検査ではレポートされなかったエラーが発生）するケースがありました。
-* ACI0093245 : [131609] MSC crashes while repairing structure
 
-Fixed bugs v15.0 build 189261 (Released on 2015-08-19)
---------------------------------------------------------------------------------
-* ACI0093195 : 4D Mac 64-bits Memory leak with SQL statement
-
-Fixed bugs v15.0 build 189224 (Released on 2015-08-18)
---------------------------------------------------------------------------------
-* ACI0092533 : [131302] Http SET OPTION on setting HTTP timeout does not change
-* ACI0093137 : [131560] [v15 regression] Constants with umlauts cannot be compiled
-* ACI0093138 : Custom Constants, Method Editor: 'resname xxxx not found'
 * ACI0093288 一部のSVG画像要素（matrix scalingがゼロかつshearがゼロではない）はピクチャエリアに表示されませんでした。Webエリアでは問題ありません。
 
-Fixed bugs v15.0 build 189179 (Released on 2015-08-15)
---------------------------------------------------------------------------------
 * ACI0092803 カレントレコードを変更した後，入力エリアの取り消し（Control+Z）履歴がクリアされませんでした。
-* ACI0093076 : Text Fields in Quick Reports Are Cut Off
+
 * ACI0093129 [XML GET ERROR](http://doc.4d.com/4Dv14/4D/14.4/XML-GET-ERROR.301-2512184.ja.html)に不正な引数を渡してもOKシステム変数に0が代入されませんでした。
+
 * ACI0093248 スタイル付きテキスト全体の文字カラーを黒ではない値に変更した場合，[ST GET ATTRIBUTES](http://doc.4d.com/4Dv14/4D/14.4/ST-GET-ATTRIBUTES.301-2510888.ja.html)から0が返されました。テキストの一部だけを変更した場合は問題ありません。
 
-Fixed bugs v15.0 build 188995 (Released on 2015-08-11)
---------------------------------------------------------------------------------
-* ACI0093042 : Malfunction in the menu editor
 * ACI0093093 [ADD RECORD](http://doc.4d.com/4Dv14/4D/14.4/ADD-RECORD.301-2512225.ja.html)または[MODIFY RECORD](http://doc.4d.com/4Dv14/4D/14.4/MODIFY-RECORD.301-2512226.ja.html)でパレットウインドウを表示した場合，閉じるボタンが動作しませんでした。
+
 * ACI0093130 [SVG_SET_SHAPE_RENDERING](http://doc.4d.com/4Dv14/4D/14/SVG-SET-SHAPE-RENDERING.301-1382636.ja.html)に```optimizeSpeed```を渡すとエラーが返されました。
-* ACI0093341 : 4DIC Mac64 failures
 
-Fixed bugs v15.0 build 188938 (Released on 2015-08-08)
---------------------------------------------------------------------------------
 * ACI0081512 ラベルエディターでオブジェクトを水平に連結した場合，フィールド間に空白が自動的に挿入されるはずですが，そうはなりませんでした。
-* ACI0093318 : Memory leak for new cooperative processes with a window
 
-Fixed bugs v15.0 build 188914 (Released on 2015-08-07)
---------------------------------------------------------------------------------
 * ACI0090169 オブジェクト型のローカル変数を別プロセスに引数で渡した場合，相手プロセス側でその変数を更新すると，呼び出し側のローカル変数も更新されました。オブジェクト型は参照型なので，代入されたローカル変数が同じオブジェクトを参照するのは正常ですが，プロセスを超えてローカル変数が同じオブジェクトを参照するのは間違いでした。
 
 例:
@@ -389,30 +379,38 @@ TRACE
 End case 
 ```
 
-Fixed bugs v15.0 build 188707 (Released on 2015-08-04)
---------------------------------------------------------------------------------
 * ACI0074490 クイックレポートで[Sum](http://doc.4d.com/4Dv14/4D/14.4/Sum.301-2510947.ja.html)を使用すると，アプリケーションがクラッシュしました。内部的に64ビット整数が返される関数のコールバックに問題ありました。
+
 * ACI0083311 アクセント記号が含まれる 4D Write文書をHTML4形式でエクスポートした場合，拡張文字が正しく出力されませんでした。修正により，UTF-8エンコーデイングと16進数のエンティティ参照（&#x...;）がサポートされるようになりました。
+
 * ACI0089701 v14.2以降，[Menu selected](http://doc.4d.com/4Dv14/4D/14.4/Menu-selected.301-2511250.ja.html)から返されるメニュー番号違いました（フォームに関連付けられたメニュー）。また，その番号を[APPEND MENU ITEM](http://doc.4d.com/4Dv14/4D/14.4/APPEND-MENU-ITEM.301-2511241.ja.html)や[Get menu title](http://doc.4d.com/4Dv14/4D/14.4/Get-menu-title.301-2511262.ja.html)に渡しても駄目で，以前のバージョンで返された番号を渡さなければなりませんでした。
+
 * ACI0089966 [PLATFORM PROPERTIES](http://doc.4d.com/4Dv14/4D/14.4/PLATFORM-PROPERTIES.301-2511885.ja.html)でWindows 8.1を検出することができませんでした。
+
 * ACI0091274 フォームの2個の4D Writeエリアが表示されているとき，日本語変換の編集ウインドウが間違った場所に表示されることがありました。あるいは，間違ったほうのエリアに確定されたテキストが入力されました。
+
 * ACI0091299 4D Viewのセルにテンキー側のピリオドキーを入力した場合，言語設定に従った小数点（ピリオドまたはカンマ）が入力されず，入力フィルターも正しく働きませんでした。
+
 * ACI0091504 Mac版のみ。アプリケーションビルドの```ClientWinIncludeIt```キーが有効で```ClientWinFolderToMac```のパスが無効な場合，アプリケーションビルドでエラー（Windows用の4D Volume Desktopがみつからない）が返されました。
+
 * ACI0091505 日本語入力中の『取り消し』（Control+Z）と『やり直し』（Control+Shift+Z）の振る舞いが一般的なアプリケーションとは違い，変換中に表示された候補がすべて履歴に残りました。
+
 * ACI0091590 [ERASE WINDOW](http://doc.4d.com/4Dv14/4D/14.4/ERASE-WINDOW.301-2512108.ja.html)を実行すると，ウインドウの背景カラーがグレーになることがありました。
-* ACI0091608 : [130913] 4D crashes when opening HTML file with 4D Write
+
 * ACI0091772 Windows版のみ。[Open form window](http://doc.4d.com/4Dv14/4D/14.4/Open-form-window.301-2512114.ja.html)で表示したウインドウを最大化してから閉じることを繰り返した場合，ウインドウ位置が少しずつ右下に移動してゆきました。
+
 * ACI0091904 [Print object](http://doc.4d.com/4Dv14/4D/14.4/Print-object.301-2511458.ja.html)あるいは印刷メニューでリストボックスをプリントアウトした場合，チェックボックスまたはドロップダウンリストのあるセルには何も印刷されませんでした。
-* ACI0091906 : Print listbox elipsis button and unit button are not print
-* ACI0091907 : Create and replacing a database
-* ACI0091920 : Since R5, it is impossible to select a size-zero object in the Form Editor
+
 * ACI0091942 リストボックスの行を上または下にドラッグしても，自動的に垂直スクロールが働きませんでした。v15は，『ドロップ可』およびOn Dropイベントプロパティが有効にされていれば，スクロールが発生しました。
-* ACI0092047 : [131090] Variable is unenterable if web area on the same form (with PDF or website loaded)
-* ACI0092071 : [131101] Cursor in 4D Write disappears
+
 * ACI0092251  Mac版のみ。日本語入力の『英字』モードが選択されている場合，CommandやControlなどのモディファイアの無いキーボードショートカットが効きませんでした。U.S.などの直接入力モードであれば，問題ありません。
+
 * ACI0092402 アプリケーションビルドで『クライアント/サーバーアプリケーションをビルド』の『クライアントアプリケーションをビルド』をチェックせずに『MacOS/Windowsクライアントアプリケーションの自動更新を有効にする』をチェックしてビルドを進めた場合，エラーが返されたり，クラッシュしたりしました。
+
 * ACI0092446 『レコードを完全に削除』が有効にされていないテーブルのデータが含まれるデータファイルに対して『レコードヘッダーによる修復』を実行した場合，修復後にMSCのデータファイル検査でエラーがレポートされるようになりました。
+
 * ACI0092460 『データファイルが更新された場合のみバックアップを行う』の動作に問題がありました。データファイルが更新されていない場合にバックアップが実行されないのは良いのですが，その後，新規レコードを追加した途端，スケジュールにないバックアップが開始されました。
+
 * ACI0092515 4D ServerにAccessからODBCで接続した場合，WHERE句にANDまたはOR述語が含まれていると，エラーが返されました。
 
 **注記**: 4D ODBC Driverが修正されました。
@@ -447,7 +445,8 @@ Where (shrs.Numberofshares>=1000000)
 * ACI0092679 SVGで『4State』バーコードフォントが使用できませんでした。
 
 * ACI0092681 BLOB配列に対して[VARIABLE TO BLOB](http://doc.4d.com/4Dv14/4D/14.4/VARIABLE-TO-BLOB.301-2511977.ja.html)が使用できませんでした。
-* ACI0092709 : SET EXTERNAL DATA PATH issue with relative path "../"
+ 
+* ACI0092709 ``SET EXTERNAL DATA PATH``に相対パス``../``が渡された場合，ビルド180345までは，データファイルに対して相対的な場所が外部データファイルパスになりましたが，183736以降，『無効なパス名』エラーが返され，デフォルトの外部データフォルダー (".ExternalData") が外部データファイルパスになりました。
 
 * ACI0092735 Mac版のみ。[READ ONLY](http://doc.4d.com/--14.4/-/READ-ONLY.301-2511556.ja.html)で表示されたフォーム上の数値フィールドは，編集ができるような印象を与えました。数字部分をクリックすれば問題ありませんが，空白部分をクリックすると，フィールドが編集できそうな表示になりました。
 
@@ -471,15 +470,6 @@ Where (shrs.Numberofshares>=1000000)
 
 * ACI0092962 Mac版のみ。Yosemiteプラットフォームで非アクティブウインドウのデフォルトボタンは，グレーに表示されるべきですが，ブルーに表示されました。
  
-* ACI0092966 : SVG_GET_ATTRIBUTES : tspan font-family, simple quote-> double quote
-* ACI0092969 : An error is displayed when trying to reconnect to 4D server.
-* ACI0092990 : QUERY BY ATTRIBUTE with null value as parameter does'nt return the same think in sequential or indexed
-* ACI0092991 : Engined OEM Server : License or privilege error.
-* ACI0093006 : QUERY BY ATTRIBUTE, bad results when using the operator # in Client/Server
-* ACI0093010 : Difference in behavior on QUERY BY ATTRIBUTE with and without index, in one case it is not diacritical in the other it is.
-* ACI0093013 : OEM Application with Mobile Expansions can use unlimited mobile connexions
-* ACI0093030 : Action not dispay in "Action" column of Moving dialogue
-
 * ACI0093031 デザインモードのツールボックスでメニューバーを削除した後，別のメニューバーを『テスト』すると，アプリケーションがクラッシュしました。また，メニューバーを追加し，ツールボックスのページを切り替えて戻った後，メニューバーを削除し，ツールボックスのページを切り替えて戻ると，メニューのリストが空になりました。
 
 * ACI0093063 ツールボックス『クリア』ボタンをクリックしても，メニューに設定された背景ピクチャを消去することができませんでした。
