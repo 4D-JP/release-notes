@@ -437,7 +437,9 @@ Where (shrs.Numberofshares>=1000000)
 * ACI0092859 Mac版のみ。PDF文書を[READ PICTURE FILE](http://doc.4d.com/4Dv14/4D/14.4/READ-PICTURE-FILE.301-2511425.ja.html)で読み込んで[TRANSFORM PICTURE](http://doc.4d.com/4Dv14/4D/14.4/TRANSFORM-PICTURE.301-2511407.ja.html)で左右を反転した場合，[WRITE PICTURE FILE](http://doc.4d.com/4Dv14/4D/14.4/WRITE-PICTURE-FILE.301-2511426.ja.html)で書き出すと空のPDFになりました。
 * ACI0092871 Webサービスの出力タイプがXML型で，そのXMLが空（```<root/>```）だった場合，不正なSOAPエンベロープが生成されました。
 * ACI0092914 ライセンス登録画面のメールアドレス入力欄で『.website』『.berlin』といったドメイン名は無効であるとして，退けられました。
-* ACI0092922 : Closing a WebSession already used cause a DeadLock in 4D WebSession Manager
+
+* ACI0092922 リクエスト処理中のWebセッションを閉じると，自動セッション管理がデッドロックに陥りました。セッション管理はプロセスを再利用しようとしますが，プリエンプティブプロセスが無反応のコオペラティブプロセスにメッセージを送信する格好になりました。
+ 
 * ACI0092944 : Web variables not reinitialized on SOAP calls
 * ACI0092954 : [131446] 4D Mobile OEM licenses are not copied during build process
 * ACI0092956 [OBJECT SET TITLE](http://doc.4d.com/4Dv14/4D/14.4/OBJECT-SET-TITLE.301-2511364.ja.html)で[XLIFF](http://doc.4d.com/4Dv15/4D/15/Appendix-C-XLIFF-architecture.300-2045562.ja.html)の『オブジェクト名』シンタックスで設定された3Dボタンのラベルを変更することができませんでした。 
@@ -458,9 +460,13 @@ Where (shrs.Numberofshares>=1000000)
 * ACI0093128 Windows版のみ。ラジオボタンやチェックボックスをプリントアウトした場合，ラベルテキストで不要な折り返し（ワードラップ）が発生しました。
 * ACI0093151 Mac版のみ。Yosemiteプラットフォームで高さが22ポイントに満たないデフォルトボタンの表示が正しくありませんでした。
 * ACI0093164 : PA_Tokenize() crashes 4Dv15
+
 * ACI0093170 重複不可のストラクチャリソースに何らかの理由で重複が存在した場合，MSCのアプリケーション検査でインデックスのエラーがレポートされました。修正により，ストラクチャリソースの重複がレポートされるようになりました。
-* ACI0093201 : Event "on selection change" raises too much for 4D Write Pro object
-* ACI0093215 : 4D Server freezes under heavy load
-* ACI0093221 : Deadlock on web server
-* ACI0093250 : 4D Server freezes when sending messages to an unresponsive client
-* ACI0093257 : 4D Server stops accepting new connections
+
+* ACI0093201 4D Write Proエリアでは，テキストの選択範囲を変更するたびに2回，``On Selection Change``イベントが発生しました。
+
+* ACI0093215 新ネットワークレイヤーのみ。1秒間に数件のSOAPリクエストを連続処理していると，15-20分ほどでサーバーがフリーズまたはデッドロック状態に陥りました。
+
+* ACI0093250 反応のないクライアントに制御メッセージを送信すると，4D Serverがフリーズしたようになりました。
+
+* ACI0093257 クライアントマネージャープロセスが多忙なためにメッセージを手際よく処理できない場合，クライアントの新規接続を受け付けることができませんでした。リスナースレッドは新規接続メッセージをクライアントマネージャープロセスに送り，処理が完了するまで待機しますが，そのプロセスから制御が返されない場合，新たな接続を受け付けることができなくなりました。
