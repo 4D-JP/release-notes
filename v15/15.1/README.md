@@ -437,25 +437,40 @@ Where (shrs.Numberofshares>=1000000)
 ```
 
 * ACI0092564 データファイルの名前にピリオドが含まれている場合，バックアップファイル（4BK）に連番が付けられず，常に最新のバックアップで上書きされてしまいました。
-* ACI0092631 : [131298] Edit action (cut, copy, paste, etc) does not work using Japanese KANA keyboard layout since v14
+
+* ACI0092631 Windows版のみ。（ローマ字ではなく）かな入力が有効にされている場合，コピー・ペースト・カットなどの編集アクションがショートカットで実行できませんでした。
+
 * ACI0092643 4D ServerにAccessからODBCで接続した場合，CDate（日付の文字列）を使用するとAccessがクラッシュしました。
-* ACI0092651 : MSC restore displays "file select" dialog in wrong window type, user must force quit 4D.
+
+* ACI0092651 Mac版のみ。MSCの復元ページから『復元後にひとつ以上のログファイルを統合する』オプションを有効にしてバックアップを復元した場合，デスクトップなど他のアプリケーションが最前面に置かれた状態で『ログファイルを統合しますか?』画面のボタンを直接クリックすると，ファイル選択画面が非アクティブなモーダルウィンドウで表示されるため，以降の操作ができませんでした。
+
 * ACI0092679 SVGで『4State』バーコードフォントが使用できませんでした。
+
 * ACI0092681 BLOB配列に対して[VARIABLE TO BLOB](http://doc.4d.com/4Dv14/4D/14.4/VARIABLE-TO-BLOB.301-2511977.ja.html)が使用できませんでした。
 * ACI0092709 : SET EXTERNAL DATA PATH issue with relative path "../"
+
 * ACI0092735 Mac版のみ。[READ ONLY](http://doc.4d.com/--14.4/-/READ-ONLY.301-2511556.ja.html)で表示されたフォーム上の数値フィールドは，編集ができるような印象を与えました。数字部分をクリックすれば問題ありませんが，空白部分をクリックすると，フィールドが編集できそうな表示になりました。
+
 * ACI0092764 ストラクチャエディターのインスペクターでフィールド名を『あああ』から『ｱｱｱ』に変更した場合，つまり，文字種だけを変更した場合，書き換えが無視されました。
+
 * ACI0092858 ツールボックスのリソースページで，ファイルを選択して『名称変更』を選択した場合，現在のファイル名が表示されませんでした。また，『ディスク上に表示する』を選択しても，何も起きませんでした。
+
 * ACI0092859 Mac版のみ。PDF文書を[READ PICTURE FILE](http://doc.4d.com/4Dv14/4D/14.4/READ-PICTURE-FILE.301-2511425.ja.html)で読み込んで[TRANSFORM PICTURE](http://doc.4d.com/4Dv14/4D/14.4/TRANSFORM-PICTURE.301-2511407.ja.html)で左右を反転した場合，[WRITE PICTURE FILE](http://doc.4d.com/4Dv14/4D/14.4/WRITE-PICTURE-FILE.301-2511426.ja.html)で書き出すと空のPDFになりました。
+
 * ACI0092871 Webサービスの出力タイプがXML型で，そのXMLが空（```<root/>```）だった場合，不正なSOAPエンベロープが生成されました。
+
 * ACI0092914 ライセンス登録画面のメールアドレス入力欄で『.website』『.berlin』といったドメイン名は無効であるとして，退けられました。
 
 * ACI0092922 リクエスト処理中のWebセッションを閉じると，自動セッション管理がデッドロックに陥りました。セッション管理はプロセスを再利用しようとしますが，プリエンプティブプロセスが無反応のコオペラティブプロセスにメッセージを送信する格好になりました。
  
-* ACI0092944 : Web variables not reinitialized on SOAP calls
-* ACI0092954 : [131446] 4D Mobile OEM licenses are not copied during build process
+* ACI0092944 v13以降，SOAPプロセスのプロセス変数は，以前のリクエストで作成されたプロセスの値を継承しました。つまり，値が初期化されませんでした。5秒以上の間隔が空いていれば問題ありません。修正により，SOAPプロセスの``TTL`` (Time To Live) 5秒が取り除かれました。これは，直前に終了したプロセスを再利用することにより，パフォーマンスを（若干）向上させるために設定されたものでした。
+ 
+* ACI0092954 4D Mobile OEMライセンスがビルドアプリケーションにインストールされませんでした。
+
 * ACI0092956 [OBJECT SET TITLE](http://doc.4d.com/4Dv14/4D/14.4/OBJECT-SET-TITLE.301-2511364.ja.html)で[XLIFF](http://doc.4d.com/4Dv15/4D/15/Appendix-C-XLIFF-architecture.300-2045562.ja.html)の『オブジェクト名』シンタックスで設定された3Dボタンのラベルを変更することができませんでした。 
+
 * ACI0092962 Mac版のみ。Yosemiteプラットフォームで非アクティブウインドウのデフォルトボタンは，グレーに表示されるべきですが，ブルーに表示されました。
+ 
 * ACI0092966 : SVG_GET_ATTRIBUTES : tspan font-family, simple quote-> double quote
 * ACI0092969 : An error is displayed when trying to reconnect to 4D server.
 * ACI0092990 : QUERY BY ATTRIBUTE with null value as parameter does'nt return the same think in sequential or indexed
@@ -464,10 +479,15 @@ Where (shrs.Numberofshares>=1000000)
 * ACI0093010 : Difference in behavior on QUERY BY ATTRIBUTE with and without index, in one case it is not diacritical in the other it is.
 * ACI0093013 : OEM Application with Mobile Expansions can use unlimited mobile connexions
 * ACI0093030 : Action not dispay in "Action" column of Moving dialogue
+
 * ACI0093031 デザインモードのツールボックスでメニューバーを削除した後，別のメニューバーを『テスト』すると，アプリケーションがクラッシュしました。また，メニューバーを追加し，ツールボックスのページを切り替えて戻った後，メニューバーを削除し，ツールボックスのページを切り替えて戻ると，メニューのリストが空になりました。
-* ACI0093063 : "Clear" button to clear menu background image does nothing
-* ACI0093069 : QUERY BY ATTRIBUTE doesn't work in indexed with array object
-* ACI0093072 : Service isn't relaunch after update 4D server v14  32bits with 4D server v15 32bits
+
+* ACI0093063 ツールボックス『クリア』ボタンをクリックしても，メニューに設定された背景ピクチャを消去することができませんでした。
+
+* ACI0093069 ``QUERY BY ATTRIBUTE``は，
+インデックスが設定されているオブジェクトフィールドを``a.b[].c``のようなパスで検索した場合，正しい結果を返さないことがありました。シーケンシャルクエリでは問題ありません。
+
+* ACI0093072 Windows版のみ。サービス登録された32ビット版4D Serverをv14からv15に自動アップデートした場合，アプリケーションが入れ替わりますが，サービスは中止され，サーバーは再起動されませんでした。v14同士，あるいはv15同士であれば，問題ありません。 
 
 * ACI0093127 Windows版のみ。Windows 8.1プラットフォームでフォームまたはオブジェクトのプラットフォームプロパティが『印刷』ではない場合，ラジオボタンやチェックボックスのラベルがプリントアウトされませんでした。Windows 7では問題ありません。
 
