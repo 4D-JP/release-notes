@@ -92,21 +92,26 @@ POP RECORD([Table_1])
 
 * ACI0093786 Windows版のみ。モーダルウィンドウに表示されたフォーム上に配置されたドロップダウンメニューをクリックし，項目が画面に収まりきらないほど長いリストを表示した場合，マウスホイールでリストを垂直スクロールをすることができませんでした。ACI0093729（後述）が修正されたことに関連があります。修正前は，リスト下端の矢印をクリックすることもできました。
 
-* ACI0089836 : Memorization of window geometry not working
-* ACI0093592 : Wrong information about current system in server administration window
-* ACI0093670 : 4D Client IP Address does not appear in 4DRequestLog_ProcessInfo log
-* ACI0093729 :[131883] issue with dropdown list displays in modal windows
-* ACI0093752 : Error with SVG_Validate_file
-* ACI0093641 : Form Editor - shift - new line drag
-* ACI0093600 : The menu "File/Import ODBC..." displays an error alert
+* ACI0089836 タブコントロールやポップアップメニューは『配置を記憶』プロパティが効きませんでした。
+
+* ACI0093592 Windows版のみ。Windows Server 2012またはWindows 8.1以降で実行した場合，4D Serverの管理画面にプラットフォームの情報が表示されませんでした。
+
+* ACI0093670 リクエストログの``4DRequestLog_ProcessInfo``ファイルには，クライアントのIPアドレスが記録されませんでした。
+
+**注記**: データベースにテーブルが存在しない場合，リクエストログにエントリーは作られません。
+
+* ACI0093729 Windows版のみ。モーダルウィンドウに表示されたフォーム上に配置されたドロップダウンメニューをクリックし，項目が画面に収まりきらないほど長いリストを表示した場合，マウスホイールの操作をやめるとすぐにリストが消えてしまい，項目を選択することができませんでした。
+
+* ACI0093752 ``SVG_Validate_file``コマンドでSVG文書を検証することができませんでした。
+
+* ACI0093641 フォームエディターでShiftキーを押しながら線オブジェクトを描画した場合，長さがゼロになるか，線が斜めに描画されてしまいました。本来であれば，垂直または水平の線が描画されるはずです。
+
+* ACI0093600 ファイルメニューのODBCインポートメニューを実行した場合，データベースにテーブルが存在しない，というエラーが返されました。
 
 * ACI0093759 重複不可でインデックスが設定されているフィールドに何らかの理由で重複するレコードが登録されている場合，そのフィールドのインデックスを削除した後，[CREATE INDEX](http://doc.4d.com/4Dv14/4D/14.4/CREATE-INDEX.301-2511803.ja.html)または[SET INDEX](http://doc.4d.com/4Dv14/4D/14.4/SET-INDEX.301-2511800.ja.html)コマンドでインデックスを再作成すると，重複不可属性が解除されました。修正により，インデックス構築中に重複不可属性の違反が検出されても，属性は解除されないようになりました。
 
-* ACI0093752 : Error with SVG_Validate_file
+* ACI0093746 ``SVG_SET_STROKE_MITERLIMIT``の第2パラメーターにゼロを渡した場合，エラー``-9930``が返されました。
 
-* ACI0093746 : Error -9930 with SVG command SVG_SET_STROKE_MITERLIMIT and parameter 0
-
---------------------------------------------------------------------------------
 * ACI0088416 ビルドされたデスクトップ版アプリケーションの『[ユーザー認証](http://doc.4d.com/4Dv14/4D/14.4/Access-system-overview.300-2604083.ja.html)』ダイアログで『パスワードを保存』オプションを有効にしても，次回の起動で再び『ユーザー認証』ダイアログが表示されました。
 
 * ACI0091789 Windows版のみ。フランス語版の4D Viewまたは4D Writeプラグインの著作権情報が英語でエクスプローラーに表示されました。
@@ -115,9 +120,7 @@ POP RECORD([Table_1])
 
 * ACI0093587 [ユーザー設定](http://doc.4d.com/4Dv15/4D/15/Using-user-settings.300-2045482.ja.html)を使用したときに表示されるサブメニューが英語でした。
 
-Fixed bugs v15.0 build 190946 (Released on 2015-09-25)
---------------------------------------------------------------------------------
-* ACI0088897 : [131734 ] The command "PV Get Picture"  causes 4D to crash if it throws an error.
+* ACI0088897 ``PV Get picture``を壊れたピクチャファイルに対して使用したり，無効な行列番号を指定した場合，エラーが返されてアプリケーションがクラッシュしました。
 
 * ACI0092449 4D Internet Commandは，UTF-8以外のエンコーディングで電子メールを送信することができませんでした。[SMTP_SetPrefs](http://doc.4d.com/4Dv14/4D-Internet-Commands/14/SMTP-SetPrefs.301-1237783.ja.html)や[SMTP_Charset](http://doc.4d.com/4Dv14/4D-Internet-Commands/14/SMTP-Charset.301-1237763.ja.html)は効力がありませんでした。
 
@@ -131,8 +134,7 @@ Fixed bugs v15.0 build 190946 (Released on 2015-09-25)
 
 * ACI0093419 クライアント/サーバー版のみ。[エクスターナルデータベース](http://doc.4d.com/4Dv14/4D/14/USE-DATABASE.300-1198442.ja.html)から```SQL_INTERNAL```にスイッチした後，トランザクション内で実行されたSQLが失敗しました。トランザクションを開始しなければ問題ありません。
 
-* ACI0093480 : Can not restart in compiled or in interpreted for C/S databases running with new network layer.
-* ACI0093593 : [131792] Modifier key missing from pop-up menu
+* ACI0093480 新ネットワークレイヤーのみ。クライアント側からコンパイルモード/インタープリターモードを切り替えて再起動することができませんでした。
 
 * ACI0093608 スプリッターを右クリックすると，以降，動かすことができなくなりました。
 
@@ -216,36 +218,36 @@ End SQL
 * ACI0093546 : Option "do not create log" is ignored in compact date file command
 * ACI0093630 : String( -0.99999999999999534) produces "1" instead of "-1"
 
-Fixed bugs v15.0 build 190428 (Released on 2015-09-16)
---------------------------------------------------------------------------------
 * ACI0088819 エクスプローラーの『ホーム』タブで，メソッドを複製した場合，新しいメソッドは同じフォルダー内に作成されますが，フォームを複製した場合，新しいフォームはトップレベルに作成されました。
 
-Fixed bugs v15.0 build 190414 (Released on 2015-09-15)
---------------------------------------------------------------------------------
-* ACI0085614 : Internet Commands work wrong with relative path
+* ACI0085614 Windows版のみ。v13以降，4D Internet Commandsは相対パスの処理に問題がありました。``SMTP_ATTACHMENT``のようなコマンドに相対パスが渡された場合，ストラクチャファイルと同じ階層にあるファイルが使用されませんでした。
+
 * ACI0087196 Mac版のみ。[PICTURE PROPERTIES](http://doc.4d.com/4Dv14/4D/14.4/PICTURE-PROPERTIES.301-2511415.ja.html)に壊れたピクチャ（例: 高さと幅がゼロ）が渡された場合，アプリケーションがフリーズしました。
+
 * ACI0091224 : Transfer Time in web log shows confusing values
 * ACI0093442 : 4D Documentation Links
 
-Fixed bugs v15.0 build 190312 (Released on 2015-09-11)
---------------------------------------------------------------------------------
 * ACI0093121 日本語版のみ。フォームエディターの『オブジェクト』メニューの『縦中央揃え』と『横中央揃え』が逆でした。またコンテキストメニューの『縦均等配置』とあるべきところが『整列...』となっていました。
+
 * ACI0093462 クイックレポートから4D Viewの出力に問題がありました。レコードの数が正しくありませんでした。HTML出力は問題ありません。
+
 * ACI0093586 フォームエディター上でリストボックスのヘッダーをドラッグすると表示しきれていなかった列がスクロールするはずですが，v13以降，スクロールはせずに列だけが移動しました。
 
-Fixed bugs v15.0 build 190179 (Released on 2015-09-10)
---------------------------------------------------------------------------------
 * ACI0088594 エクスプローラーでフォームの名前を編集中，入力を確定せずにトリプルクリックすると，フォーム名が元に戻ってしまいました。
 
-Fixed bugs v15.0 build 190137 (Released on 2015-09-09)
---------------------------------------------------------------------------------
 * ACI0089641 : [130456] Breakpoint in a "On display detail" list form event freezes.
 * ACI0092734 : Resizing width of listbox array
+
 * ACI0092779 リストボックスのブール型カラム（チェックボックス）ラベルをXLIFFまたはリソースで定義することができませんでした。
+
 * ACI0092792 : Style of units button or lllipsis is modify when enter in edit mode.
+
 * ACI0092980 Mac版のみ。階層リストのスクロール速度が遅すぎました。
+
 * ACI0093008 リスト型サブフォームが画面に表示できる行数またはそれよりも後の位置にレコードを追加した場合，サブフォームに表示されていたレコードの値が画面から消えました。
+
 * ACI0093336 リストボックスのロックされたカラムを移動すると，ロックされていないカラムの水平スクロールが逆方向に動きました。
+
 * ACI0093339 : Listbox footer ignores font colour settings
 * ACI0093594 : Spelling error in french on information pop-up.
 
@@ -258,7 +260,7 @@ Fixed bugs v15.0 build 190021 (Released on 2015-09-08)
 * ACI0093415 自動セッション管理が有効にされている場合，最後に返されたHTTPステータスコードが500（内部サーバーエラー）だったときは，次のリクエストでOn Web Connectionが実行されず，404が返されました。
 * ACI0093459 : No SVG created if only a part of styled text is styled by context menu
 * ACI0093546 : Option "do not create log" is ignored in compact date file command
-* ACI0093580 Windows版のみ。チェコ語版のインストーラーを実行すると，エラーは発生しました。
+* ACI0093580 Windows版のみ。チェコ語版のインストーラーを実行すると，エラーが発生しました。
 
 Fixed bugs v15.0 build 189972 (Released on 2015-09-05)
 --------------------------------------------------------------------------------
