@@ -2,11 +2,7 @@
 ---
 
 * ACI0093073 : Update 4D server 64 bits doesn't work in service
-* ACI0093467 : QR Execute Command can return error No 9852 in 4D v15
-* ACI0093196 : In a built Client/Server application the Server is not being populated with a version number
-* ACI0093073 : Update 4D server 64 bits doesn't work in service
 * ACI0087268 : [128955] Freeze of 4D with incorrect formula in the Quick Report
-* ACI0093044 : Missing plugins icon in the explorer
 * ACI0093281 : Crash after drag & drop of a picture in a form on Design mode
 * ACI0093470 : Explorer Menu not working
 * ACI0093510 : MSC - Verify structure crash in Volume Desktop
@@ -31,10 +27,6 @@
 * ACI0093013 : OEM Application with Mobile Expansions can use unlimited mobile connexions
 * ACI0093030 : Action not dispay in "Action" column of Moving dialogue
 * ACI0093076 : Text Fields in Quick Reports Are Cut Off
-
-
-
-
 
 * ACI0092792 スタイル配列が設定されているオブジェクト配列型のリストボックス (4D View Pro) は，セルデータの編集中，配列で定義されたスタイルではなく，リストボックスのスタイルがボタンに適用されました。
 
