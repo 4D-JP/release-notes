@@ -1,9 +1,10 @@
 4D v15.1
 ---
 
-* ACI0093073 : Update 4D server 64 bits doesn't work in service
-* ACI0087268 : [128955] Freeze of 4D with incorrect formula in the Quick Report
-* ACI0093281 : Crash after drag & drop of a picture in a form on Design mode
+* ACI0087268 カラムに間違ったフォーミュラ式が設定されているクリックレポートを実行するとアプリケーションがフリーズしました。修正により，``Escape``キーで制御を取り戻すことができるようになりました。
+
+* ACI0093281 特定の画像ファイルをフォームエディターにドラッグ＆ドロップすると，アプリケーションがクラッシュしました。
+
 * ACI0093470 : Explorer Menu not working
 * ACI0093510 : MSC - Verify structure crash in Volume Desktop
 * ACI0084755 : "Current method path" does no more return object path Compiled
@@ -20,13 +21,23 @@
 * ACI0093138 : Custom Constants, Method Editor: 'resname xxxx not found'
 * ACI0092966 : SVG_GET_ATTRIBUTES : tspan font-family, simple quote-> double quote
 * ACI0092969 : An error is displayed when trying to reconnect to 4D server.
-* ACI0092990 : QUERY BY ATTRIBUTE with null value as parameter does'nt return the same think in sequential or indexed
-* ACI0092991 : Engined OEM Server : License or privilege error.
-* ACI0093006 : QUERY BY ATTRIBUTE, bad results when using the operator # in Client/Server
-* ACI0093010 : Difference in behavior on QUERY BY ATTRIBUTE with and without index, in one case it is not diacritical in the other it is.
-* ACI0093013 : OEM Application with Mobile Expansions can use unlimited mobile connexions
-* ACI0093030 : Action not dispay in "Action" column of Moving dialogue
-* ACI0093076 : Text Fields in Quick Reports Are Cut Off
+ 
+* ACI0093010 ``QUERY BY ATTRIBUTE``は，属性名の大文字と小文字を区別するはずですが，インデックスが設定されているときはその区別をしませんでした。
+
+* ACI0093006 ``QUERY BY ATTRIBUTE``は，クライアント/サーバー版で``#``比較演算子を使用した場合，正しい結果を返しませんでした。
+
+* ACI0092990 ``QUERY BY ATTRIBUTE``は，未定義のオブジェクトをパラメーターとして渡して``NULL``をサーチした場合，インデックスが設定されてフィールドでは正しい結果を返しませんでした。
+
+``
+C_OBJECT($found)
+QUERY BY ATTRIBUTE([Table];[Table]TObject;"AAA";#;$found)
+``
+
+* ACI0092991 OEM版のビルドされたサーバーアプリケーションを起動すると『ライセンスまたは権限エラー』``9949``が返されました。
+
+* ACI0093076 クイックレポートに長いテキストが含まれていた場合，最終行が完全に印刷（またはプレビュー）されないことがありました。
+
+* ACI0093030 データベース間でオブジェクトを移動したときに表示されるダイアログには，衝突を解決する方法の選択肢が第二画面に表示されるはずですが，v15以降，その列にデフォルトのアクション（『置換』など）が表示されませんでした。
 
 * ACI0092792 スタイル配列が設定されているオブジェクト配列型のリストボックス (4D View Pro) は，セルデータの編集中，配列で定義されたスタイルではなく，リストボックスのスタイルがボタンに適用されました。
 
