@@ -59,14 +59,22 @@ ALERT(String(Num("-0.99999999999999534";".")))
 * ACI0093013 : OEM Application with Mobile Expansions can use unlimited mobile connexions
 * ACI0093030 : Action not dispay in "Action" column of Moving dialogue
 * ACI0093076 : Text Fields in Quick Reports Are Cut Off
-* ACI0093042 : Malfunction in the menu editor
-* ACI0093341 : 4DIC Mac64 failures
-* ACI0093318 : Memory leak for new cooperative processes with a window 
-* ACI0091906 : Print listbox elipsis button and unit button are not print
-* ACI0091907 : Create and replacing a database
-* ACI0091920 : Since R5, it is impossible to select a size-zero object in the Form Editor
-* ACI0091608 : [130913] 4D crashes when opening HTML file with 4D Write
-* ACI0092071 : [131101] Cursor in 4D Write disappears
+ 
+* ACI0092071 同じフォームに4D Writeとコンボボックスまたはドロップダウンメニューが表示されている場合，メニューの項目を選択した後，4D Writeエリアに表示されていたカーソルが消えました。
+
+* ACI0091608 特定のHTMLファイルを4D Writeで開いた場合，アプリケーションがクラッシュしました。愚弟的には，属性の値が255文字よりも長い場合，問題になりました。
+
+* ACI0091920 v14R5以降，フォームエディターで幅および高さがゼロのオブジェクトをクリック選択することができなくなりました。
+
+* ACI0091907 Mac版のみ。データベース作成画面で既存のデータベースを上書きした場合，古いデータベースが削除される代わりに，パッケージ内に新しいファイル群が作成され，『最近使用したデータベース』メニューは新しいほうのデータベースを開きますが，パッケージをドラッグ＆ドロップしたり，『開く』ダイアログから選択して開いて場合，古いほうのデータベースが開かれました。修正により，まず古いデータベースが削除されるようになりました。
+
+* ACI0091906 ``Print object``コマンドでオブジェクト配列型のリストボックス (4D View Pro) を印刷した場合，ボタンが印刷されませんでした。
+
+* ACI0093318 Mac 64ビット版のみ。新規プロセスを作成するたびにメモリーリークが発生しました。ウィンドウを閉じるときの``autoreleasepool``がありませんでした。
+
+* ACI0093341 Mac 64ビット版のみ。一部の4D Internet Commandsが正しく動作しませんでした。
+
+* ACI0093042 メニューバーエディターに問題がありました。3個のメニューバーを作成し，2, 3, 5番のメニューを削除し，さらに2個のメニューバーを作成した場合，メニューバー2番が2個できました。メニューバー番号が重複するのは間違いです。
 
 * ACI0093946 v12のデータファイルを変換した場合，自動UUIDタイプのプライマリーキーに存在するNULLが自動的に新しい値で更新されませんでした。本来であれば，自動タイプのプライマリーキーは，NULLが含まれていたとしても，データベース起動時に新しいキー値が自動的に発行されるはずです。整数/自動インクリメント型のプライマリーキーであれば，問題ありません。ACI0087170やACI0093762（後述）が修正されたことに関連があります。
 
