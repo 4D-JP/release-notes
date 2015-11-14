@@ -1,28 +1,25 @@
 4D v15.1
 ---
 
-* ACI0093237 : [131602] BASIC web authentication takes 15 seconds using Safari or FireFox 
-* ACI0093359 : Dereferenced field pointer from method fails  
-* ACI0089383 : The expiration date of the license is always 00.00.0000 in the MCS Information window.
-* ACI0093245 : [131609] MSC crashes while repairing structure
-* ACI0093195 : 4D Mac 64-bits Memory leak with SQL statement
+* ACI0093237 v15以降，SafariまたはFireFoxブラウザで4DのWebサーバーにアクセスした場合，BASIC認証に15秒を要するようになりました。
 
-* ACI0092533
+**注記**: Keep-Aliveが有効にされた接続では，サーバーは``401 Access Denied``レスポンスコードを返し，開かれた接続をすべて閉じる必要がありますが，v15はタイムアウトに到達するまで``close``リクエストをユーザーエージェントに返しませんでした。Chromeは，``401``を受け取ると``close``リクエストを待たずに接続を閉じるため，問題がありません。
 
-``HTTP SET OPTION``でHTTPタイムアウトを変更しても，20秒以下の値は反映されませんでした。
+* ACI0093359 メソッドの戻り値がフィールドに対するポインターだった場合，受け取った側でポインターをフィールドに戻すことができませんでした。
 
+* ACI0089383 MSCの情報画面には，ライセンスの有効期限が0000年00月00日と表示されました。
 
-**注記**: タイムアウトエラーを再現するため，下記の方法でネットワークエラーを誘発することができます。
+* ACI0093245 特定のストラクチャをMSCで修復すると，アプリケーションがクラッシュしました。
 
-Windows:
+* ACI0093195 Mac 64ビット版のみ。外部（ODBCまたは4Dダイレクトパススルー）からSQLの``INSERT``文を受信した場合，メモリーリークが発生しました。ローカルのSQLステートメントでは問題ありません。
 
-ケーブルを抜く。
+* ACI0092533 ``HTTP SET OPTION``でHTTPタイムアウトを変更しても，20秒以下の値は反映されませんでした。
 
-OS X:
+**注記**: タイムアウトエラーを再現するため，下記の方法でネットワークエラーを起こすことができます。
 
-``sh
-sudo route add -host 216.35.172.75 127.0.0.1
-``
+Windows: ケーブルを抜く。
+
+OS X: ``sudo route add -host 216.35.172.75 127.0.0.1``
 
 * ACI0093137 名前にウムラウトが含まれる定数は，コンパイルすることができませんでした。
 
