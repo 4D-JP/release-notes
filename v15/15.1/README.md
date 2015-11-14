@@ -1,10 +1,6 @@
 4D v15.1
 ---
 
-* ACI0087268 カラムに間違ったフォーミュラ式が設定されているクリックレポートを実行するとアプリケーションがフリーズしました。修正により，``Escape``キーで制御を取り戻すことができるようになりました。
-
-* ACI0093281 特定の画像ファイルをフォームエディターにドラッグ＆ドロップすると，アプリケーションがクラッシュしました。
-
 * ACI0093470 : Explorer Menu not working
 * ACI0093510 : MSC - Verify structure crash in Volume Desktop
 * ACI0084755 : "Current method path" does no more return object path Compiled
@@ -19,9 +15,15 @@
 * ACI0092533 : [131302] Http SET OPTION on setting HTTP timeout does not change
 * ACI0093137 : [131560] [v15 regression] Constants with umlauts cannot be compiled
 * ACI0093138 : Custom Constants, Method Editor: 'resname xxxx not found'
-* ACI0092966 : SVG_GET_ATTRIBUTES : tspan font-family, simple quote-> double quote
-* ACI0092969 : An error is displayed when trying to reconnect to 4D server.
  
+* ACI0087268 カラムに間違ったフォーミュラ式が設定されているクリックレポートを実行するとアプリケーションがフリーズしました。修正により，``Escape``キーで制御を取り戻すことができるようになりました。
+
+* ACI0093281 特定の画像ファイルをフォームエディターにドラッグ＆ドロップすると，アプリケーションがクラッシュしました。
+
+* ACI0092969 クライアントをサーバーに再接続した場合，エラー``-50``が返されました。
+
+* ACI0092966 ``SVG_GET_ATTRIBUTES``は， ``font-family``属性などのシングルクオート記号をダブルクオートに変換して返しました。返された値を``SVG_SET_ATTRIBUTES_BY_ARRAYS``などに渡した場合，間違ったSVGが作成されました。
+
 * ACI0093010 ``QUERY BY ATTRIBUTE``は，属性名の大文字と小文字を区別するはずですが，インデックスが設定されているときはその区別をしませんでした。
 
 * ACI0093006 ``QUERY BY ATTRIBUTE``は，クライアント/サーバー版で``#``比較演算子を使用した場合，正しい結果を返しませんでした。
