@@ -7,7 +7,7 @@
 
 * ACI0093630 ``String( -0.99999999999999534)``は``-1``ではなく，``1``を返しました。
 
-**注記**: メソッドエディターは近似値を``1``にトークナイズするため，``Num``関数を使用する必要があります。
+**注記**: メソッドエディターは上記の近似値を``1``にトークナイズするため，``Num``関数を使用する必要があります。
 
 ``
 ALERT(String(Num("-0.99999999999999534";".")))
@@ -17,16 +17,18 @@ ALERT(String(Num("-0.99999999999999534";".")))
 
 * ACI0089641 ``On Display Detail``イベントで実行されるメソッドにブレークポイントを追加してフォームを実行した場合，デバッガが20回程度表示された後にアプリケーションがフリーズしたようになり，クラッシュしました。ACI0089641が修正されたことに関連があります。
  
-* ACI0092734 : Resizing width of listbox array
-* ACI0093339 : Listbox footer ignores font colour settings
-* ACI0093594 : Spelling error in french on information pop-up.
-* ACI0092137 : Export data editor - double click adds field twice
-* ACI0093044 : Missing plugins icon in the explorer
-* ACI0093396 : [131690] Listbox, Data Source Undefined leads the crash of 4D
-* ACI0093459 : No SVG created if only a part of styled text is styled by context menu
-* ACI0093546 : Option "do not create log" is ignored in compact date file command
-* ACI0093459 : No SVG created if only a part of styled text is styled by context menu
-* ACI0093072 : Service isn't relaunch after update 4D server v14  32bits with 4D server v15 32bits
+* ACI0092734 リストボックスは，ヘッダの間を2度クリックすると左側にある列の幅をせばめることができますが，v15以降，変化があまりにも速いために右側の列がソートされてしまいました。
+
+* ACI0093339 リストボックスのフッターは，フォントカラーをブラック以外に設定しても，実行時にはブラックで表示されました。
+
+* ACI0092137 ユーザーモードのデータ書き出しダイアログに表示されるテーブルのフィールドをダブルクリックすると，同じフィールドがふたつ追加されました。
+
+* ACI0093044 Windows版のみ。エクスプローラーのプラグインページにアイコンが表示されませんでした。
+
+* ACI0093396 カレントセレクション型のリストボックスに2個以上の列が設定されており，その内のひとつが『データソース未定義』だった場合，フォームを実行するとアプリケーションがクラッシュしました。
+
+* ACI0093459 SVGコンポーネントは，スタイル付きテキストにも対応していますが，渡された文字列が基本的に標準テキストで一部がスタイル付きだった場合（コンテキストメニューを使用すると，そのようなテキストが作られるかもしれません），SVGにテキストが追加されませんでした。
+ 
 * ACI0093073 : Update 4D server 64 bits doesn't work in service
 * ACI0093467 : QR Execute Command can return error No 9852 in 4D v15
 * ACI0093196 : In a built Client/Server application the Server is not being populated with a version number
@@ -64,7 +66,6 @@ ALERT(String(Num("-0.99999999999999534";".")))
 * ACI0091907 : Create and replacing a database
 * ACI0091920 : Since R5, it is impossible to select a size-zero object in the Form Editor
 * ACI0091608 : [130913] 4D crashes when opening HTML file with 4D Write
-* ACI0092047 : [131090] Variable is unenterable if web area on the same form (with PDF or website loaded)
 * ACI0092071 : [131101] Cursor in 4D Write disappears
 
 * ACI0093946 v12のデータファイルを変換した場合，自動UUIDタイプのプライマリーキーに存在するNULLが自動的に新しい値で更新されませんでした。本来であれば，自動タイプのプライマリーキーは，NULLが含まれていたとしても，データベース起動時に新しいキー値が自動的に発行されるはずです。整数/自動インクリメント型のプライマリーキーであれば，問題ありません。ACI0087170やACI0093762（後述）が修正されたことに関連があります。
