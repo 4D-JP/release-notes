@@ -1,12 +1,22 @@
 4D v15.1
 ---
 
-* ACI0092792 : Style of units button or lllipsis is modify when enter in edit mode.
-* ACI0093546 : Option "do not create log" is ignored in compact date file command
-* ACI0093630 : String( -0.99999999999999534) produces "1" instead of "-1"
-* ACI0091224 : Transfer Time in web log shows confusing values
-* ACI0093442 : 4D Documentation Links
-* ACI0089641 : [130456] Breakpoint in a "On display detail" list form event freezes.
+* ACI0092792 スタイル配列が設定されているオブジェクト配列型のリストボックス (4D View Pro) は，セルデータの編集中，配列で定義されたスタイルではなく，リストボックスのスタイルがボタンに適用されました。
+
+* ACI0093546 ``COMPACT DATA FILE``コマンドでデータファイルを圧縮した場合，『ログファイルを作成しない』オプションを有効にしてもログファイルが作成されました。
+
+* ACI0093630 ``String( -0.99999999999999534)``は``-1``ではなく，``1``を返しました。
+
+**注記**: メソッドエディターは近似値を``1``にトークナイズするため，``Num``関数を使用する必要があります。
+
+``
+ALERT(String(Num("-0.99999999999999534";".")))
+``
+
+* ACI0091224 ELF形式のWebログファイルを``Extended Log Format``を有効にした場合，``TRANSFER_TIME``，つまりサーバーがレスポンスを生成するのに要した時間が変でした。正しい値が記録されることもあれば，10,000ミリ秒を超える数値が誤って記録されることもありました。
+
+* ACI0089641 ``On Display Detail``イベントで実行されるメソッドにブレークポイントを追加してフォームを実行した場合，デバッガが20回程度表示された後にアプリケーションがフリーズしたようになり，クラッシュしました。ACI0089641が修正されたことに関連があります。
+ 
 * ACI0092734 : Resizing width of listbox array
 * ACI0093339 : Listbox footer ignores font colour settings
 * ACI0093594 : Spelling error in french on information pop-up.
