@@ -1,16 +1,32 @@
 4D v15.1
 ---
 
-* ACI0092691 : Connection is broken when using new network layer with On Server Close Connection
-* ACI0092692 : [Servernet] On Server Close Connection reports network error
 * ACI0093237 : [131602] BASIC web authentication takes 15 seconds using Safari or FireFox 
 * ACI0093359 : Dereferenced field pointer from method fails  
 * ACI0089383 : The expiration date of the license is always 00.00.0000 in the MCS Information window.
 * ACI0093245 : [131609] MSC crashes while repairing structure
 * ACI0093195 : 4D Mac 64-bits Memory leak with SQL statement
-* ACI0092533 : [131302] Http SET OPTION on setting HTTP timeout does not change
-* ACI0093137 : [131560] [v15 regression] Constants with umlauts cannot be compiled
-* ACI0093138 : Custom Constants, Method Editor: 'resname xxxx not found'
+
+* ACI0092533
+
+``HTTP SET OPTION``でHTTPタイムアウトを変更しても，20秒以下の値は反映されませんでした。
+
+
+**注記**: タイムアウトエラーを再現するため，下記の方法でネットワークエラーを誘発することができます。
+
+Windows:
+
+ケーブルを抜く。
+
+OS X:
+
+``sh
+sudo route add -host 216.35.172.75 127.0.0.1
+``
+
+* ACI0093137 名前にウムラウトが含まれる定数は，コンパイルすることができませんでした。
+
+* ACI0093138 カスタム定数のテーマ名がエクスプローラーに表示されませんでした。
 
 * ACI0092691 新ネットワークレイヤーのみ。``On Server Close Connection``データベースイベント実行時に『接続が失われました』ネットワークエラーが返されました。
 
