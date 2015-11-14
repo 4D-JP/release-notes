@@ -1,10 +1,6 @@
 4D v15.1
 ---
 
-* ACI0093470 : Explorer Menu not working
-* ACI0093510 : MSC - Verify structure crash in Volume Desktop
-* ACI0084755 : "Current method path" does no more return object path Compiled
-* ACI0090925 : SQL Month and Year functions can return incorrect results
 * ACI0092691 : Connection is broken when using new network layer with On Server Close Connection
 * ACI0092692 : [Servernet] On Server Close Connection reports network error
 * ACI0093237 : [131602] BASIC web authentication takes 15 seconds using Safari or FireFox 
@@ -15,6 +11,16 @@
 * ACI0092533 : [131302] Http SET OPTION on setting HTTP timeout does not change
 * ACI0093137 : [131560] [v15 regression] Constants with umlauts cannot be compiled
 * ACI0093138 : Custom Constants, Method Editor: 'resname xxxx not found'
+
+* ACI0092691 新ネットワークレイヤーのみ。``On Server Close Connection``データベースイベント実行時に『接続が失われました』ネットワークエラーが返されました。
+
+* ACI0090925 SQLの``MONTH``および``YEAR``関数は，システムの時間帯に影響されていました。特に月の1日を評価した場合，時間帯によっては前日の情報が返されることがありました。
+
+* ACI0093470 ドイツ語オペレーションシステムでは，デザインメニューのサブメニューでエクスプローラーを表示することができませんでした。メニューの項目数が合っていませんでした。
+
+* ACI0093510 ビルドされたデスクトップ版アプリケーションでMSCのストラクチャ検証を実行した場合，アプリケーションがクラッシュしました。リソースフォルダーの``Objects.json``ファイルが4D Unlimited Deskstopで欠落しているためでした。ファイルをコピーすれば，問題を回避することができます。
+
+* ACI0084755 ``Current method path``は，オブジェクトメソッドのコンテキストで実行された場合，オブジェクト名に基づくパスが返されましたが，v14以降，コンパイルモードでは変数名に基づくパスが返されるようになりました。
  
 * ACI0087268 カラムに間違ったフォーミュラ式が設定されているクリックレポートを実行するとアプリケーションがフリーズしました。修正により，``Escape``キーで制御を取り戻すことができるようになりました。
 
