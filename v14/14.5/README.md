@@ -1,4 +1,4 @@
-4D v14.5
+4D v14.4hf1
 ---
 
 * ACI0087196 Mac版のみ。[PICTURE PROPERTIES](http://doc.4d.com/4Dv14/4D/14.4/PICTURE-PROPERTIES.301-2511415.ja.html)に壊れたピクチャ（例: 高さと幅がゼロ）が渡された場合，アプリケーションがフリーズしました。
