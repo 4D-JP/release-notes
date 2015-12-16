@@ -1,7 +1,7 @@
 4D v14.4 Hotfix 1
 ---
 
-* ACI0093996 クイックレポートから出力したHTMLをMS Excelで開いた場合，せるデータの前に制御文字（``ESC``）が挿入されました。HTMLに改行コード（``CR``）がふくまれていることが原因です。修正により，列の名前や値は``html<p>値</p>``で表現されるように改善されました。
+* ACI0093996 クイックレポートから出力したHTMLをMS Excelで開いた場合，せるデータの前に制御文字（``ESC``）が挿入されました。HTMLに改行コード（``CR``）がふくまれていることが原因です。修正により，列の名前や値は``<p>値</p>``で表現されるように改善されました。
 
 Unexpected character after exporting HTML file from Quick Report
 
