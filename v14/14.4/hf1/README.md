@@ -9,13 +9,13 @@
 
 * ACI0092339 SQLビューをリストボックスに表示した場合，ヘッダーに表示される列名が間違っていました。フィールドを連結したビューの代わりに``<expression>``，フィールドの別名を設定したビューは元の名前が表示されました。
 
-``sql
+```sql
 CREATE or REPLACE VIEW CUSTOMERS_NY (FullName,City,Sales) 
 AS SELECT CONCAT(FirstName, LastName), City, TOTAL_SALES 
 FROM CUSTOMERS 
 WHERE State='New York'
 INTO LISTBOX:listbox;
-``
+```
 
 * ACI0092631 Windows版のみ。日本語かな入力モードが使用されている場合，Control+Cなどの編集ショートカットが使用できませんでした。
 
