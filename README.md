@@ -7,7 +7,7 @@ Release Notes
 
 * v15.1
 
-```2016-00-00.000000``` [4D v15.1 Hotfix 1](https://github.com/4D-JP/release-notes/blob/master/v15/15.1/hf1/README.md)
+```2016-00-00.195631``` [4D v15.1 Hotfix 1](https://github.com/4D-JP/release-notes/blob/master/v15/15.1/hf1/README.md)
  
 ```2015-11-4.192845``` [4D v15.1](https://github.com/4D-JP/release-notes/blob/master/v15/15.1/README.md)
 
