@@ -126,7 +126,11 @@ Until (Shift down)
 - iso-2022-cn
 - hz-gb-2312
 
-ACI0094076 : [132140] [4D Mobile] Realtions in 4D cannot be loaded with the autoExpand option in Wakanda.
+*ACI0094076 : 4D Mobi leで``autoExpand``オプションを使用してリレーション属性からエンティティを取り出すことができませんでした。
+
+```js
+sources.table_1.query('ID<100',{autoExpand: 'Relation_1'});
+```
 
 * ACI0094155 システム版のWebエリアが配置されたフォームをページが完全に表示されないうちに閉じるとアプリケーションがクラッシュしました。
 
