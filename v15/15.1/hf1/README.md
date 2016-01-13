@@ -126,7 +126,7 @@ Until (Shift down)
 - iso-2022-cn
 - hz-gb-2312
 
-*ACI0094076 : 4D Mobi leで``autoExpand``オプションを使用してリレーション属性からエンティティを取り出すことができませんでした。
+* ACI0094076 : 4D Mobi leで``autoExpand``オプションを使用してリレーション属性からエンティティを取り出すことができませんでした。
 
 ```js
 sources.table_1.query('ID<100',{autoExpand: 'Relation_1'});
