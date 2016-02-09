@@ -1,6 +1,47 @@
 4D v15 R3
 ---
 
+* ACI0092753 日本語版のみ。クエリエディターで日付の範囲が部分的に隠れて表示されました。
+
+* ACI0092339 SQLビューをリストボックスに表示した場合，ヘッダーに表示される列名が間違っていました。フィールドを連結したビューの代わりに``<expression>``，フィールドの別名を設定したビューは元の名前が表示されました。
+
+```sql
+CREATE or REPLACE VIEW CUSTOMERS_NY (FullName,City,Sales) 
+AS SELECT CONCAT(FirstName, LastName), City, TOTAL_SALES 
+FROM CUSTOMERS 
+WHERE State='New York'
+INTO LISTBOX:listbox;
+```
+
+* ACI0093179 Windows版のみ。システムWebエリアは，Internet Explorer 11がインストールされていても，IE9互換モードで実行されました。ユーザーエージェントの値がそのことを示唆しています。
+
+```
+Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/7.0)
+```
+
+JavaScriptの```navigator.userAgent```を実行しても，似たような結果が返されました。
+
+**注記**: システムWebエリアが使用しているWeb Browserコントロールは，Windows 10の標準ブラウザであるEdgeモードをサポートしていません。したがって，Windows 10で使用した場合，WebエリアはIE11互換モードで動作することになります。
+
+* ACI0093451 互換性オプションの『ブラケットの代わりにをコメント使用する』が有効にされて**いない**場合『4Dについて』画面が正しく表示されませんでした。
+
+* ACI0093535 システムの日付フォーマットが年を4桁で表示するように設定されていても，表示形式が``System date short``に設定されているリストボックスには，日付が``01/09/15``のように表示され，`` !0&9##/##/####``のような入力フィルターではセル内で日付を編集することができませんでした。
+
+* ACI0093615 SQLの[GROUP BY](http://doc.4d.com/4Dv15R2/4D/15-R2/Using-the-GROUP-BY-clause.300-2636257.ja.html)は，WHERE句で合致するレコード数がみつからなかった場合，0件ではなく，1件を配列などに返しました。
+
+```sql
+SELECT Customer_ID,SUM(f.Total)
+FROM INVOICES f  
+WHERE Customer_ID = 1 
+AND Customer_ID = 2  
+GROUP BY Customer_ID  
+INTO :$alCID,:$arTotal
+```
+
+* ACI0093682 ひとつでもリストボックスのフッターに色が設定されていた場合，水平および垂直の罫線が表示されませんでした。
+
+* ACI0093916 Windows版のみ。[Print form](http://doc.4d.com/4Dv15R2/4D/15-R2/Print-form.301-2543547.ja.html)でXPSプレビューを出力した場合，詳細マーカーの1ポイント下に配置された線オブジェクトが詳細エリアでも描画されました。直接，プリンターに出力すれば問題ありません。
+
 * ACI0093766 新ネットワークレイヤーのみ。サーバー管理画面で『新規接続を拒否』をクリックし，再度クリックした場合，そのサーバーにはもう接続できなくなりました。利用可能なサーバーのリストにアプリケーション名が表示されず，固定IPアドレスを入力しても接続することができません。そのようなサーバーを終了しようとすると，『Tasks pending』ダイアログが表示され，キャンセルするまでサーバーを終了することができませんでした。
 
 * ACI0093773 Mac版のみ。ピクチャポップアップメニューをクリックしたときに表示されるポップアップメニューの画像は，Retinaディスプレイに対応していませんでした。メニュー項目がSVG画像であれば，高解像度でピクチャが表示されるべきです。
