@@ -1,17 +1,53 @@
 4D v15.1 Hotfix 2
 ---
 
-* ACI0094492 Method Parameters unassignable when indirection used.
-* ACI0094499 [132497] Unexpected syntax error on if test with (${$i}#"")
-* ACI0094515 [132474] Compiler error in nightly build 194900 and after.
-* ACI0094509 [132480] The compiler does not accept the indirection syntax in conditions.
-* ACI0068985 Method Editor: Auto complete on method's name slow if many.
-* ACI0093488 [131739] SQL LOGIN returns error 9918 on v15.
-* ACI0094433 Listbox duplicate column problem.
-* ACI0089945 [130197] Fields content disappeared Arabic.
-* ACI0094007 Set fontstyle with SVG_New_text no effekt with Arial font.
-* ACI0094430 [132396] 4D issue using 4D View document that contains negative column values.
-* ACI0094497 [132420] Picture Button image and the options (Continuous scrolling, on Click)
+* ACI0094492 引数の関節参照に値を代入することができませんでした。ビルド196080以降の問題です。コンパイラー/シンタックスチェックが『無効な定数型です』エラーを出力します。ACI0094499（下記）と関連があります。問題が発生するコードの例:
+
+```
+C_LONGINT(${1})
+${1}:=3
+```
+
+* ACI0094499 引数の関節参照に対して比較演算子を使用することができませんでした。ビルド196129以降の問題です。コンパイラー/シンタックスチェックが『無効な定数型です』エラーを出力します。問題が発生するコードの例:
+
+```
+For ($i;1;Count parameters)
+  If (${$i}#"")
+  //何かの処理
+  End if 
+End for 
+```
+
+**注記**: 回避策として余分のカッコを使用することができます。例: ``If((${$i})#"")``
+
+* ACI0094515 引数の関節参照を変数に代入することができませんでした。ビルド194900以降の問題です。コンパイラー/シンタックスチェックで『変数の型を倍長整数からタイプ19に変更しようとしています。』というエラーが返されました。問題が発生するコードの例:
+
+```
+C_LONGINT(${1})
+C_LONGINT($minimum)
+
+$minimum:=$1
+For ($param;2;Count parameters)
+  If (${$param}<$minimum)
+    $minimum:=${$param}
+  End if
+End for 
+```
+
+* ACI0068985 メソッドエディターのオートコンプリート機能は，候補が多数（たとえば3万件以上）存在する場合，動作がとても遅くなりました。
+
+* ACI0093488 [SQL LOGIN](http://doc.4d.com/4Dv15/4D/15.1/SQL-LOGIN.301-2686188.ja.html)コマンドで4Dから別の4D Serverにログインする場合，"4D:{データベース名}"記法を使用すると，エラー9918が返されました。v15同士の問題です。v14からv15に接続する場合は問題ありません。また，第1引数に空の文字列を渡してサーバーを選択する場合も問題ありません。
+
+* ACI0094433 セレクション型のリストボックスに対して[LISTBOX DUPLICATE COLUMN](http://doc.4d.com/4Dv15/4D/15.1/LISTBOX-DUPLICATE-COLUMN.301-2686079.ja.html)を実行してデータソースが未定義のカラムを複製すると，アプリケーションがクラッシュしました。ビルド195696以降の問題です。
+
+* ACI0089945 Windows版のみ。フィールドの名前が8文字以下の場合，アラビア文字の値が表示されませんでした。v13では問題ありません。
+
+* ACI0094007 Mac版のみ。[SVG_New_text]のフォント名"Arial"とスタイル定数``Bold``を渡した場合，ボールド体のテキストが表示されませんでした。"Times New Roman"フォントであれば，問題ありません。
+
+* ACI0094430 ツールメニューから4D Viewエリアを表示し，文書を開いてスクロールすると，アプリケーションがクラッシュすることがありました。プラグインが負の列番号に対応していなかったことが原因でした。
+
+* ACI0094497 [ピクチャボタン](http://doc.4d.com/4Dv15/4D/15.1/Picture-Buttons.300-2679559.ja.html)の『マウスアップで戻る』プロパティが有効にされている場合，『ボタン押下中は自動更新』の値に関係なく，ボタン押下中は自動更新されました。
+
 * ACI0094547 Method editor disclosure triangles alignment issue.
 * ACI0092351 The storage type "In record" of the  Object field is not retained.
 * ACI0093311 [131762] Form event On Deactivate fires when another application gets focus.
