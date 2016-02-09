@@ -62,7 +62,7 @@ v14と比較して，[EXECUTE FORMULA](http://doc.4d.com/4Dv15/4D/15.1/EXECUTE-F
 
 * ACI0094438 リストボックスのダブルクリック時アクション『レコード編集』で入力フォームを開いた場合，そのフォームに4D Writeエリアが存在すると，そのエリアにはカーソルが表示されませんでした。
 
-* ACI0094485 ビルド194902以降の問題です。ビルドしたアプリケーションがクラッシュすることがあります。ACI0089829修正の副作用でした。
+* ACI0094485 ビルドしたアプリケーションの動作が不安定でした。ビルド194902以降の問題です。[ACI0089829](https://github.com/4D-JP/release-notes/tree/master/v15/15.1/hf1)修正の副作用でした。
 
 * ACI0091544 [132257] WR PICTURE TO AREA does not work when running it on the server.
 * ACI0094399 [132124] Problem when sorting ListBox.
@@ -84,7 +84,14 @@ v14と比較して，[EXECUTE FORMULA](http://doc.4d.com/4Dv15/4D/15.1/EXECUTE-F
 * ACI0094095 [132299] open form windows: "*" option and the full-screen problem.
 * ACI0094333 [132356] 4D v15 copy&paste incompatible with MS Word 2016.
 * ACI0094363 [4DWP] Adverse and inexplicable events.
-* ACI0094274 Draggable property not correct with variable.
-* ACI0094302 [132336] EDIT FORM in built application cause 4D issue.
-* ACI0094402 [132377] Open window returns 0 with Windows type 2 and close box method in OS X.
+
+* ACI0094274 Mac版のみ。変数のプロパティで『ドラッグ可』が有効にされている場合，``On Clicked``イベントが発生しませんでした。ダブルクリックが必要でした。
+
+* ACI0094302 ビルドしたアプリケーションで[EDIT FORM](http://doc.4d.com/4Dv15/4D/15.1/EDIT-FORM.301-2685255.ja.html)を実行すると，少し間を置いてからアプリケーションがクラッシュしました。
+
+* ACI0094402 Mac版のみ。[Open window](http://doc.4d.com/4Dv15/4D/15.1/Open-window.301-2686131.ja.html)にウインドウタイプ``2``を渡し，クローズボックスメソッドを設定すると，ウインドウ参照番号に``0``が返されました。問題が発生するコードの例:
+
+```
+$win:=Open window(300;300;600;600;Plain dialog box;"TITLE";"CLOSE_BOX")
+```
 
