@@ -58,7 +58,7 @@ v14と比較して，[EXECUTE FORMULA](http://doc.4d.com/4Dv15/4D/15.1/EXECUTE-F
 
 **注記**: 修正により，一定数のフォーミュラーがキャッシュに保持されるようになりました。この値は，[SET DATABASE PARAMETER](http://doc.4d.com/4Dv15/4D/15.1/SET-DATABASE-PARAMETER.301-2686308.ja.html)のセレクター``92``で有効にすることができます。
 
-**参考**: [フォーミュラの書き方](http://www.4d.com/jp/blog/formula-execution.html)
+**参考記事**: [フォーミュラの書き方](http://www.4d.com/jp/blog/formula-execution.html)
 
 * ACI0094438 リストボックスのダブルクリック時アクション『レコード編集』で入力フォームを開いた場合，そのフォームに4D Writeエリアが存在すると，そのエリアにはカーソルが表示されませんでした。
 
@@ -102,12 +102,26 @@ End case
 
 * ACI0094431 15.1以降，Internet Commandsで添付ファイル名にドイツ語アクセント記号が含まれるメールが送信できませんでした。
 
-* ACI0094478 [132454] Disabled highlight buttons are badly rendered on a list form.
-* ACI0094479 [132453] Listbox not enterable if "On Getting Focus" AND invisble Array assigned.
-* ACI0094416 [132395] Quick Report file destination and 4Dpop.
-* ACI0089253 Save all & star.
-* ACI0092139 [131127] [4D View] Numeric formats do not work in certain regions.
-* ACI0090701 [130821] 4D issues when running compiler tools such as check syntax and compile.
+* ACI0094478 Windows版のみ。リストフォームに表示されたハイライトボタンは，Disabled状態でグレーの半透明になりませんでした。詳細フォームであれば問題ありません。
+
+**注記**: ハイライトボタンは，古いタイプのフォームオブジェクトであり，早急に使用を中止して，[カスタム3Dボタン](http://doc.4d.com/4Dv15/4D/15.1/Buttons.300-2679560.ja.html)などに切り替えるよう，しばらく前から勧告がされています。今回の修正は，ハイライトボタンが配置されたリスト型フォームの描画が遅くなるリスクを承知の上で修正がなされました。新しい開発では，他のフォームオブジェクトを使用するように心がけてください。
+
+* ACI0094479 配列型リストボックスは，``On Getting Focus``イベントが有効にされており，かつ，非表示行の配列が使用されている場合，常に入力不可でした。ビルド193710以降の問題です。
+
+* ACI0094416 Windowd版のみ。4D Popが起動されているときに，クリックレポートの出力先をファイルに指定すると，ファイル保存ダイアログがクイックレポートの背面に移動してしまい，書き出しを完了することができませんでした。4D Popが起動されていなければ問題ありません。
+
+* ACI0089253 Windows版のみ。フォームを編集し，そのフォームメソッドを編集した後，メニューから『すべてを保存』した場合，エディターのウインドウタイトルに表示されているアスタリスク（*: 未保存の変更があることを意味する）が消えませんでした。
+
+* ACI0092139 4D Viewは，地域と言語の設定で決められた数値フォーマットを継承しませんでした。たとえば，スペイン設定で``###,##0.00``のようなフォーマットを使用した場合，値が``<<<<<<``と表示されました。期待される結果は``1.200,00``のような形式です。本来（4D本体がそうであるように）フォーマットを``###.##0,00``のように調整する必要はないはずです。修正により，スペイン語・ポルトガル語のリソースファイルが改定されました。
+
+* ACI0090701 一部のアプリケーションは，コンパイルやシンタックスチェックの実行でクラッシュすることがありました。原因は，間違ったコード（下記）にありました。修正により，『変数 ? は配列ではありません』というエラーが返されるようになりました。
+
+```
+$a:=0
+$b:=0
+$b:=Method2 {$a}
+```
+
 * ACI0093505 [132287] Check box: the state of the space key change issues.
 * ACI0094332 [132362] Japanese corrupted in QR when converting from v14 to v15.
 * ACI0094346 [132352] 4D lets C_OBJECT field hold wrong value {"":""}, then crashes accessing it.
