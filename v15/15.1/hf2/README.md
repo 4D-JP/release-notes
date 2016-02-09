@@ -66,7 +66,7 @@ v14と比較して，[EXECUTE FORMULA](http://doc.4d.com/4Dv15/4D/15.1/EXECUTE-F
 
 * ACI0091544 Windows版のみ。サーバー側で[WR PICTURE TO AREA](http://doc.4d.com/4Dv15/4D-Write/15/WR-PICTURE-TO-AREA.301-2398605.ja.html)が使用できませんでした。
 
-* ACI0094399 フォームの表示と同時にリストボックスのカラムをプログラムで並び替えることができませんでした。フォームが表示された後，クリックイベント等であれば問題ありません。
+* ACI0094399 フォームの表示と同時にリストボックスのカラムをプログラムで並び替えることができませんでした。フォームが表示された後，クリックイベント等であれば，問題ありません。
 
 **注記**: 回避策として``On Timer``を使用することができます。
 
@@ -102,7 +102,7 @@ End case
 
 * ACI0094431 15.1以降，Internet Commandsで添付ファイル名にドイツ語アクセント記号が含まれるメールが送信できませんでした。
 
-* ACI0094478 Windows版のみ。リストフォームに表示されたハイライトボタンは，Disabled状態でグレーの半透明になりませんでした。詳細フォームであれば問題ありません。
+* ACI0094478 Windows版のみ。リストフォームに表示されたハイライトボタンは，Disabled状態でグレーの半透明になりませんでした。詳細フォームであれば，問題ありません。
 
 **注記**: ハイライトボタンは，古いタイプのフォームオブジェクトであり，早急に使用を中止して，[カスタム3Dボタン](http://doc.4d.com/4Dv15/4D/15.1/Buttons.300-2679560.ja.html)などに切り替えるよう，しばらく前から勧告がされています。今回の修正は，ハイライトボタンが配置されたリスト型フォームの描画が遅くなるリスクを承知の上で修正がなされました。新しい開発では，他のフォームオブジェクトを使用するように心がけてください。
 
@@ -122,17 +122,33 @@ $b:=0
 $b:=Method2 {$a}
 ```
 
-* ACI0093505 [132287] Check box: the state of the space key change issues.
-* ACI0094332 [132362] Japanese corrupted in QR when converting from v14 to v15.
-* ACI0094346 [132352] 4D lets C_OBJECT field hold wrong value {"":""}, then crashes accessing it.
-* ACI0091101 [4D Write Pro] properties background color exceeds a radius border at corners.
-* ACI0093422 [4D Write Pro] Bad behaviour of underline when text is subscript or superscript.
-* ACI0093761 Expression that evaluates as a function (obj.func) does not work on windows native web area.
-* ACI0093783 4D Write Pro: Select style without selection.
-* ACI0094063 Non roman text Navigation direction is inversed in 4D Write Pro.
-* ACI0094095 [132299] open form windows: "*" option and the full-screen problem.
-* ACI0094333 [132356] 4D v15 copy&paste incompatible with MS Word 2016.
-* ACI0094363 [4DWP] Adverse and inexplicable events.
+* ACI0093505 日本語入力がオンにされている場合，フォーカスされたチェックボックスの状態をスペースバーでトグルすることができませんでした。ラジオボタンであれば，問題ありません。
+
+* ACI0094332 v14以前に作成されたクイックレポート定義ファイルのカラムフォーミュラーにリテラル文字列が含まれている場合，v15でリテラル文字列部分が化けました。
+
+* ACI0094346 オブジェクト型変数のプロパティ名に空の文字列を使用することができました。``{"":""}``のような値をデータベースに保存した場合，以降，そのデータにアクセスすることとアプリケーションがクラッシュしました。また，そのようなレコードを削除すると，データファイルが壊れました。
+
+**注記**: JSONの仕様によれば，空の文字列は有効なプロパティ名です。
+
+* ACI0091101 Mac版のみ。4D Write Proエリアで段落の角の丸い罫線を設定した場合，背景色の塗りつぶしが丸い角を超えて適用されました。
+
+* ACI0093422 4D Write Proエリアで上付き・下付き文字のスタイルにアンダーラインを適用した場合，下線がそこだけ細く引かれ，上付きの場合は取り消し線の位置に描画されました。
+
+**注記**: WYSIWYGモードでは，Google Chromeの実装に準じます。そうでなければ，Microsoft Wordの実装に準じます。上付き・アンダーラインが上付き文字のベースラインに沿って描画されるか，それとも文章のベースラインに沿って描画されるか，という違いがあります。
+
+* ACI0093761 Windows版のみ。ネイティブWebエリアでは，関数型オブジェクトを評価（実行）することができませんでした。修正により，WebエリアにロードされたURL，つまり直接HTMLの中に記述された関数であれば，フォームが実際にロードされた後に関数の戻り値を受け取ることができるようになりました。しかし，ネイティブ関数オブジェクト（例: Date.parse）の戻り値を受け取ることはできません。これはActiveXコントロールの制約です。
+
+**参考記事:** [WindowsネイティブWebエリアの制約](http://www.4d.com/jp/blog/native-web-area-on-windows.html)
+
+* ACI0093783 4D Write Proエリア内でテキストをタイプ入力した後，コンテキストメニューからスタイルを変更（たとえばイタリックに）した場合，続けて入力したテキストのスタイルは，変更前の文字列から継承されました。これは，一般的なエディター（Word・OpenOffice・Pages・テキストエディット）と動きが違います。
+* 
+* ACI0094063 4D Write Proにアラビア語文字が表示されている場合，左右矢印キーの動きが逆になりました。
+
+* ACI0094095 Windows版のみ。[Open form window](http://doc.4d.com/4Dv15/4D/15.1/Open-form-window.301-2686139.ja.html)にオプションのアスタリスクを渡した使用した場合，2度目のコールで全画面表示が解除されました。
+
+* ACI0094333 Windows版のみ。Microsoft Word 2016でコピーしたテキストを4Dにペーストまたはドロップすると，最後にU+0000/U+000Aが挿入されました。Microsoft Word 2013以前であれば問題ありません。
+
+* ACI0094363 Mac版のみ。4D Write Proエリア内のオブジェクト変数を更新すると，``On After Edit``イベントが発生しました。修正により，``On After Edit``イベントはユーザーが操作（キーボード・コンテキストメニュー・マウス）しない限り，発生しないようになりました。
 
 * ACI0094274 Mac版のみ。変数のプロパティで『ドラッグ可』が有効にされている場合，``On Clicked``イベントが発生しませんでした。ダブルクリックが必要でした。
 
