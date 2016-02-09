@@ -1,6 +1,18 @@
 4D v15.1 Hotfix 2
 ---
 
+* ACI0094492 Method Parameters unassignable when indirection used.
+* ACI0094499 [132497] Unexpected syntax error on if test with (${$i}#"")
+* ACI0094515 [132474] Compiler error in nightly build 194900 and after.
+* ACI0094509 [132480] The compiler does not accept the indirection syntax in conditions.
+* ACI0068985 Method Editor: Auto complete on method's name slow if many.
+* ACI0093488 [131739] SQL LOGIN returns error 9918 on v15.
+* ACI0094433 Listbox duplicate column problem.
+* ACI0089945 [130197] Fields content disappeared Arabic.
+* ACI0094007 Set fontstyle with SVG_New_text no effekt with Arial font.
+* ACI0094430 [132396] 4D issue using 4D View document that contains negative column values.
+* ACI0094497 [132420] Picture Button image and the options (Continuous scrolling, on Click)
+* ACI0094547 Method editor disclosure triangles alignment issue.
 * ACI0092351 The storage type "In record" of the  Object field is not retained.
 * ACI0093311 [131762] Form event On Deactivate fires when another application gets focus.
 * ACI0093953 [132030] Slowness in v15 with PROCESS 4D TAGS. 
