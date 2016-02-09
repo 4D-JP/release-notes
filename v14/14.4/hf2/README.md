@@ -1,51 +1,178 @@
 4D v14.4 Hotfix 2
 ---
 
-* ACI0089945 [130197] Fields content disappeared Arabic.
-* ACI0094430 [132396] 4D issue using 4D View document that contains negative column values.
 * ACI0094486 [132463] Spaces in charset in e-mail header.
-* ACI0091544 [132257] WR PICTURE TO AREA does not work when running it on the server.
-* ACI0094399 [132124] Problem when sorting ListBox.
-* ACI0094431 [132408] 4D IC do no more send german diacritical chars like äöüß.
-* ACI0094478 [132454] Disabled highlight buttons are badly rendered on a list form.
-* ACI0088553 Inconsistent behavior/error during the build process.
-* ACI0092139 [131127] [4D View] Numeric formats do not work in certain regions.
-* ACI0090701 [130821] 4D issues when running compiler tools such as check syntax and compile.
-* ACI0093505 [132287] Check box: the state of the space key change issues.
-* ACI0094274 Draggable property not correct with variable.
-* ACI0094095 [132299] open form windows: "*" option and the full-screen problem.
 * ACI0094245 Inactive pop-up in the objects library.
-* ACI0094333 [132356] 4D v15 copy&paste, incompatible with MS Word 2016.
-* ACI0093236 Toolbox password confirmation does not check confirmation password.
-* ACI0093919 [132000] Widget DateEntry and UP & DOWN keys.
-* ACI0080477 Duplication of longint column and time display format.
-* ACI0094135 [132186] Printing an SVG textArea containing a tspan
-* ACI0094212 [132259] IMPORT TEXT: Char(0) is imported to alpha field.
-* ACI0091585 Popup with no item shows empty line on Windows.
-* ACI0093095 [131518] [Search Widget] On data Change is executed twice for every entered character.
-* ACI0093545 Invalid protocol crash HTTP Get.
-* ACI0094002 [132225] SVG SET ATTRIBUTE does not touch picture field.
-* ACI0094054 Text input loses selection on window deactivation.
-* ACI0094374 Error message in the User Identification dialog.
-* ACI0094386 Listbox get rows height can return wrong line height.
-* ACI0085311 [132005] Stopping play of Sound cannot be stopped. 
-* ACI0094129 LISTBOX Get information for display header/footer doesn't return correct information for a form loaded.
-* ACI0092129 [131123] Saving to pdf crashes when set print preview to true.
-* ACI0094061 Changing object type from variable to field removes stylesheet and grows height by 1.
-* ACI0094209 [132264] "Remember Password" Option Missing.
-* ACI0094264 Subform data is not drawn after calling OBJECT SET Subform.
-* ACI0094303 Unable to install an ODBC driver v14 on OS X 10.11.
-* ACI0090056 [130776] Default HTML Root referencing error.
-* ACI0083469 [127956] Error using OBJECT DUPLICATE command with the listbox.
-* ACI0094182 Index damaged after compacting.
-* ACI0093534 [132161] Dynamic menu bar is not retained after closing a window with no menu bar associated.
-* ACI0094166 [132220] Problem with "@" in 4D View. 
-* ACI0094236 Issue when building index.
-* ACI0092860 Form method not exiting on CANCEL command.
-* ACI0094185 Issue with SQLRequest Select * from aaa as aaa
-* ACI0094215 [132260] Strg+Alt+(2,3,Q,E) or AltGr+(2,3,Q,E) doesn't create symbols in view or write.
-* ACI0093284 [131802] Crash bug with  GET TEXT KEYWORDS / LIRE MOTS CLES TEXTE.  
-* ACI0094039 [132109] ODBC errors if 4D query from Windev.
-* ACI0094147 Admin Window:  OS: "Windows 8" instead of "Windows 10".
-* ACI0093770 Marker colour is misrepresented in application preferences dialog.
 * ACI0094093 [132190] List box: the input filter of Japanese font problem.
+* ACI0094303 Unable to install an ODBC driver v14 on OS X 10.11.
+
+
+
+* ACI0093919 [DatePickerウィジェット](http://doc.4d.com/4Dv15R2/4D/15-R2/DatePicker-and-DateEntry.300-2714815.ja.html)とテキストフィールドが同一のフォームに表示されていた場合，上下矢印キーの入力でテキストエリア内でカーソルが移動する代わりに日付が変わりました。
+
+* ACI0080477 表示フォーマットが時間型に設定されている配列リストボックスの数値配列を複製した場合，表示フォーマットがコピーされず，普通の数値列になりました。関連付けられているのが時間配列であれば問題ありません。
+
+* ACI0094374 ユーザー認証ダイアログでデザイナーのパスワード変更を試み，古いパスワードだけを入力して新しいパスワードを入力しなかった場合，エラー``-10511``（コマンド""をコンポーネントから呼び出すことはできません）が表示されました。
+
+* ACI0093236 ツールボックスでパスワードを編集した場合，第1フィールドに新しいパスワードを入力し，第2フィールドに空または別の文字列を入力した場合，エラーが表示されますが，OKボタンを2回クリックしてダイアログを閉じれば，パスワードを更新することができました。確認用の第2フィールドに意味がありませんでした。
+
+* ACI0089945 Windows版のみ。フィールドの名前が8文字以下の場合，アラビア文字の値が表示されませんでした。v13では問題ありません。
+
+* ACI0094430 ツールメニューから4D Viewエリアを表示し，文書を開いてスクロールすると，アプリケーションがクラッシュすることがありました。プラグインが負の列番号に対応していなかったことが原因でした。
+
+* ACI0091544 Windows版のみ。サーバー側で[WR PICTURE TO AREA](http://doc.4d.com/4Dv15/4D-Write/15/WR-PICTURE-TO-AREA.301-2398605.ja.html)が使用できませんでした。
+
+* ACI0094399 フォームの表示と同時にリストボックスのカラムをプログラムで並び替えることができませんでした。フォームが表示された後，クリックイベント等であれば，問題ありません。
+
+**注記**: 回避策として``On Timer``を使用することができます。
+
+```
+Case of 
+: (Form event=On Load)
+
+  $vpLb:=OBJECT Get pointer(Object named;"tbLb")
+  $vpCol1:=OBJECT Get pointer(Object named;"ttCol1")
+  $vpCol2:=OBJECT Get pointer(Object named;"ttCol2")
+  ARRAY BOOLEAN($vpLb->;0)
+  ARRAY TEXT($vpCol1->;0)
+  ARRAY TEXT($vpCol2->;0)
+  APPEND TO ARRAY($vpLb->;False)
+  APPEND TO ARRAY($vpCol1->;"A")
+  APPEND TO ARRAY($vpCol2->;"2")
+  APPEND TO ARRAY($vpLb->;False)
+  APPEND TO ARRAY($vpCol1->;"B")
+  APPEND TO ARRAY($vpCol2->;"1")
+  APPEND TO ARRAY($vpLb->;False)
+  APPEND TO ARRAY($vpCol1->;"C")
+  APPEND TO ARRAY($vpCol2->;"3")
+
+  SET TIMER(-1)
+
+: (Form event=On timer)
+
+  SET TIMER(0)
+  カスタムソートメソッド ("tbLb";0)
+
+End case 
+```
+
+* ACI0094431 15.1以降，Internet Commandsで添付ファイル名にドイツ語アクセント記号が含まれるメールが送信できませんでした。
+
+* ACI0094478 Windows版のみ。リストフォームに表示されたハイライトボタンは，Disabled状態でグレーの半透明になりませんでした。詳細フォームであれば，問題ありません。* ACI0088553 Inconsistent behavior/error during the build process.
+
+* ACI0092139 4D Viewは，地域と言語の設定で決められた数値フォーマットを継承しませんでした。たとえば，スペイン設定で``###,##0.00``のようなフォーマットを使用した場合，値が``<<<<<<``と表示されました。期待される結果は``1.200,00``のような形式です。本来（4D本体がそうであるように）フォーマットを``###.##0,00``のように調整する必要はないはずです。修正により，スペイン語・ポルトガル語のリソースファイルが改定されました。
+
+* ACI0090701 一部のアプリケーションは，コンパイルやシンタックスチェックの実行でクラッシュすることがありました。原因は，間違ったコード（下記）にありました。修正により，『変数 ? は配列ではありません』というエラーが返されるようになりました。
+
+```
+$a:=0
+$b:=0
+$b:=Method2 {$a}
+```
+
+* ACI0093505 日本語入力がオンにされている場合，フォーカスされたチェックボックスの状態をスペースバーでトグルすることができませんでした。ラジオボタンであれば，問題ありません。
+
+* ACI0094274 Mac版のみ。変数のプロパティで『ドラッグ可』が有効にされている場合，``On Clicked``イベントが発生しませんでした。ダブルクリックが必要でした。
+
+* ACI0094095 Windows版のみ。[Open form window](http://doc.4d.com/4Dv15/4D/15.1/Open-form-window.301-2686139.ja.html)にオプションのアスタリスクを渡した使用した場合，2度目のコールで全画面表示が解除されました。
+
+* ACI0094333 Windows版のみ。Microsoft Word 2016でコピーしたテキストを4Dにペーストまたはドロップすると，最後にU+0000/U+000Aが挿入されました。Microsoft Word 2013以前であれば問題ありません。
+
+* ACI0094135 Windows版のみ。``textArea``内に``tspan``が含まれるSVGを印刷した場合，フォントサイズが10倍になりました。
+
+```xml
+<textArea height="20" width="200" x="10" y="10">Hello <tspan font-size="12">world!</tspan></textArea>
+```
+
+* ACI0094212 [IMPORT TEXT](http://doc.4d.com/4Dv15R2/4D/15-R2/IMPORT-TEXT.301-2543783.ja.html)で読み込んだテキストデータが改行コード（10または13）以外で終わっている場合，データの末尾にヌル文字``0x0000``が追加されることがありました。
+
+* ACI0091585 Windows版のみ。空のポップアップメニューをクリックすると，空の行が表示されました。本来であれば，何も表示されるべきではありません。
+
+* ACI0093095 [SearchPickerウィジェット](http://doc.4d.com/4Dv15R2/4D/15-R2/SearchPicker.201-2714814.ja.html)に文字を入力するたびに``On Data Change``イベントが2回，発生しました。同イベントでクエリを実行するようなアプリケーションでは，データベースに余計な負荷がかかりました。
+
+**注記**: 一般的に，キーストロークイベントでクエリを実行する場合，直ちにクエリを実行するのではなく，[SET TIMER](http://doc.4d.com/4Dv15R2/4D/15-R2/SET-TIMER.301-2543851.ja.html)を実行し，タイマーイベントでクエリを実行するように工夫することが推奨されています。そうすれば，キーボード入力を休止したときのまとまった文字列でクエリを実行することができるからです。
+
+* ACI0093545 Windows版のみ。[HTTP Get](http://doc.4d.com/4Dv15R2/4D/15-R2/HTTP-Get.301-2543928.ja.html)に（``http:``，``ftp:``などではない）無効なプロトコルが渡された場合，プリケーションがクラッシュしました。``image:``のようなカスタムプロトコルは，APIとして公開されていることがあります。DNSクエリでクラッシュするのは間違いです。
+
+* ACI0094002 [SVG SET ATTRIBUTE](http://doc.4d.com/4Dv15R2/4D/15-R2/SVG-SET-ATTRIBUTE.301-2542980.ja.html)にアスタリスクオプションを添えてピクチャフィールドの属性を書き換えた場合，ピクチャを更新したことにはならず，フィールドを保存したり，[PICTURE TO BLOB](http://doc.4d.com/4Dv15R2/4D/15-R2/PICTURE-TO-BLOB.301-2544177.ja.html)で変換しても，古い画像のままでした。
+
+* ACI0094054 テキスト入力内で文字列が選択された状態で別のウインドウをアクティブにしてから当初のウインドウを再度アクティブにした場合，テキストの選択された状態が失われました。
+
+* ACI0094386 [LISTBOX Get rows height](http://doc.4d.com/4Dv15R2/4D/15-R2/LISTBOX-Get-rows-height.301-2544043.ja.html)は，行の高さがピクセル単位で設定されており，その高さが1行の高さに満たない場合，``0``を返しました。
+
+* ACI0085311 Mac版のみ。[PLAY](http://doc.4d.com/4Dv15R2/4D/15-R2/PLAY.301-2543166.ja.html)の非同期モードで開始したサウンドファイルの再生を下記のコマンドで停止することができませんでした。
+
+```
+PLAY("";0)
+```
+
+* ACI0094129 [LISTBOX Get information](http://doc.4d.com/4Dv15R2/4D/15-R2/LISTBOX-Get-information.301-2544059.ja.html)は，[メモリにロードされたフォーム](http://doc.4d.com/4Dv15R2/4D/15-R2/FORM-LOAD.301-2543830.ja.html)ヘッダー/フッターの表示/非表示情報を正確に返しませんでした。
+
+* ACI0092129 Mac版のみ。[SET PRINT PREVIEW](http://doc.4d.com/4Dv15R2/4D/15-R2/SET-PRINT-PREVIEW.301-2543565.ja.html)でプレビューが有効にされた場合，印刷ダイアログで『PDFとして保存』『PDFでメールを送信』などのオプションを選択するとアプリケーションがクラッシュしました。
+
+* ACI0094061 テキスト入力オブジェクトのタイプを変数からフィールドに変更するたびに，オブジェクトの高さが1ずつ増えてゆきました。結果的に，自動スタイルシートもはずされてしまいました。
+
+* ACI0094209 データベースにパスワードを設定し，クライアント/サーバーアプリケーションをビルドした場合，ログイン画面に表示されるはずの『パスワードを保存』オプションがありませんでした。
+
+* ACI0094264 [OBJECT SET SUBFORM](http://doc.4d.com/4Dv15R2/4D/15-R2/OBJECT-SET-SUBFORM.301-2543636.ja.html)でサブフォームを切り替えた場合，直後にフォームが再描画されませんでした。[SET TIMER](http://doc.4d.com/4Dv15R2/4D/15-R2/SET-TIMER.301-2543851.ja.html)で強制的にフォームイベントを発生させれば問題ありませんでした。その場合，タイマーイベントで何がを実行する必要はありません。
+
+* ACI0090056 データベースフォルダーに対する相対パスでデフォルトHTMLルートフォルダーが設定されている場合，ビルドされたアプリケーションで，フォルダーパスが正しく表示されませんでした。たとえば，
+
+```
+.\DataBaseName\Database\Database\WebFolder
+```
+
+のようなパスは，設定画面に
+
+```
+.\DataBaseName\Database\WebFolder
+```
+
+と表示されました。
+
+* ACI0083469 [OBJECT DUPLICATE](http://doc.4d.com/4Dv15R2/4D/15-R2/OBJECT-DUPLICATE.301-2543598.ja.html)でリストボックスを複製すると，ヘッダーやフッターなどのオブジェクトに重複する名前が与えられました。デザインモードでリストボックスを複製した場合には問題ありません。
+
+* ACI0094182 レコードとインデックスを圧縮した後に一部のインデックスが破損することがありました（『タグヘッダーが無効です』）。
+
+* ACI0093534 メニューバーが関連づけられていないフォームを閉じた後，最前面になったウインドウのダイナミックメニューバーが再描画されませんでした。たとえば，プログラスバーコンポーネントを閉じた後に問題がありました。64ビット版では問題ありません。
+
+* ACI0094166 Windows版のみ。4D Viewエリアにドイツ配列のキーボードでアロバース記号（@）を入力することができませんでした。
+
+* ACI0094236 Mac版のみ。キーワードインデックスが設定されたテーブルでインデックス構築中にアプリケーションがクラッシュすることがありました。『[テキストのクエリや並び替えでタグを使用しない](http://doc.4d.com/4Dv15R2/4D/15-R2/Field-properties.300-2634639.ja.html)』プロパティが使用されている場合，スタイル付きテキストの``span``タグが取り除かれますが，HTMLページからペーストされたテキストのように，有効なXML構造ではない（たとえば閉じるタグがない``<br>``が含まれるHTML）データのインデックス作成で問題が発生しました。``<br />``のようにタグが整形されていれば問題ありません。
+
+**注記**: スタイル付きテキストに閉じるタグが省略されたHTMLが保存されることがないように注意してください。修正により，クラッシュは回避されるようになりましたが，XMLとして解析できないようなデータは標準テキストとして評価されることになります。
+
+* ACI0092860 ダイアログ表示中のフォームから別のフォームを開いた場合，[CANCEL](http://doc.4d.com/4Dv15R2/4D/15-R2/CANCEL.301-2542996.ja.html)で前のフォームに戻りませんでした。
+
+* ACI0094185 SQLでテーブルの名前をエイリアスとして使用することができませんでした。
+
+```sql
+SELECT * FROM aaa AS aaa;
+
+```
+
+* ACI0094215 Windows版のみ。4D Viewあるいは4D Writeエリアにドイツ語配列のキーボードでControl+Alt+(2,3,Q,E)キーで² / ³ / @ / ?といった記号を入力することができませんでした。ビルド190461以降の問題です。
+
+* ACI0093284 [GET TEXT KEYWORDS](http://doc.4d.com/4Dv15R2/4D/15-R2/GET-TEXT-KEYWORDS.301-2543352.ja.html)にメモリーリークがありました。*オプションを使用しなければ問題ありません。
+
+```
+C_TEXT($txt_t)
+ARRAY TEXT($motcle_at;0)
+
+$txt_t:="a b c d e f g h i j k l m n o p q r s t u v w x y z"
+
+Repeat 
+GET TEXT KEYWORDS($txt_t;$motcle_at;*)
+Until (Shift down)
+```
+
+* ACI0094039 Windevによる4D ODBC Driverを介したデータ取得ができませんでした。Windev製品特有のSQLリクエストを処理するために，DSNの新しいオプション『Windev』が追加されました。
+
+* ACI0094147 4D Serverの管理画面には，Windows 10と表示されるべきプラットフォーム名がWindow 8と表示されました。
+
+**注記**: Windows 8.1が認識されない問題はACI0093592，[PLATFORM PROPERTIES](http://doc.4d.com/4Dv15R2/4D/15-R2/PLATFORM-PROPERTIES.301-2544208.ja.html)でWindows 10が認識されない問題はACI0094184で修正されました。
+
+* ACI0093770 アプリケーションの環境設定でマーカーの色を変更しても，環境設定画面には常にマーカー色が黒で表示されました。
+
+
+
