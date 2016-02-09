@@ -64,9 +64,44 @@ v14と比較して，[EXECUTE FORMULA](http://doc.4d.com/4Dv15/4D/15.1/EXECUTE-F
 
 * ACI0094485 ビルドしたアプリケーションの動作が不安定でした。ビルド194902以降の問題です。[ACI0089829](https://github.com/4D-JP/release-notes/tree/master/v15/15.1/hf1)修正の副作用でした。
 
-* ACI0091544 [132257] WR PICTURE TO AREA does not work when running it on the server.
-* ACI0094399 [132124] Problem when sorting ListBox.
-* ACI0094431 [132408] 4D IC do no more send german diacritical chars like äöüß.
+* ACI0091544 Windows版のみ。サーバー側で[WR PICTURE TO AREA](http://doc.4d.com/4Dv15/4D-Write/15/WR-PICTURE-TO-AREA.301-2398605.ja.html)が使用できませんでした。
+
+* ACI0094399 フォームの表示と同時にリストボックスのカラムをプログラムで並び替えることができませんでした。フォームが表示された後，クリックイベント等であれば問題ありません。
+
+**注記**: 回避策として``On Timer``を使用することができます。
+
+```
+Case of 
+: (Form event=On Load)
+
+  $vpLb:=OBJECT Get pointer(Object named;"tbLb")
+  $vpCol1:=OBJECT Get pointer(Object named;"ttCol1")
+  $vpCol2:=OBJECT Get pointer(Object named;"ttCol2")
+  ARRAY BOOLEAN($vpLb->;0)
+  ARRAY TEXT($vpCol1->;0)
+  ARRAY TEXT($vpCol2->;0)
+  APPEND TO ARRAY($vpLb->;False)
+  APPEND TO ARRAY($vpCol1->;"A")
+  APPEND TO ARRAY($vpCol2->;"2")
+  APPEND TO ARRAY($vpLb->;False)
+  APPEND TO ARRAY($vpCol1->;"B")
+  APPEND TO ARRAY($vpCol2->;"1")
+  APPEND TO ARRAY($vpLb->;False)
+  APPEND TO ARRAY($vpCol1->;"C")
+  APPEND TO ARRAY($vpCol2->;"3")
+
+  SET TIMER(-1)
+
+: (Form event=On timer)
+
+  SET TIMER(0)
+  カスタムソートメソッド ("tbLb";0)
+
+End case 
+```
+
+* ACI0094431 15.1以降，Internet Commandsで添付ファイル名にドイツ語アクセント記号が含まれるメールが送信できませんでした。
+
 * ACI0094478 [132454] Disabled highlight buttons are badly rendered on a list form.
 * ACI0094479 [132453] Listbox not enterable if "On Getting Focus" AND invisble Array assigned.
 * ACI0094416 [132395] Quick Report file destination and 4Dpop.
