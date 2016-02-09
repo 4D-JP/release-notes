@@ -48,12 +48,22 @@ End for
 
 * ACI0094497 [ピクチャボタン](http://doc.4d.com/4Dv15/4D/15.1/Picture-Buttons.300-2679559.ja.html)の『マウスアップで戻る』プロパティが有効にされている場合，『ボタン押下中は自動更新』の値に関係なく，ボタン押下中は自動更新されました。
 
-* ACI0094547 Method editor disclosure triangles alignment issue.
-* ACI0092351 The storage type "In record" of the  Object field is not retained.
-* ACI0093311 [131762] Form event On Deactivate fires when another application gets focus.
-* ACI0093953 [132030] Slowness in v15 with PROCESS 4D TAGS. 
-* ACI0094438 [132417] 4D Write has no cursor when form was opened by listbox.
-* ACI0094485 [132460] Compiled Application on recent v15.1 would cause issue.
+* ACI0094547 Mac版のみ。メソッドエディターの展開/収縮アイコン（三角形）とブロックの終端を結ぶ縦ラインの位置が揃っていませんでした。
+
+* ACI0092351 オブジェクト型フィールドのレコード保存場所を『レコードと一緒』に変更してからストラクチャエディターを閉じた場合，開きなおしてみると，以前のプロパティ値に戻っていました。つまり，変更が保存されませんでした。データベースではなく，ストラクチャエディターの問題でした。[オブジェクト型フィールド](http://doc.4d.com/4Dv15/4D/15.1/External-data-storage.300-2679440.ja.html)はこの保存方式をサポートしています。
+
+* ACI0093311 [131762] Windows版のみ。別アプリケーションがフォーカスを得ると，非モーダルダイアログの``On Deactivate``イベントが実行されました。v14以前のバージョンでは，同イベントが発生しませんでした。そのため，ダイアログの``On Deactivate``イベントで``BRING TO FRONT(Current process)``が実行されるようにコーディングされていた場合，4D以外のアプリケーションが最前面にある間，ずっとイベントが発生し，ダイアログが点滅し続けました。
+
+v14と比較して，[EXECUTE FORMULA](http://doc.4d.com/4Dv15/4D/15.1/EXECUTE-FORMULA.301-2685876.ja.html)および[PROCESS 4D TAGS](http://doc.4d.com/4Dv15/4D/15.1/PROCESS-4D-TAGS.301-2684931.ja.html)のループ実行にかかる時間が長くなりました（コンパイルモード）。前者は，2倍以上，後者は4倍以上，遅くなりました。
+
+***注記**: 修正により，一定数のフォーミュラーがキャッシュに保持されるようになりました。この値は，[SET DATABASE PARAMETER](http://doc.4d.com/4Dv15/4D/15.1/SET-DATABASE-PARAMETER.301-2686308.ja.html)のセレクター``92``で有効にすることができます。
+
+**参考**: [フォーミュラの書き方](http://www.4d.com/jp/blog/formula-execution.html)
+
+* ACI0094438 リストボックスのダブルクリック時アクション『レコード編集』で入力フォームを開いた場合，そのフォームに4D Writeエリアが存在すると，そのエリアにはカーソルが表示されませんでした。
+
+* ACI0094485 ビルド194902以降の問題です。ビルドしたアプリケーションがクラッシュすることがあります。ACI0089829修正の副作用でした。
+
 * ACI0091544 [132257] WR PICTURE TO AREA does not work when running it on the server.
 * ACI0094399 [132124] Problem when sorting ListBox.
 * ACI0094431 [132408] 4D IC do no more send german diacritical chars like äöüß.
