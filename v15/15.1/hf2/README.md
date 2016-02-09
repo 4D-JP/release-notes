@@ -56,7 +56,7 @@ End for
 
 v14と比較して，[EXECUTE FORMULA](http://doc.4d.com/4Dv15/4D/15.1/EXECUTE-FORMULA.301-2685876.ja.html)および[PROCESS 4D TAGS](http://doc.4d.com/4Dv15/4D/15.1/PROCESS-4D-TAGS.301-2684931.ja.html)のループ実行にかかる時間が長くなりました（コンパイルモード）。前者は，2倍以上，後者は4倍以上，遅くなりました。
 
-***注記**: 修正により，一定数のフォーミュラーがキャッシュに保持されるようになりました。この値は，[SET DATABASE PARAMETER](http://doc.4d.com/4Dv15/4D/15.1/SET-DATABASE-PARAMETER.301-2686308.ja.html)のセレクター``92``で有効にすることができます。
+**注記**: 修正により，一定数のフォーミュラーがキャッシュに保持されるようになりました。この値は，[SET DATABASE PARAMETER](http://doc.4d.com/4Dv15/4D/15.1/SET-DATABASE-PARAMETER.301-2686308.ja.html)のセレクター``92``で有効にすることができます。
 
 **参考**: [フォーミュラの書き方](http://www.4d.com/jp/blog/formula-execution.html)
 
