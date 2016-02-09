@@ -1,12 +1,27 @@
 4D v14.4 Hotfix 2
 ---
 
-* ACI0094486 [132463] Spaces in charset in e-mail header.
-* ACI0094245 Inactive pop-up in the objects library.
-* ACI0094093 [132190] List box: the input filter of Japanese font problem.
-* ACI0094303 Unable to install an ODBC driver v14 on OS X 10.11.
+* ACI0094486 Internet Commandsでメールを送信すると，SMTPのヘッダーに``charset="utf - 8"``といった文字列がセットされました。ハイフンの前後に余計なスペースが存在するため，一部のメールクライアントでメッセージが正しく表示されませんでした。
 
+* ACI0094245 Windows版のみ。オブジェクトライブラリの『カテゴリー』ポップアップメニューが機能していませんでした。
 
+* ACI0094093 Windows版のみ。リストボックスのセルに入力フィルターが設定されている場合，タイプ入力中にテキストが上下に揺れました。
+
+* ACI0094303 Mac版のみ。OS X 10.11に[ODBC driver v14](http://doc.4d.com/4Dv14/4D/14/Installing-an-ODBC-driver-on-OS-X.300-1395108.ja.html)がインストールできないことがありました。
+
+**注記**: ドライバーは，下記の場所にあるOpenSSL.frameworkを必要としています。
+
+```
+/System/Library/Frameworks
+```
+
+または
+
+```
+/Library/Frameworks
+```
+
+修正により，フレームワークがなくても，ドライバーが使用できるようになりました。その場合，SSL接続はできません。
 
 * ACI0093919 [DatePickerウィジェット](http://doc.4d.com/4Dv15R2/4D/15-R2/DatePicker-and-DateEntry.300-2714815.ja.html)とテキストフィールドが同一のフォームに表示されていた場合，上下矢印キーの入力でテキストエリア内でカーソルが移動する代わりに日付が変わりました。
 
