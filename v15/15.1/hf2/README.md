@@ -77,9 +77,4 @@ End for
 * ACI0094274 Draggable property not correct with variable.
 * ACI0094302 [132336] EDIT FORM in built application cause 4D issue.
 * ACI0094402 [132377] Open window returns 0 with Windows type 2 and close box method in OS X.
-* ACI0093236 Toolbox password confirmation does not check confirmation password.
-* ACI0093919 [132000] Widget DateEntry and UP & DOWN keys.
-* ACI0094286 [132311] HTTP FIXER OPTION doesn't clean the authentication.
-* ACI0080477 Duplication of longint column and time display format.
-* ACI0094135 [132186] Printing an SVG textArea containing a tspan.
-* ACI0094212 [132259] IMPORT TEXT: Char(0) is imported to alpha field.
+
