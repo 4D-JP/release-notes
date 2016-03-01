@@ -1,6 +1,43 @@
 4D v15 R3
 ---
 
+* ACI0093589 Windows版のみ。ODBC経由でデータをExcelに表示し，MS Queryで4Dのフィールドを更新しようとすると，MS Queryがクラッシュしました。INSERTでは問題ありません。UPDATEコマンドに問題があります。SQLエンジンとODBCドライバーそれぞれに問題がありました。
+
+```
+UPDATE Table_1
+SET Table_1.Champ_2='aaaa'
+WHERE Table_1.Champ_2='ZZZZZZ';
+```
+
+* ACI0093027 Windows版のみ。4D Viewで行を挿入するためのキーボードショートカット（Control+Alt+I）が効きませんでした。
+
+* ACI0089241 Mac版のみ。Webサーバーがリクエストを処理している最中にWebサーバーを終了すると，以後，Webサーバーを起動しようとしても『データベースが公開できません』エラーが返されました。ポート番号が1024以上のときに問題が発生します。ポート番号が1023以下（[HelperTool](http://doc.4d.com/4Dv15/4D/15/Web-server-configuration-and-connection-management.300-2006437.ja.html)でWebサーバーを公開）であれば，問題ありません。
+
+```
+WEB START SERVER 
+Repeat 
+  IDLE 
+Until (WEB Is server running) 
+WEB STOP SERVER 
+WEB START SERVER
+```
+
+* ACI0093895 ツールボックスでピクチャライブラリの画像を削除すると，``-20001``エラーが返されました。
+
+* ACI0094010 日本語版のみ。``Internal date long``日付フォーマットが正しくありませんでした。
+
+* ACI0093758 [METHOD SET CODE](http://doc.4d.com/4Dv15R2/4D/15-R2/METHOD-SET-CODE.301-2543907.ja.html)で設定されたSQLコードブロックは，正しくトークナイズされませんでした。
+
+```
+METHOD SET CODE("toto";"begin sql\rselect * from A\r end sql")
+```
+
+* ACI0093608 スプリッターを右クリックすると，以降，動かすことができなくなりました。
+
+* ACI0091153 Windows版のみ。エクスプローラーの編集モード（メソッド名などを2度クリック）の挙動が不自然でした。
+
+* ACI0093770 アプリケーションの環境設定でマーカーの色を変更しても，環境設定画面には常にマーカー色が黒で表示されました。
+ 
 * ACI0091942 移動できるリストボックスの行をリストボックスの外までドラッグしても，スクロールが始まりませんでした。
 
 * ACI0092692 新ネットワークレイヤーのみ。サーバー側の``On Server Close Connection``データベースメソッドで[TRACE](http://livedoc.4d.com/--15.1/-/TRACE.301-2684990.ja.html)コマンドが使用されていた場合，クライアント終了時にネットワークエラーが発生しました。
