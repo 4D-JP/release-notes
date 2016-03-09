@@ -9,6 +9,10 @@ Release Notes
 
 ```2015-11-10.192846``` [4D v15 R2](https://github.com/4D-JP/release-notes/blob/master/v15/r2/README.md) 
 
+* v15.2
+
+```2016-00-00.000000``` [4D v15.2](https://github.com/4D-JP/release-notes/blob/master/v15/15.2/README.md)
+
 * v15.1
 
 ```2016-02-15.196937``` [4D v15.1 Hotfix 2](https://github.com/4D-JP/release-notes/blob/master/v15/15.1/hf2/README.md)
