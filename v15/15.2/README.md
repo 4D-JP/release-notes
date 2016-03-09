@@ -68,3 +68,25 @@
 * ACI0094697 Windows 64ビット版のみ。[WA EXECUTE JAVASCRIPT FUNCTION](http://doc.4d.com/4Dv15/4D/15.1/WA-EXECUTE-JAVASCRIPT-FUNCTION.301-2685016.ja.html)は，ブール型および整数型の値を返しませんでした。統合WebKitであれば問題ありません。
 
 **注記**: [ドキュメント](http://doc.4d.com/4Dv15R3/4D/15-R3/WA-EXECUTE-JAVASCRIPT-FUNCTION.301-2696078.ja.html)に明記されているように『複雑な型』の結果を返すことができるのは，統合WebKitだけです。複雑な型には，日付やオブジェクトが含まれます。数値・ブール・テキストは『シンプルなデータ型』です。
+
+* ACI0094620 [METHOD SET CODE](http://doc.4d.com/4Dv15/4D/15.1/METHOD-SET-CODE.301-2685964.ja.html)で作成したSOAP公開メソッドは，Webサービスでコールすることができませんでした。手作業でメソッドを編集すれば，コールできるようになります。
+
+* ACI0093708 スタイル付きテキストに表示フォーマットを設定すると，テキストのソースコードが整形されて表示されました。
+
+* ACI0091831 『起動時にWebサーバーを開始』設定が有効にされたデータベースに対し，``http://127.0.0.1:3080/4DSTATS``のようなURLをリクエストした後，Webサーバーを再起動すると『データベースを公開できません』というエラーが返されました。
+
+* ACI0094575 フォームエディター上で矢印キーを使用し，オブジェクトを移動した直後は，取り消し操作（Command+Z）ができませんでした。一度，Command+Zを入力した後，取り消しができるようになります。
+
+* ACI0094459 Mac版のみ。``Escape``がキーボードショートカットに設定されたボタンがキー入力に反応しませんでした。
+
+* ACI0093029 フォーム作成ウイザードのテーブル名のポップアップメニューに『{tableName}データテーブルに問題があります』というテキストが表示されました。『プロジェクトフォーム』と表示されているべきです。
+
+* ACI0094556 [SET DATABASE PARAMETER](http://doc.4d.com/4Dv15/4D/15.1/SET-DATABASE-PARAMETER.301-2686308.ja.html)で``Log command list``を指定し，特定のコマンドだけデバッグログに記録させようとすると，第5列以降の情報がずれていました。
+
+```
+SET DATABASE PARAMETER(Log command list;"322") 
+SET DATABASE PARAMETER(34;2+4) 
+BEEP
+SET DATABASE PARAMETER(34;0)
+```
+* ACI0093501 4D Viewの自動計算モードが常に有効でした。
