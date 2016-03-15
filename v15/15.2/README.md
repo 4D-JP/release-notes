@@ -1,6 +1,18 @@
 4D v15.2
 ---
 
+* ACI0094001 リストボックスのヘッダーに『移動』以外のスタイルシートが設定されている場合，[OBJECT SET FONT](http://doc.4d.com/4Dv15/4D/15.1/OBJECT-SET-FONT.301-2685674.ja.html)または[OBJECT SET FONT SIZE ](http://doc.4d.com/4Dv15/4D/15.1/OBJECT-SET-FONT-SIZE.301-2685680.ja.html)でフォントを変更することができませんでした。また，ヘッダーの高さも連動して変化しませんでした。
+
+* ACI0094506 クイックレポートの幅が日付または数値に対して不足しており，かつ，高さに余裕がある場合，印刷時にデータが折り返されませんでした。数値は隣の列に重ねて出力され，日付は途中で切られました。
+
+* ACI0094776 印刷中にリストボックスに対して[OBJECT GET BEST SIZE](http://doc.4d.com/4Dv15/4D/15.1/OBJECT-GET-BEST-SIZE.301-2685666.ja.html)を実行すると，アプリケーションがクラッシュしました。15.1には存在しなかった問題です。 
+
+* ACI0094788 [SVG_SAVE_AS_TXT](http://doc.4d.com/4Dv15/4D/15/SVG-SAVE-AS-TEXT.301-2048775.ja.html)を実行すると，エラー``-9926``が返されました。
+
+* ACI0094770 Windows版のみ。フォームエディター，オブジェクトライブラリーの『カテゴリー』メニューをクリックしても，何も起きませんでした。15.1には存在しなかった問題です。 
+
+* ACI0094731 Windows版のみ。SVGコンポーネントのビューアーに画像を表示すると，1行目のテキストが重ねて表示されました。コンポーネントというよりも，SVGレンダリング自体の問題です。
+
 [4D v15.1 Hotfix 2](https://github.com/4D-JP/release-notes/blob/master/v15/15.1/hf2/README.md)および[Hotfix 1](https://github.com/4D-JP/release-notes/blob/master/v15/15.1/hf1/README.md)の修正事項は，それぞれのページに掲載されています。
 
 * ACI0094644 クイックレポートエディターにフォーミュラーを入力しようとすると，キーストロークが二重に処理されました。たとえば，``substring``とタイプ入力した場合，``ssuubbssttrriinngg``というフォーミュラーになりました。通常のフォーミュラーエディターでは問題ありません。15.1には存在しなかった不具合です。
