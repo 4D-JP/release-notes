@@ -1,6 +1,27 @@
 4D v15.2
 ---
 
+* ACI0094591 [Size of array](http://doc.4d.com/4Dv15/4D/15.1/Size-of-array.301-2685282.ja.html)内で配列の要素に対してポインターの逆参照を使用するとアプリケーションがクラッシュしました。
+
+```
+C_POINTER($ptr) 
+ARRAY POINTER($ptrArr;1) 
+ARRAY LONGINT($longintArr;2) 
+
+$ptr:=->$ptrArr 
+$ptr->{1}:=->$longintArr 
+
+ASSERT(Size of array($ptr->{1}->)=Size of array($longintArr);"size of array should work") 
+```
+
+* ACI0094647 4D View Pro型のリストボックス列を並び替えた後，再描画が不完全で，一時的に列の同期が取られていないような表示になりました。
+
+* ACI0094809 階層リストボックスに非表示行の配列が使用した場合，非表示になるべき行がそうなりませんでした。ビルド``193710``以降の問題です。
+
+* ACI0094825 印刷中，リストボックスに対して[OBJECT GET BEST SIZE](http://doc.4d.com/4Dv15/4D/15.1/OBJECT-GET-BEST-SIZE.301-2685666.ja.html)を使用すると，最適高さに正しい値が返されませんでした。ACI0094776修正後の問題です。
+
+* ACI0094802 ``SMTP_SetPrefs``で設定したエンコーディングが件名に適用されませんでした。
+
 * ACI0094001 リストボックスのヘッダーに『移動』以外のスタイルシートが設定されている場合，[OBJECT SET FONT](http://doc.4d.com/4Dv15/4D/15.1/OBJECT-SET-FONT.301-2685674.ja.html)または[OBJECT SET FONT SIZE ](http://doc.4d.com/4Dv15/4D/15.1/OBJECT-SET-FONT-SIZE.301-2685680.ja.html)でフォントを変更することができませんでした。また，ヘッダーの高さも連動して変化しませんでした。
 
 * ACI0094506 クイックレポートの幅が日付または数値に対して不足しており，かつ，高さに余裕がある場合，印刷時にデータが折り返されませんでした。数値は隣の列に重ねて出力され，日付は途中で切られました。
