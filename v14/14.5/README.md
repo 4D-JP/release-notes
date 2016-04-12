@@ -1,4 +1,4 @@
-4D v14.4 Hotfix 1
+4D v14.5
 ---
 * ACI0093941 [MSG_Extract](http://doc.4d.com/4Dv15R2/4D-Internet-Commands/15-R2/MSG-Extract.301-2666848.ja.html)は，添付ファイルのファイル名に``/ \ : * ? " < > |``記号が含まれている場合，実際に作成されるファイル名（``MailDownload.msg``など）ではなく，間違った名前を返しました。
 
