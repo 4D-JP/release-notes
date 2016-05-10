@@ -17,7 +17,7 @@ If ($lngIsCompressed#0)
 End if
 ```
 
-* ACI0089399 コンポーネントメソッドを[4DACTION](http://doc.4d.com/4Dv15/4D/15.1/URLs-and-Form-Actions.300-2685147.ja.html)URLで呼び出すことができませんでした。
+* ACI0089399 コンポーネントメソッドを[4DACTION](http://doc.4d.com/4Dv15/4D/15.1/URLs-and-Form-Actions.300-2685147.ja.html)で呼び出すことができませんでした。
 
 * ACI0092682 メソッド内に変数名がいくつも含まれる場合，日本語入力中に表示されるガイドラインの位置が左にずれて表示されました。
 
