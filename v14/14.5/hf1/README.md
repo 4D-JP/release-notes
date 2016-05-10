@@ -1,11 +1,6 @@
 4D v14.5 Hotfix 1
 ---
-* ACI0093268 Mac版のみ。4D Viewのスクロール速度に問題がありました。Macのトラックパッドやマウスでエリアを上下にスクロールした場合，エリアが2本指スワイプ操作にほとんどついてこられませんでした。スクロール速度が非常にゆっくりで，移動の開始も遅れがちでした。今回の修正で下記の動作が改良されました。
-
-* 4D Write　
-* 4D View　
-* プロパティリスト 
-* クリックレポート 
+* ACI0093268 Mac版のみ。4D Viewのスクロール速度に問題がありました。Macのトラックパッドやマウスでエリアを上下にスクロールした場合，エリアが2本指スワイプ操作にほとんどついてこられませんでした。スクロール速度が非常にゆっくりで，移動の開始も遅れがちでした。今回の修正で4D Write, 4D View, プロパティリスト，クリックレポートの動作が改良されました。
 
 * ACI0094561 サイズの小さなBLOBに対して[EXPAND BLOB](http://doc.4d.com/4Dv15/4D/15.1/EXPAND-BLOB.301-2686170.ja.html)のgzip圧縮を使用すると，エラーメッセージが表示されました。
 
@@ -50,11 +45,11 @@ End if
 * ``/private/etc``に``TNSNAMES.ORA``設定ファイルを追加
 
 ```
-         oracle4D =
-           (DESCRIPTION =
-               (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.1.2)(PORT = 1521))
-             (CONNECT_DATA =
-               (SERVICE_NAME = XE)
-             )
-           )
+  oracle4D =
+    (DESCRIPTION =
+      (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.1.2)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVICE_NAME = XE)
+    )
+  )
 ```
