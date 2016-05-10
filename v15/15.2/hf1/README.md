@@ -33,54 +33,11 @@ SELECTION RANGE TO ARRAY(3;2;[Table_1];$a)
 
 * ACI0094964 [QUERY BY FORMULA](http://doc.4d.com/4Dv15/4D/15.1/QUERY-BY-FORMULA.301-2685583.ja.html)の動作がv13とv15では違いました。たとえば，下記のようなリレーションが3テーブル間に設定されている場合，v13で瞬時だったクエリがv15では0.2秒ほどになりました。
 
+```
 [PA_SEJOUR] 1<-N [PA_MVT] 1<-N [MVT_ACTES]
+```
 
 運用ではセレクションのサイズがあるので，ユーザーが苛立ちを感じるほどに時間がかかります。クエリパスを比較すると，明らかにv12とv15では違う処理がなされており，v15では途中でおおきな結果セットが作られていることがわかります。
-
-```
-//v12
-AND
-Join on Table : PA_SEJOUR , PA_MVT.Num_Admission = PA_SEJOUR.Num_admission , MVT_ACTES.Cle_MVT = PA_MVT.Cle_MVT
-OR
-[index : PA_SEJOUR.Num_admission ] = 160201001 (1 record found in 0 ms)
-[index : PA_SEJOUR.Num_Admission1 ] = 160201001 (0 record found in 0 ms)
---> 1 record found in 0 ms
-[index : PA_MVT.Num_Admission ] = <Array of Values> (1 record found in 0 ms)
---> 6 records found in 0 ms
-AND
-[index : MVT_ACTES.Type ] = BIOLOGIE (4 records found in 0 ms)
-MVT_ACTES.Supprime LIKE false (4 records found in 0 ms)
-MVT_ACTES.DeSortie LIKE false (4 records found in 0 ms)
-MVT_ACTES.Signe_dte NOT LIKE 00/00/0 00:00:00 Or 4D Script (4 records found in 0 ms)
-MVT_ACTES.Executant_type = INFIRMIERE Or MVT_ACTES.Executant_type = (4 records found in 0 ms)
-MVT_ACTES.Date_debut <= 06/04/2016 00:00:00 Or 4D Script Or 4D Script (4 records found in 0 ms)
-MVT_ACTES.Charge_dte LIKE 00/00/0 00:00:00 Or (4D Script And MVT_ACTES.Arret_dte LIKE 06/04/2016 00:00:00 And 4D Script) (0 record found in 0 ms)
---> 0 record found in 0 ms
---> 0 record found in 0 ms
-```
-
-```
-//v15
-AND
-AND
-[index : MVT_ACTES.Type ] = BIOLOGIE (14043 records found in 0 ms)
-MVT_ACTES.Supprime == false (13259 records found in 21 ms)
-MVT_ACTES.DeSortie == false (13198 records found in 12 ms)
-MVT_ACTES.Signe_dte != 00/00/0 00:00 Or Vrai=Faux (11629 records found in 36 ms)
-MVT_ACTES.Executant_type === INFIRMIERE Or MVT_ACTES.Executant_type === (11629 records found in 11 ms)
-MVT_ACTES.Date_debut <= 06/04/2016 00:00 Or Non(Faux) Or "BIOLOGIE"#"DI" (11629 records found in 70 ms)
-MVT_ACTES.Charge_dte == 00/00/0 00:00 Or ("BIOLOGIE"="BIOLOGIE" And MVT_ACTES.Arret_dte == 06/04/2016 00:00 And [MVT_ACTES]Arret_dte#[MVT_ACTES]Date_debut) (34 records found in 84 ms)
---> 34 records found in 234 ms
-Join on Table : PA_MVT : MVT_ACTES.Cle_MVT = PA_MVT.Cle_MVT
-Join on Table : PA_SEJOUR : PA_MVT.Num_Admission = PA_SEJOUR.Num_admission
-OR
-[index : PA_SEJOUR.Num_admission ] = 160201001 (1 record found in 0 ms)
-[index : PA_SEJOUR.Num_Admission1 ] = 160201001 (0 record found in 0 ms)
---> 1 record found in 0 ms
---> 1 record found in 0 ms
---> 0 record found in 0 ms
---> 0 record found in 234 ms
-```
 
 * ACI0094401  クロスタブ型クイックレポート内の時間フィールドは，[Sum](http://doc.4d.com/4Dv15/4D/15.1/Sum.301-2686264.ja.html)の計算値が正しくありませんでした。小計値は秒単位，合計値は時間単位で値が表示されました。
 
@@ -91,3 +48,17 @@ OR
 * ACI0091689 Windows版のみ。マーカーをcontrolクリックで削除することができませんでした。
 
 * ACI0092682 メソッド内に変数名がいくつも含まれる場合，日本語入力中に表示されるガイドラインの位置が左にずれて表示されました。
+
+* ACI0094028 Mac版のみ。おおきな外部モニターをメイン画面として使用した場合，内部モニター（サブ画面）でクリックしたポップアップメニューの表示される位置が正しくありませんでした。 
+
+* ACI0094194 Windows版のみ。ドロップダウンリストを矢印キーでスクロールし，Enterキーで選択および確定すると，アプリケーションがクラッシュしました。
+
+* ACI0094314 Mac版のみ。[SET PRINT PREVIEW](http://doc.4d.com/4Dv15/4D/15.1/SET-PRINT-PREVIEW.301-2685618.ja.html)を実行すると，それまでに設定した用紙の向きがリセットされました。本来，コマンドの実行順序は関係ないはずです。
+
+* ACI0094435 Mac版のみ。OS X 10.11 El Capitanでは，既定サイズよりも背の高いコンボボックスは正しく表示されませんでした。
+
+* ACI0094454 リストフォームをダブルクリックしても，[FILTER EVENT](http://doc.4d.com/4Dv15/4D/15.1/FILTER-EVENT.301-2685822.ja.html)で画面の遷移を抑制することができます。ダブルクリックをフィルターして表示したダイアログから表示したダイアログを続けてキャンセルした場合，最初のリスト画面に復帰する代わりにフィルターしたはずの入力画面が表示されました。つまり，ダイアログを続けたことにより，フィルターが無効になりました。
+
+* ACI0094739 Windows版のみ。終了処理中にメニューバークリックするとアプリケーションがクラッシュしました。
+
+* ACI0094773 Mac版のみ。Retinaディスプレイに表示された4D Writeエリアに対して何かをドロップすると，画面の表示が乱れました。
