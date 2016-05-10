@@ -23,9 +23,7 @@ End if
 
 * 正 ``REDRAW WINDOW{( windows )} ``
   
-* ACI0094740 
-
-[SELECTION RANGE TO ARRAY](http://doc.4d.com/4Dv15/4D/15.1/SELECTION-RANGE-TO-ARRAY.301-2685271.ja.html)で不正なセレクション範囲を指定した場合，アプリケーションがクラッシュしました。
+* ACI0094740 [SELECTION RANGE TO ARRAY](http://doc.4d.com/4Dv15/4D/15.1/SELECTION-RANGE-TO-ARRAY.301-2685271.ja.html)で不正なセレクション範囲を指定した場合，アプリケーションがクラッシュしました。
 
 ```
 //テーブルにレコードは1件のみ
@@ -86,7 +84,7 @@ OR
 
 * ACI0094401  クロスタブ型クイックレポート内の時間フィールドは，[Sum](http://doc.4d.com/4Dv15/4D/15.1/Sum.301-2686264.ja.html)の計算値が正しくありませんでした。小計値は秒単位，合計値は時間単位で値が表示されました。
 
-* ACI0094120 ``$0``に値を返すようなメソッドが式ウォッチに登録されている場合，[TRACE](http://doc.4d.com/4Dv15/4D/15.1/TRACE.301-2684990.ja.html)，3回目のトレース以降はデバッガが使用できなくなりました。
+* ACI0094120 ``$0``に値を返すようなメソッドが式ウォッチに登録されている状況で，[TRACE](http://doc.4d.com/4Dv15/4D/15.1/TRACE.301-2684990.ja.html)が使用されているメソッドを実行した場合，3回目のトレース以降はデバッガが使用できなくなりました。
 
 * ACI0094029 [SET DATABASE PARAMETER](http://doc.4d.com/4Dv15/4D/15.1/SET-DATABASE-PARAMETER.301-2686308.ja.html)で``Circular log limitation``を指定すれば，ログファイルの数が最新のn個に制限されるはずですが，クライアント側では設定が無視され，延々とファイルが増えてゆきました。ターミナルクライアントはディスク容量が限られているため，このコマンドが特に必要です。
 
