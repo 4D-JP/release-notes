@@ -33,14 +33,16 @@ End if
 
 参考: OCIライブラリのインストール方法
 
-* ダウンロード (http://www.oracle.com/technetwork/topics/intel-macsoft-096467.html)
+* ダウンロード http://www.oracle.com/technetwork/topics/intel-macsoft-096467.html
 * ``instantclient-basic-macos.x32-11.2.0.4.0.zip``または``instantclient-basic-macos.x64-11.2.0.4.0.zip``を入手
 * ``/usr/local/lib``にライブラリをインストール
-- libclntsh.dylib.11.1
-- libnnz11.dylib
-- libocci.dylib.11.1
-- libociei.dylib
-- libocijdbc11.dylib
+```
+libclntsh.dylib.11.1
+libnnz11.dylib
+libocci.dylib.11.1
+libociei.dylib
+libocijdbc11.dylib
+```
 * ``libclntsh.dylib.11.1``に対するシンボリックリンク``libclntsh.dylib``を作成
 * ``/private/etc``に``TNSNAMES.ORA``設定ファイルを追加
 
