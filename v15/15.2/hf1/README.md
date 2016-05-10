@@ -62,3 +62,29 @@ SELECTION RANGE TO ARRAY(3;2;[Table_1];$a)
 * ACI0094739 Windows版のみ。終了処理中にメニューバークリックするとアプリケーションがクラッシュしました。
 
 * ACI0094773 Mac版のみ。Retinaディスプレイに表示された4D Writeエリアに対して何かをドロップすると，画面の表示が乱れました。
+
+* ACI0094861 [PRINTERS LIST](http://doc.4d.com/4Dv15/4D/15.1/PRINTERS-LIST.301-2685608.ja.html)が原因でクラッシュすることがありました。極めて特殊な状況でなければ再現しません。
+
+* ACI0083980 データベース設定でメッセージフォントをクリックし，フォントピッカーをキャンセルしても，ピッカーで選択されていたフォントが採用されました。
+
+* ACI0089399 コンポーネントメソッドを[4DACTION](http://doc.4d.com/4Dv15/4D/15.1/URLs-and-Form-Actions.300-2685147.ja.html)で呼び出すことができませんでした。
+
+* ACI0093962 Mac版のみ。テキスト終わりにある空白をダブルクリックした場合，本来であれば最後のワードまたは空白が選択されるはずですが，何も起きませんでした。
+
+* ACI0094045 [WR SAVE DOCUMENT](http://doc.4d.com/4Dv15/4D-Write/15/WR-SAVE-DOCUMENT.301-2398576.ja.html)でドキュメントをUTF-8形式で保存した場合，拡張子``txt``が省略されました。
+
+```
+$vl_Template:=WR New offscreen area 
+$vt_Document:=System folder(Desktop)+"test.txt"
+WR INSERT TEXT ($vl_Template;"4D is the best!!!")
+WR SAVE DOCUMENT ($vl_Template;$vt_Document;wr unicode document UTF8)
+WR DELETE OFFSCREEN AREA ($vl_Template)
+```
+
+* ACI0094410 バーコードフォントなど，一部のフォント名がラベルエディターのフォントリストに表示されませんでした。
+
+注記: 表示されないフォント名は，現行のAPIではサポートされていないものです。（旧式のAPIを使用している）ラベルエディターのリストは修正されましたが，プロパティリストおよび[FONT LIST](http://doc.4d.com/4Dv15R3/4D/15-R3/FONT-LIST.301-2695248.ja.html)は，引き続き現行のフォント名だけが列挙されます。
+
+* ACI0094451 SQL ``INTO``でBLOBフィールドをBLOB配列にコピーしようとしても，配列にデータが転写されませんでした。
+
+* ACI0094502 Mac版のみ。iMacテンキーの``clear``を入力した場合，何もテキストが選択されていなければ，何も起きず，テキストが選択されていれば，制御文字が挿入されました。v13以前は，いずれの場合も制御文字が挿入されました。正しい動作は，選択されたテキストを削除するというものです。
