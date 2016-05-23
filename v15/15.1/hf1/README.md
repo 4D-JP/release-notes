@@ -119,12 +119,14 @@ Until (Shift down)
 
 同じことが下記のエンコーディングでも発生していました。ビルド189084以降の問題です。
 
-- us-ascii
-- iso-8859-1
-- iso-2022-jp
-- iso-2022-kr
-- iso-2022-cn
-- hz-gb-2312
+```
+us-ascii
+iso-8859-1
+iso-2022-jp
+iso-2022-kr
+iso-2022-cn
+hz-gb-2312
+```
 
 * ACI0094076 : 4D Mobi leで``autoExpand``オプションを使用してリレーション属性からエンティティを取り出すことができませんでした。
 
