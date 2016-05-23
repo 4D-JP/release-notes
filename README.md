@@ -1,6 +1,10 @@
 Release Notes
 -------------
 
+* v15 R4
+
+```2016-00-00.200345``` [4D v15 R4](https://github.com/4D-JP/release-notes/blob/master/v15/r4/README.md)
+
 * v15 R3
 
 ```2016-02-24.196777``` [4D v15 R3](https://github.com/4D-JP/release-notes/blob/master/v15/r3/README.md) 
