@@ -364,3 +364,54 @@ ${1}:=3
 * ACI0094497 [ピクチャボタン](http://doc.4d.com/4Dv15/4D/15.1/Picture-Buttons.300-2679559.ja.html)の『マウスアップで戻る』プロパティが有効にされている場合，『ボタン押下中は自動更新』の値に関係なく，ボタン押下中は自動更新されました。
 
 * ACI0094547 Mac版のみ。メソッドエディターの展開/収縮アイコン（三角形）とブロックの終端を結ぶ縦ラインの位置が揃っていませんでした。
+
+* ACI0094898 [Replace string](http://doc.4d.com/4Dv15R3/4D/15-R3/Replace-string.301-2695698.ja.html)で正しく文字列が置換されない場合がありました。
+
+```
+$string:="aaaa aaaa aaaa aaaa"
+$string:=Replace string($string;"aaaa";"xxxx";*)
+ALERT($string)
+// The result is"xxxx aaaxxxxaa aaa"
+```
+
+* ACI0092729 サブディスプレイ内で閉じられた場合，[Open form window](http://doc.4d.com/4Dv15R3/4D/15-R3/Open-form-window.301-2695382.ja.html)に``*``オプションを指定して開いたウインドウの位置が保持されませんでした。
+
+* ACI0094757 Mac版のみ。64ビット版の4D Serverで「データベース設定」メニューを選択すると，「終了」ダイアログが表示されました。
+
+* ACI0094839 Windows版のみ。64ビット版の4Dで進捗バーオプションを指定して[FTP_Receive](http://doc.4d.com/4Dv15R3/4D-Internet-Commands/15-R3/FTP-Receive.301-2813588.ja.html)に使用すると，アプリケーションがクラッシュしました。
+
+**注記:** 64ビット版の4D Internet Commandsでは，ダイアログの表示がサポートされていないことに留意してください。
+
+* ACI0094632 ``PRINT LABEL([MyTable])``を実行しても，ラベルエディターが起動しませんでした。また，``PRINT LABEL([MyTable];*)``を実行しても，印刷が始まりませんでした。
+
+* ACI0094633 ``Alt``キーを押しながら操作をしても，複数のリストボックス行をドラッグすることができませんでした。``Alt``キーを押さえていても，クリックで選択が解除されてしまいました。15R3では問題ありませんでした。
+
+* ACI0095016 "Web Application Expansion for 4D Client"ライセンスのアクティベーションができませんでした。ライセンス番号は認識されますが，ブラウザからアクセスすると，エラーページが返されました。
+
+* ACI0094921 4D Writeドキュメントを4D Write Proで開くと，フォーミュラーの参照が正しくインポートされないことがありました。
+
+**注記**: 存在しないテーブルやフィールドが参照されている場合，当然，エラー48が返されます。[SET ALLOWED METHODS](http://doc.4d.com/4Dv15R3/4D/15-R3/SET-ALLOWED-METHODS.301-2696335.ja.html)で許可されていないメソッドも同様です。
+
+* ACI0094667 間違ったパスワードを送信するとLDAPコマンドでアプリケーションがクラッシュしました。
+
+```
+LDAP LOGIN($url;$dn;$pwd;LDAP password plain text)
+```
+
+* ACI0094972 デザインモードの「メソッド」メニューが表示されないことがありました。
+
+* ACI0094654 新ラベルエディターで「レイアウト」ページに画面を切り替えようとすると，エラー59が返されました。
+
+* ACI0094822 ``$4DEVAL``, ``$4DHTML``, ``$4DTEXT``が含まれる文字列を作成し，WEB SEND系コマンドで処理すると，コードが実行されました。
+
+**注記:** 修正により，下記のコマンドでは$シンタックスの新しいタグが評価されないようになりました。
+
+```
+WEB SEND TEXT
+WEB SEND BLOB
+WEB SEND FILE
+```
+
+* ACI0094512 "4D SQL Desktop"ライセンスのアクティベーションができませんでした。ライセンス番号は認識されますが，[SQL LOGIN](http://doc.4d.com/4Dv15R3/4D/15-R3/SQL-LOGIN.301-2695340.ja.html)コマンドを実行するとライセンスまたはアクセス権エラーが返されました。
+
+* ACI0094283 リストボックスのヘッダーをダブルクリックした場合，[Clickcount](http://doc.4d.com/4Dv15R3/4D/15-R3/Clickcount.301-2696298.ja.html)から``2``が返されませんでした。
