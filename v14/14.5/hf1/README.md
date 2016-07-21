@@ -21,7 +21,7 @@
 
 * ACI0091247 Mac版のみ。階層リストに``Carriage return``が含まれるテキストを表示した場合，2行にわたってテキストが表示されました。
 
-``注記:** 修正により，改行コード以降のテキストは切り捨てられるようになりました。
+**注記**: 修正により，改行コード以降のテキストは切り捨てられるようになりました。
 
 * ACI0094947 階層リストボックスをセットアップ（作成およびデータ挿入）したのと同じメソッド内でコールされた場合，[LISTBOX SELECT BREAK](http://doc.4d.com/4Dv15/4D/15.1/LISTBOX-SELECT-BREAK.301-2686094.ja.html)は何もしませんでした。階層リストボックスでなければ問題ありません。
 
@@ -70,7 +70,7 @@ End if
 
 * ACI0094909 Mac版のみ。OS X 10.11 El Capitanでは4D for OCIプラグインが使用できませんでした。OCIライブラリを``/usr/lib``にインストールすることができなくなったためです。
 
-参考: OCIライブラリのインストール方法
+**参考**: OCIライブラリのインストール方法
 
 * ダウンロード http://www.oracle.com/technetwork/topics/intel-macsoft-096467.html
 * ``instantclient-basic-macos.x32-11.2.0.4.0.zip``または``instantclient-basic-macos.x64-11.2.0.4.0.zip``を入手
