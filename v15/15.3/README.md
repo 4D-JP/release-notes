@@ -11,20 +11,44 @@
 
 ---
 
-ACI0094500 : [131973] Tip et roll over ne fonctionnent pas dans barre d'outils sous Windows.
-ACI0095250 : [132976] Picture field with stored outside data file property in transaction.
-ACI0095359 : [133404] cannot catch a right-click on a radio button.
-ACI0095374 : [133505] GET BACKUP INFORMATION returns incorrect data on 4D CLIENT.
-ACI0095505 : [133705] Right-aligned text is displayed wrong in listview.
-ACI0094551 : [132492] Date format is incorrect on French system; the first letter of the month is uppercase.
-ACI0095063 : [132861] Option+delete shortcut does not work in 4D v15
-ACI0095321 : Modify selection screw up help menu
-ACI0093999 : [132603] [MAC][4D WRITE] Cursor disappear if you write something in 4D Write.
-ACI0094484 : Since v15, the plain border colour of text input is always black.
-ACI0095085 : After clicking CANCEL button in the 4D Server shutdown window, client connections are rejected or damaged.
-ACI0095446: Unexpected error text (#-10531) with  OPEN SETTINGS WINDOW("/Database";True;User settings)
-ACI0095305: 4D Write incompatible with Web Area
-ACI0095364: 4D Write Pro: Inserting an image twice has no effect even if the image has been modified
-ACI0095383: 4D Write Pro: Resized image is fuzzy
-ACI0095384: 4D Write Pro: Margin is not highlighted in selection
-ACI0095211 : [133306] Type ahead in combo boxes is broken.
+* ACI0094500 Windows版のみ。ツールバーウインドウ上では，ヘルプTipsが表示されませんでした。また，3Dボタンの「ロールオーバー」効果が起きませんでした。
+
+**注記**: ツールバーの管理方法はv15で刷新されました。新しいメカニズムでは，[Open form window](http://doc.4d.com/4Dv15/4D/15.1/Open-form-window.301-2686139.ja.html)の``Toolbar form window``定数と[SHOW TOOL BAR](http://doc.4d.com/4Dv15/4D/15.1/SHOW-TOOL-BAR.301-2686156.ja.html)を組み合わせて管理します。
+
+http://doc.4d.com/4Dv15/4D/15/Toolbar-form-windows.300-2044334.ja.html
+
+* ACI0095250 トランザクション中，保存場所が「データファイルの外」に設定されているピクチャーフィールドに画像を代入して新規レコードを保存し，トランザクション中にアンロード/ロードした場合，画像がロードされませんでした。トランザクションを確定した後でなければ，画像をロードすることができませんでした。
+
+* ACI0095359 ラジオボタンをクリックすると，イベントが発生しませんでした。チェックボックスでは問題ありません。
+
+* ACI0095374 ``GET BACKUP INFORMATION(Next backup date)``をクライアント側で実行すると，常にカレント日付とカレント時間が返されました。 
+
+* ACI0095505 Windows版のみ。リストフォームに表示されたフィールドの整列を「右揃え」に設定した場合，幅に収まりきらないテキストが切り捨てられる代わりに，エリアの外に表示されました。
+
+* ACI0094551 フランス語版のみ。日付フォーマットの``Internal date long (5)``および``Internal date abbreviated (6)``番は，月名の冒頭が大文字でした。フランス語では，月名をすべて小文字で表記するべきです。
+
+* ACI0095063 Mac版のみ。``option``キーを押しながら``delete``を入力すると，ワードが削除されるはずですが，4D（フォームエディターおよびメソッドエディター）ではこのショートカットが認識されませんでした。
+
+**注記**: Macの標準キーボードショートカットは下記のURLに列挙されています。
+
+https://support.apple.com/en-us/HT201236
+
+* ACI0095321 [MODIFY SELECTION](http://doc.4d.com/4Dv15/4D/15.1/MODIFY-SELECTION.301-2684948.ja.html)で実行されたフォームが表示されている間は，ヘルプメニューが動きませんでした。
+
+* ACI0093999 Mac版のみ。4D Writeにテキストを入力すると，カーソルが消えました。マウスを動かすと再びカーソルが表示されました。
+
+* ACI0094484 テキスト入力エリアのボーダースタイルが標準（``Plain (1)``）に設定されていた場合，ボーダーの色はフォントカラーを踏襲せず，常にブラックでした。フォームエディター上は問題ありません。ランタイムの問題です。
+
+* ACI0095085 4D Serverのシャットダウン画面で「キャンセル」ボタンをクリックすると，サーバーは動き続きますが，接続中のクライアントは接続が切断され，新規接続はできなくなりました。
+
+* ACI0095446 ユーザー設定が無効にされた状態で``OPEN SETTINGS WINDOW("/Database";True;User settings)``を実行すると，シンタックスエラーが返されました。しかし，エラーメッセージがありません。「ユーザーデータベース設定が有効化されていません。」というエラーメッセージが表示されるべきでした。
+
+* ACI0095305 Windows版のみ。別々のフォームページに4D Writeと4D Webエリアをそれぞれ配置し，ページを切り替えると，4D Writeにテキストを入力することができなくなりました。
+
+* ACI0095364 4D Write Pro文書に画像を挿入した後，削除し，元の画像ファイルを画像編集ソフトなどで加工してからもう一度挿入すると，加工前の古い画像が挿入されました。
+
+* ACI0095383 4D Write Pro文書（72DPI）にコンテキストメニューから画像を追加し，マウス操作でその画像をリサイズすると，画像がぼやけて表示されました。
+
+* ACI0095384 4D Write Pro文書の段落にマージンが設定されている場合，テキストの高さだけがハイライト表示されました。上下マージンもハイライト表示されるべきです。
+
+* ACI0095211 コンボボックスにタイプ入力中，完全に一致するアイテムがない限り，項目が選択されませんでした。以前のバージョンでは，前方一致した最初のアイテムが選択され，途中でEnterキーを入力すれば入力中のテキストが補完されました。
