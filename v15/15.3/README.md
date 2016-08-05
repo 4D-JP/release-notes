@@ -3,9 +3,11 @@
 
 ![jp](https://cloud.githubusercontent.com/assets/10509075/16182979/016305e0-36e7-11e6-816b-2335cc6f0abb.png)
 
-ACI0095313 : Wrong text encoding in 4D Compiler error messages for Japanese form name.
-ACI0095283 : Icon is not 4D icon in Plain form window.
-ACI0095167 : [133243] Focus lost in Query editor after selecting a value from a list attached to a field.
+* ACI0095313 シンタックスチェックを実行すると，日本語のフォーム名が文字化け表示されました。
+
+* ACI0095283 Windows版のみ。``Plain form window``タイプのウインドウを表示した場合，一般的なアプリケーションのアイコンがタイトルバーに表示されました。以前のバージョンでは，アプリケーションのアイコン（たとえば4Dのアイコン）が表示されていました。
+ 
+* ACI0095167 クエリエディターから表示された選択リストダイアログをキャンセルすると，フォーカスがクエリエディターに戻りませんでした。
 
 ---
 
