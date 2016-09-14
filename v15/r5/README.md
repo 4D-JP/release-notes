@@ -3,6 +3,8 @@
 
 ![jp](https://cloud.githubusercontent.com/assets/10509075/16182979/016305e0-36e7-11e6-816b-2335cc6f0abb.png)
 
+* ACI0094995 メソッドエディターに日本語を入力中，未確定の文字列を何度も再描画されました。
+ 
 * ACI0095340 フォームエディターでリストボックスの列を選択し，コンテキストメニューを表示しようとすると，アプリケーションがクラッシュしました。
 
 * ACI0095302 日本語入力中に``return``キーを押すと，デフォルトボタンが反応しました。
@@ -197,3 +199,33 @@ ASSERT(Size of array($ptr->{1}->)=Size of array($longintArr);"size of array shou
 * ACI0093455 Mac版の4D Viewの[PV SET CELL PROPERTY](http://doc.4d.com/4Dv15/4D-View/15/PV-SET-CELL-PROPERTY.301-2061444.ja.html)コマンドに``pv style color text odd``を指定した場合，実際には``pv style automatic word wrap``が変化しました。16進数で表現したRGB値の赤と緑が入れ替わっているような振る舞いでした。
 
 * ACI0095211 コンボボックスにタイプ入力中，完全に一致するアイテムがない限り，項目が選択されませんでした。以前のバージョンでは，前方一致した最初のアイテムが選択され，途中で``Enter``キーを入力すれば入力中のテキストが補完されました。
+
+* ACI0095394 HTTPの``Origin``ヘッダーが存在する場合，クロスオリジンリソース共有（CORS）リクエストに対して``403``エラーが返されました。
+
+* ACI0095407 プリエンプティブプロセスで[Time string](http://doc.4d.com/4dv15r/help/command/ja/page180.html)を使用するとアプリケーションがクラッシュしました。
+
+**注記**: 内部的にリソース``STR#149``が参照されていました。修正により，時間型の[String](http://doc.4d.com/4dv15r/help/command/ja/page10.html)および[Time string](http://doc.4d.com/4dv15r/help/command/ja/page180.html)はXLIFFを使用するようになりました。
+
+* ACI0095117 64ビット版のみ。[OBJECT SET RGB COLORS](http://doc.4d.com/4dv15r/help/command/ja/page628.html)でオブジェクトの背景色を透明にすることができませんでした。
+
+* ACI0095368 アプリケーションのビルド名（``BuildApplicationName``）を変更した場合，以前にビルドされたクライアントはサーバーに自動接続できませんでした。``EnginedServer.4Dlink``内の``server_database_name``には以前のサーバー名が設定されてしまうためです。
+
+* ACI0095293 64ビット版のみ。ビルドされたアプリケーションを起動すると，「4D Reportコンポーネントは4D SVGコンポーネントが必要です」というエラーメッセージが表示されました。修正により，新しいクイックレポートは自立したコンポーネントになりました。
+
+* ACI0095275 終了中にユーザー/グループにアクセスすると，アプリケーションがクラッシュすることがありました。
+
+* ACI0095244 [Position](http://doc.4d.com/4dv15r/help/command/ja/page15.html)にアスタリスクオプションを渡さなかった場合の速度が以前のバージョンよりも遅くなりました。
+
+* ACI0095111 ``Open form window``と``DIALOG``の間で[CALL FORM](http://doc.4d.com/4dv15r/help/command/ja/page1391.html)を使用しても，何も起きませんでした。ウインドウは作成されているので，メソッドは``On Load`イベントに続けて実行されるべきです。
+
+* ACI0095188 Windows版のみ。[CREATE FOLDER](http://doc.4d.com/4dv15r/help/command/ja/page475.html)に無効なパスが渡された場合，トレースするとエラー``-120``ではなく``-43``が返されました。
+
+* ACI0095234 [ OPEN PRINTING JOB](http://doc.4d.com/4dv15r/help/command/ja/page995.html)よりも前に[SET PRINT PREVIEW](http://doc.4d.com/4dv15r/help/command/ja/page364.html)を使用した場合，初回はプレビューではなくプリンターにジョブが送信されました。
+
+* ACI0094416 4D Popが起動された状態でクリックレポートのファイル選択ダイアログを表示すると，ダイアログがレポート画面の背後に表示されてしまい，操作を続けることができませんでした。
+
+* ACI0093887 Mac版のみ。選択されたセルのハイライトカラーが正しくありませんでした。
+ 
+* ACI0094820 15.1以前のバージョンで作成されたクイックレポートファイル（拡張子4qr）にフォーミュラが含まれており，その中で拡張文字が使用されている場合，15.2以降のクイックレポートでそのファイルを開くと文字化けが発生しました。
+
+* ACI0095104 Mac版のみ。4D Write Proまたはスタイル付きテキストで文法チェックを使用した場合，以前に訂正した単語に対する提案がメニューに表示されました。
