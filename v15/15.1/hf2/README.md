@@ -56,7 +56,7 @@ End for
 
 * ACI0093311 [131762] Windows版のみ。別アプリケーションがフォーカスを得ると，非モーダルダイアログの``On Deactivate``イベントが実行されました。v14以前のバージョンでは，同イベントが発生しませんでした。そのため，ダイアログの``On Deactivate``イベントで``BRING TO FRONT(Current process)``が実行されるようにコーディングされていた場合，4D以外のアプリケーションが最前面にある間，ずっとイベントが発生し，ダイアログが点滅し続けました。
 
-v14と比較して，[EXECUTE FORMULA](http://doc.4d.com/4Dv15/4D/15.1/EXECUTE-FORMULA.301-2685876.ja.html)および[PROCESS 4D TAGS](http://doc.4d.com/4Dv15/4D/15.1/PROCESS-4D-TAGS.301-2684931.ja.html)のループ実行にかかる時間が長くなりました（コンパイルモード）。前者は，2倍以上，後者は4倍以上，遅くなりました。
+* ACI0093953 v14と比較して，[EXECUTE FORMULA](http://doc.4d.com/4Dv15/4D/15.1/EXECUTE-FORMULA.301-2685876.ja.html)および[PROCESS 4D TAGS](http://doc.4d.com/4Dv15/4D/15.1/PROCESS-4D-TAGS.301-2684931.ja.html)のループ実行にかかる時間が長くなりました（コンパイルモード）。前者は，2倍以上，後者は4倍以上，遅くなりました。
 
 **注記**: 修正により，一定数のフォーミュラーがキャッシュに保持されるようになりました。この値は，[SET DATABASE PARAMETER](http://doc.4d.com/4Dv15/4D/15.1/SET-DATABASE-PARAMETER.301-2686308.ja.html)のセレクター``92``で有効にすることができます。
 
