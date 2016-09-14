@@ -108,8 +108,8 @@ SET DATABASE PARAMETER(34;2+4)
 BEEP
 SET DATABASE PARAMETER(34;0)
 ```
-* ACI0093501 4D Viewの自動計算モードが常に有効でした。
 
+* ACI0093501 4D Viewの自動計算モードが常に有効でした。
 
 * ACI0094591 [Size of array](http://doc.4d.com/4Dv15/4D/15.1/Size-of-array.301-2685282.ja.html)内で配列の要素に対してポインターの逆参照を使用するとアプリケーションがクラッシュしました。
 
