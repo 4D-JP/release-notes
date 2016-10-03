@@ -222,3 +222,17 @@ https://support.apple.com/en-us/HT201236
 * ACI0094916 Windows版のみ。.NET ODBCプロバイダー経由で4D ODBCドライバーにアクセスした場合，クエリの結果が完全に返されませんでした。Microsoft Excel，WinSQL，PHPでは問題ありません。C#/.Netアプリケーションからのアクセスは``SQLGetData``のチャンク処理に問題がありました。
 
 * ACI0095129 非常に負荷がかかった状態では，稀に[New log file](http://doc.4d.com/4dv15r/help/command/ja/page926.html)の実行中にレコード作成のオペレーションがログファイルに記録されないことがありました。
+
+* ACI0095724 リストボックスの``'On Column Resize'``イベントは，リストボックスのヘッダー上でマウスボタンをリリースしなければ発生しませんでした。
+
+* ACI0092571 [ユーザー設定](http://doc.4d.com/4Dv15R5/4D/15-R5/Using-user-settings.300-2964123.ja.html)が使用されている場合，アップグレード後に互換性オプションの「旧ネットワークレイヤーを使用する」が解除されました。
+
+* ACI0095266 フォームにスタイル付きテキストが存在し，テキストにアンパーサンド記号（``&``）が含まれている場合，[Print form ](http://doc.4d.com/4dv15r/help/command/ja/page5.html)で空のオブジェクトが印刷されました。
+
+* ACI0095726 Webサービスウィザードが生成するコードは，廃止予定コマンドである``_o_C_STRING``を含んでいました。
+
+* ACI0095711 Mac版のみ。リストフォームに長いテキスト（700KB程度）を表示しようとすると，アプリケーションの振る舞いが非常に遅くなりました。
+
+* ACI0091205 ``MAXINT``を超える行番号で[SAX Get XML node](http://doc.4d.com/4dv15r/help/command/ja/page860.html)のエラーが発生した場合，[GET LAST ERROR STACK](http://doc.4d.com/4dv15r/help/command/ja/page1015.html)に負の行番号が返されました。
+
+* ACI0092274 [ON EVENT CALL](http://doc.4d.com/4dv15r/help/command/ja/page190.html)を中止する（イベントマネージャープロセスを通常にプロセスに切り替える）ためのキーコンビネーション（Windows版は{{``Control``+``Shift``+``Backspace``，Mac版は``command``+``shift``+``control``+``backspace``）が効きませんでした。
