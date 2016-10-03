@@ -235,4 +235,4 @@ https://support.apple.com/en-us/HT201236
 
 * ACI0091205 ``MAXINT``を超える行番号で[SAX Get XML node](http://doc.4d.com/4dv15r/help/command/ja/page860.html)のエラーが発生した場合，[GET LAST ERROR STACK](http://doc.4d.com/4dv15r/help/command/ja/page1015.html)に負の行番号が返されました。
 
-* ACI0092274 [ON EVENT CALL](http://doc.4d.com/4dv15r/help/command/ja/page190.html)を中止する（イベントマネージャープロセスを通常にプロセスに切り替える）ためのキーコンビネーション（Windows版は{{``Control``+``Shift``+``Backspace``，Mac版は``command``+``shift``+``control``+``backspace``）が効きませんでした。
+* ACI0092274 [ON EVENT CALL](http://doc.4d.com/4dv15r/help/command/ja/page190.html)を中止する（イベントマネージャープロセスを通常にプロセスに切り替える）ためのキーコンビネーション（Windows版は``Control``+``Shift``+``Backspace`` Mac版は``command``+``shift``+``control``+``backspace``）が効きませんでした。
