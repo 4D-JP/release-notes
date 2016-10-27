@@ -11,6 +11,16 @@
 
 ---
 
+* ACI0094194 Windows版のみ。ポップアップメニューアイテムをキーボートで確定した直後に[CONFIRM](http://doc.4d.com/4Dv15R5/4D/15-R5/CONFIRM.301-2936614.ja.html)コマンドを実行すると，アプリケーションがクラッシュしました。
+
+* ACI0095018 [外部ファイルのユーザー設定を有効にする](http://doc.4d.com/4Dv15R5/4D/15-R5/Using-user-settings.300-2964123.ja.html)がチェックされていないまま下記のコードを実行すると，アプリケーションがクラッシュしました。
+
+```
+OPEN SETTINGS WINDOW("/Database";True;User settings)
+```
+
+* ACI0095163 フランス語版のみ。``ST FIXER TEXTE BRUT``のヘルプTipsが英語でした。
+
 * ACI0091205 [SAX Get XML node](http://doc.4d.com/4dv15r/help/command/ja/page860.html)コマンドは，32,768行目以降で発生したエラーの行番号がエラースタックに返されませんでした。
 
 * ACI0095446 ユーザー設定が無効にされた状態で``OPEN SETTINGS WINDOW("/Database";True;User settings)``を実行すると，シンタックスエラーが返されました。しかし，エラーメッセージがありません。「ユーザーデータベース設定が有効化されていません。」というエラーメッセージが表示されるべきでした。
