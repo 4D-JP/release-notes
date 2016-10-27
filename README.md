@@ -49,7 +49,7 @@ Release Notes
 
 * v14.5
 
-```2016-10-26.205251``` [4D v14.5 Hotfix 1](https://github.com/4D-JP/release-notes/blob/master/v14/14.5/hf2/README.md) 
+```2016-10-26.205251``` [4D v14.5 Hotfix 2](https://github.com/4D-JP/release-notes/blob/master/v14/14.5/hf2/README.md) 
 
 ```2016-07-11.202157``` [4D v14.5 Hotfix 1](https://github.com/4D-JP/release-notes/blob/master/v14/14.5/hf1/README.md) 
 
