@@ -58,7 +58,7 @@ CANCEL TRANSACTION
 
 * ACI0095610 ウイルス退治ソフトウェア（McAfeeなど）により，自動アップグレードが阻まれることがありました。
 
-**注記**: (Process Monitor)[https://technet.microsoft.com/ja-jp/sysinternals/processmonitor.aspx]でファイルアクセスを監視すると，自動アップデート中にMcAfeeが一瞬だけ4DCファイルにアクセスしていることが確認できます。終了直前に4DCファイルが書き換えられることに反応しているようです。ファイルがロックされているため，古いアプリケーションを移動することができず，自動アップグレードに失敗しました。
+**注記**: [Process Monitor](https://technet.microsoft.com/ja-jp/sysinternals/processmonitor.aspx)でファイルアクセスを監視すると，自動アップデート中にMcAfeeが一瞬だけ4DCファイルにアクセスしていることが確認できます。終了直前に4DCファイルが書き換えられることに反応しているようです。ファイルがロックされているため，古いアプリケーションを移動することができず，自動アップグレードに失敗しました。
 
 * ACI0095739 ポップアップウインドウ表示中にデバッガを表示しようとすると，アプリケーションがフリーズしました。
 
