@@ -51,6 +51,10 @@ Release Notes
 
 ```2015-01-14.175730``` [4D v14 R4 Hotfix 1](https://github.com/4D-JP/release-notes/blob/master/v14/r4/hf1/README.md) 
 
+* v14.6
+
+```2016-12-16.206769``` [4D v14.6](https://github.com/4D-JP/release-notes/blob/master/v14/14.6/README.md) 
+
 * v14.5
 
 ```2016-10-26.205251``` [4D v14.5 Hotfix 2](https://github.com/4D-JP/release-notes/blob/master/v14/14.5/hf2/README.md) 
