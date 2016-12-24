@@ -19,6 +19,8 @@ Release Notes
 
 * v15.3
 
+```2016-12-22.206822``` [4D v15.3 Hotfix 1](https://github.com/4D-JP/release-notes/tree/master/v15/15.3/hf1/README.md)
+
 ```2016-11-07.205412``` [4D v15.3](https://github.com/4D-JP/release-notes/blob/master/v15/15.3/README.md)
 
 * v15.2
