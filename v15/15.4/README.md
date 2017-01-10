@@ -7,6 +7,8 @@
 
 ![jp](https://cloud.githubusercontent.com/assets/10509075/16182979/016305e0-36e7-11e6-816b-2335cc6f0abb.png)
 
+* ACI0096078 ポップアップメニューの項目に空の文字列が存在する場合，0番項目の代わりにその項目が選択されました。
+
 * ACI0096166 遅いネットワークでは，HTTPクライアント（``WEB SERVICE CALL``，``HTTP Get``, ``HTTP request``）が途中で制御を返しました（``200 OK``）。
 
 **注記**: macOSでは，[Network Link Conditioner](https://developer.apple.com/download/more/)をインストールすることにより，遅いネットワークのシミュレーションをすることができます。
