@@ -37,8 +37,8 @@
 
 **注記**: 下記のファイルを削除することにより，エクスプローラーのフォーム設定を初期化することができます。
 
-Windows: ``C:\Users\<ユーザー名>\AppData\Roaming\4D\``
-Mac: ``/Users/<ユーザー名>/Library/Application Support/4D/``
+- Windows: ``C:\Users\<ユーザー名>\AppData\Roaming\4D\``
+- Mac: ``/Users/<ユーザー名>/Library/Application Support/4D/``
 
 * ACI0092113 Windows版のみ。フォームにリサイズハンドルがあり，ウインドウの右下いっぱいにリストボックスが配置されていた場合，リストボックスのスクロールバーとフォームにリサイズハンドルが同じ位置に表示されました。そのため，クリックで下方スクロール操作をすることができませんでした。
 
