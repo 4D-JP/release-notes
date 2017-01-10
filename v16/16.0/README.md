@@ -218,6 +218,7 @@ ALERT($T_Resultat)
 2016-06-15 14:19:49 [4DUP] INFO - Update failed - 6/15/2016 - 2:19
 2016-06-15 14:19:51 [PW32] ERROR - [121] The source or destination path exceeded or would exceed MAX_PATH., task #2412
 2016-06-15 14:19:51 [xbox] ERROR - [661] Can't move ... into trash., task #2412
+```
 
 * ACI0095257 15.2以降，テキストの最後に空白文字がない限り，テキストの最後をクリックしてカーソルをそこに移動することができませんでした。
 
