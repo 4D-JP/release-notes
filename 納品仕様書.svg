@@ -1,391 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="no" ?>
-
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
-  version="1.1"
-  width="210mm"
-  height="297mm">
-<desc>
-  <!--#4dtext $csv-->
-</desc>
-<defs>
-  <style type="text/css">
-    textArea {
-      display-align: center;
-      text-align: center;
-      font-weight: normal;
-      fill: black;
-      font-family: "ヒラギノ明朝 ProN";
-      font-size: 7.2;
-    }
-    /* sans serif */
-    textArea.sans_size_7 {
-      font-size: 7.2;
-      font-family: "ヒラギノ角ゴシック W3";
-    }
-    textArea.sans_size_8sp2 {
-      font-size: 8.5;
-      letter-spacing: 0.2em;
-      font-family: "ヒラギノ角ゴシック W3";
-    }
-    /* size 7.2 */
-    textArea.size_7_left {
-      font-size: 7.2;
-      text-align: start;
-    }
-    textArea.size_7_right {
-      font-size: 7.2;
-      text-align: end;
-    }
-    textArea.size_7sp0 {
-      font-size: 7.2;
-      letter-spacing: 0;
-    }
-    textArea.size_7sp0_left {
-      font-size: 7.2;
-      letter-spacing: 0;
-      text-align: start;
-    }
-    textArea.size_7sp1 {
-      font-size: 7.2;
-      letter-spacing: 0.1em;
-    }
-    textArea.size_7sp2 {
-      font-size: 7.2;
-      letter-spacing: 0.2em;
-    }
-    textArea.size_7sp2_right {
-      font-size: 7.2;
-      letter-spacing: 0.2em;
-      text-align: end;
-    }
-    textArea.size_7sp2_left {
-      font-size: 7.2;
-      letter-spacing: 0.2em;
-      text-align: start;
-    }
-    textArea.size_7sp5_left {
-      font-size: 7.2;
-      letter-spacing: 0.5em;
-      text-align: start;
-    }
-    textArea.size_7sp5 {
-      font-size: 7.2;
-      letter-spacing: 0.5em;
-    }
-    textArea.size_7sp7 {
-      font-size: 7.2;
-      letter-spacing: 0.7em;
-    }
-    textArea.size_7sp8 {
-      font-size: 7.2;
-      letter-spacing: 0.8em;
-    }
-    textArea.size_7sp9 {
-      font-size: 7.2;
-      letter-spacing:0.9em;
-    }
-    textArea.size_7sp19 {
-      font-size: 7.2;
-      letter-spacing: 1.9em;
-    }
-    /* size 7.2 nchars */
-    textArea.size_7_2chars {
-      font-size: 7.2;
-      letter-spacing:3em;
-      text-align: start;
-    }
-    textArea.size_7_3chars {
-      font-size: 7.2;
-      letter-spacing:1em;
-      text-align: start;
-    }
-    textArea.size_7_4chars {
-      font-size: 7.2;
-      letter-spacing:0.35em;
-      text-align: start;
-    }
-    textArea.size_7_nchars {
-      font-size: 7.2;
-      text-align: start;
-    }
-    /* size 9.2 */
-    textArea.size_9_left {
-      font-size: 9.2;
-      text-align: start;
-    }
-    /* size 11.2 */
-    textArea.size_11 {
-      font-size: 11.2;
-    }
-    /* size 14.8 */
-    textArea.size_14_left {
-      font-size: 14.8;
-      text-align: start;
-    }
-    /* rect,line */
-    line,rect {
-      stroke: black;
-      stroke-width: 0.1mm;
-      fill: none;
-    }
-    rect.thick {
-      stroke-width: 0.3mm;
-    }
-    rect.thicker {
-      stroke-width: 0.5mm;
-    }
-    line.dotted {
-      stroke-dasharray:"3, 3"
-    }
-    /* text,tspan */
-    text {
-      font-size:7.6;
-    }
-    tspan.size_11 {
-      letter-spacing: 1;
-    }
-    tspan.sy_v {
-      letter-spacing: 1;
-    }
-    .mx {
-      font-family: sans-serif;
-      font-size: 10.5px;
-      text-anchor: middle;
-      fill:#999;
-    }
-    .my {
-      font-family: sans-serif;
-      font-size: 10.5px;
-      text-anchor: middle;
-      fill:#999;
-    }
-    line.matrix {
-      stroke-width:0.1mm;
-      stroke:#99F;
-    }
-    line.bold {
-      stroke-width:0.3mm;
-    }
-  </style>
-</defs>
-  <g transform="translate(0,0)">
-    <image width="100%" height="100%" xlink:href="納品仕様書.pdf" />
-  </g>
-  <g transform="translate(0,0)">
-    <g id="x-label" class="mx">
-      <text x="1in" y="0.8pc">1</text>      <text x="2in" y="0.8pc">2</text>      <text x="3in" y="0.8pc">3</text>      <text x="4in" y="0.8pc">4</text>      <text x="5in" y="0.8pc">5</text>      <text x="6in" y="0.8pc">6</text>      <text x="7in" y="0.8pc">7</text>      <text x="0.2in" y="1.8pc">2</text>      <text x="0.3in" y="1.8pc">3</text>      <text x="0.4in" y="1.8pc">4</text>      <text x="0.5in" y="1.8pc">5</text>      <text x="0.6in" y="1.8pc">6</text>      <text x="0.7in" y="1.8pc">7</text>      <text x="0.8in" y="1.8pc">8</text>      <text x="0.9in" y="1.8pc">9</text>      <text x="1in" y="1.8pc">0</text>      <text x="1.1in" y="1.8pc">1</text>      <text x="1.2in" y="1.8pc">2</text>      <text x="1.3in" y="1.8pc">3</text>      <text x="1.4in" y="1.8pc">4</text>      <text x="1.5in" y="1.8pc">5</text>      <text x="1.6in" y="1.8pc">6</text>      <text x="1.7in" y="1.8pc">7</text>      <text x="1.8in" y="1.8pc">8</text>      <text x="1.9in" y="1.8pc">9</text>      <text x="2in" y="1.8pc">0</text>      <text x="2.1in" y="1.8pc">1</text>      <text x="2.2in" y="1.8pc">2</text>      <text x="2.3in" y="1.8pc">3</text>      <text x="2.4in" y="1.8pc">4</text>      <text x="2.5in" y="1.8pc">5</text>      <text x="2.6in" y="1.8pc">6</text>      <text x="2.7in" y="1.8pc">7</text>      <text x="2.8in" y="1.8pc">8</text>      <text x="2.9in" y="1.8pc">9</text>      <text x="3in" y="1.8pc">0</text>      <text x="3.1in" y="1.8pc">1</text>      <text x="3.2in" y="1.8pc">2</text>      <text x="3.3in" y="1.8pc">3</text>      <text x="3.4in" y="1.8pc">4</text>      <text x="3.5in" y="1.8pc">5</text>      <text x="3.6in" y="1.8pc">6</text>      <text x="3.7in" y="1.8pc">7</text>      <text x="3.8in" y="1.8pc">8</text>      <text x="3.9in" y="1.8pc">9</text>      <text x="4in" y="1.8pc">0</text>      <text x="4.1in" y="1.8pc">1</text>      <text x="4.2in" y="1.8pc">2</text>      <text x="4.3in" y="1.8pc">3</text>      <text x="4.4in" y="1.8pc">4</text>      <text x="4.5in" y="1.8pc">5</text>      <text x="4.6in" y="1.8pc">6</text>      <text x="4.7in" y="1.8pc">7</text>      <text x="4.8in" y="1.8pc">8</text>      <text x="4.9in" y="1.8pc">9</text>      <text x="5in" y="1.8pc">0</text>      <text x="5.1in" y="1.8pc">1</text>      <text x="5.2in" y="1.8pc">2</text>      <text x="5.3in" y="1.8pc">3</text>      <text x="5.4in" y="1.8pc">4</text>      <text x="5.5in" y="1.8pc">5</text>      <text x="5.6in" y="1.8pc">6</text>      <text x="5.7in" y="1.8pc">7</text>      <text x="5.8in" y="1.8pc">8</text>      <text x="5.9in" y="1.8pc">9</text>      <text x="6in" y="1.8pc">0</text>      <text x="6.1in" y="1.8pc">1</text>      <text x="6.2in" y="1.8pc">2</text>      <text x="6.3in" y="1.8pc">3</text>      <text x="6.4in" y="1.8pc">4</text>      <text x="6.5in" y="1.8pc">5</text>      <text x="6.6in" y="1.8pc">6</text>      <text x="6.7in" y="1.8pc">7</text>      <text x="6.8in" y="1.8pc">8</text>      <text x="6.9in" y="1.8pc">9</text>      <text x="7in" y="1.8pc">0</text>      <text x="7.1in" y="1.8pc">1</text>      <text x="7.2in" y="1.8pc">2</text>      <text x="7.3in" y="1.8pc">3</text>      <text x="7.4in" y="1.8pc">4</text>      <text x="7.5in" y="1.8pc">5</text>      <text x="7.6in" y="1.8pc">6</text>      <text x="7.7in" y="1.8pc">7</text>      <text x="7.8in" y="1.8pc">8</text>      <text x="7.9in" y="1.8pc">9</text>      <text x="8in" y="1.8pc">0</text>      <text x="8.1in" y="1.8pc">1</text>    </g>
-    <g id="x-lines">
-      <line class="matrix" x1="0.4in" y1="2pc" x2="0.4in" y2="297mm" />
-      <line class="matrix" x1="0.5in" y1="2pc" x2="0.5in" y2="297mm" />
-      <line class="matrix" x1="0.6in" y1="2pc" x2="0.6in" y2="297mm" />
-      <line class="matrix" x1="0.7in" y1="2pc" x2="0.7in" y2="297mm" />
-      <line class="matrix" x1="0.8in" y1="2pc" x2="0.8in" y2="297mm" />
-      <line class="matrix" x1="0.9in" y1="2pc" x2="0.9in" y2="297mm" />
-      <line class="matrix bold" x1="1in" y1="2pc" x2="1in" y2="297mm" />
-      <line class="matrix" x1="1.1in" y1="2pc" x2="1.1in" y2="297mm" />
-      <line class="matrix" x1="1.2in" y1="2pc" x2="1.2in" y2="297mm" />
-      <line class="matrix" x1="1.3in" y1="2pc" x2="1.3in" y2="297mm" />
-      <line class="matrix" x1="1.4in" y1="2pc" x2="1.4in" y2="297mm" />
-      <line class="matrix" x1="1.5in" y1="2pc" x2="1.5in" y2="297mm" />
-      <line class="matrix" x1="1.6in" y1="2pc" x2="1.6in" y2="297mm" />
-      <line class="matrix" x1="1.7in" y1="2pc" x2="1.7in" y2="297mm" />
-      <line class="matrix" x1="1.8in" y1="2pc" x2="1.8in" y2="297mm" />
-      <line class="matrix" x1="1.9in" y1="2pc" x2="1.9in" y2="297mm" />
-      <line class="matrix bold" x1="2in" y1="2pc" x2="2in" y2="297mm" />
-      <line class="matrix" x1="2.1in" y1="2pc" x2="2.1in" y2="297mm" />
-      <line class="matrix" x1="2.2in" y1="2pc" x2="2.2in" y2="297mm" />
-      <line class="matrix" x1="2.3in" y1="2pc" x2="2.3in" y2="297mm" />
-      <line class="matrix" x1="2.4in" y1="2pc" x2="2.4in" y2="297mm" />
-      <line class="matrix" x1="2.5in" y1="2pc" x2="2.5in" y2="297mm" />
-      <line class="matrix" x1="2.6in" y1="2pc" x2="2.6in" y2="297mm" />
-      <line class="matrix" x1="2.7in" y1="2pc" x2="2.7in" y2="297mm" />
-      <line class="matrix" x1="2.8in" y1="2pc" x2="2.8in" y2="297mm" />
-      <line class="matrix" x1="2.9in" y1="2pc" x2="2.9in" y2="297mm" />
-      <line class="matrix bold" x1="3in" y1="2pc" x2="3in" y2="297mm" />
-      <line class="matrix" x1="3.1in" y1="2pc" x2="3.1in" y2="297mm" />
-      <line class="matrix" x1="3.2in" y1="2pc" x2="3.2in" y2="297mm" />
-      <line class="matrix" x1="3.3in" y1="2pc" x2="3.3in" y2="297mm" />
-      <line class="matrix" x1="3.4in" y1="2pc" x2="3.4in" y2="297mm" />
-      <line class="matrix" x1="3.5in" y1="2pc" x2="3.5in" y2="297mm" />
-      <line class="matrix" x1="3.6in" y1="2pc" x2="3.6in" y2="297mm" />
-      <line class="matrix" x1="3.7in" y1="2pc" x2="3.7in" y2="297mm" />
-      <line class="matrix" x1="3.8in" y1="2pc" x2="3.8in" y2="297mm" />
-      <line class="matrix" x1="3.9in" y1="2pc" x2="3.9in" y2="297mm" />
-      <line class="matrix bold" x1="4in" y1="2pc" x2="4in" y2="297mm" />
-      <line class="matrix" x1="4.1in" y1="2pc" x2="4.1in" y2="297mm" />
-      <line class="matrix" x1="4.2in" y1="2pc" x2="4.2in" y2="297mm" />
-      <line class="matrix" x1="4.3in" y1="2pc" x2="4.3in" y2="297mm" />
-      <line class="matrix" x1="4.4in" y1="2pc" x2="4.4in" y2="297mm" />
-      <line class="matrix" x1="4.5in" y1="2pc" x2="4.5in" y2="297mm" />
-      <line class="matrix" x1="4.6in" y1="2pc" x2="4.6in" y2="297mm" />
-      <line class="matrix" x1="4.7in" y1="2pc" x2="4.7in" y2="297mm" />
-      <line class="matrix" x1="4.8in" y1="2pc" x2="4.8in" y2="297mm" />
-      <line class="matrix" x1="4.9in" y1="2pc" x2="4.9in" y2="297mm" />
-      <line class="matrix bold" x1="5in" y1="2pc" x2="5in" y2="297mm" />
-      <line class="matrix" x1="5.1in" y1="2pc" x2="5.1in" y2="297mm" />
-      <line class="matrix" x1="5.2in" y1="2pc" x2="5.2in" y2="297mm" />
-      <line class="matrix" x1="5.3in" y1="2pc" x2="5.3in" y2="297mm" />
-      <line class="matrix" x1="5.4in" y1="2pc" x2="5.4in" y2="297mm" />
-      <line class="matrix" x1="5.5in" y1="2pc" x2="5.5in" y2="297mm" />
-      <line class="matrix" x1="5.6in" y1="2pc" x2="5.6in" y2="297mm" />
-      <line class="matrix" x1="5.7in" y1="2pc" x2="5.7in" y2="297mm" />
-      <line class="matrix" x1="5.8in" y1="2pc" x2="5.8in" y2="297mm" />
-      <line class="matrix" x1="5.9in" y1="2pc" x2="5.9in" y2="297mm" />
-      <line class="matrix bold" x1="6in" y1="2pc" x2="6in" y2="297mm" />
-      <line class="matrix" x1="6.1in" y1="2pc" x2="6.1in" y2="297mm" />
-      <line class="matrix" x1="6.2in" y1="2pc" x2="6.2in" y2="297mm" />
-      <line class="matrix" x1="6.3in" y1="2pc" x2="6.3in" y2="297mm" />
-      <line class="matrix" x1="6.4in" y1="2pc" x2="6.4in" y2="297mm" />
-      <line class="matrix" x1="6.5in" y1="2pc" x2="6.5in" y2="297mm" />
-      <line class="matrix" x1="6.6in" y1="2pc" x2="6.6in" y2="297mm" />
-      <line class="matrix" x1="6.7in" y1="2pc" x2="6.7in" y2="297mm" />
-      <line class="matrix" x1="6.8in" y1="2pc" x2="6.8in" y2="297mm" />
-      <line class="matrix" x1="6.9in" y1="2pc" x2="6.9in" y2="297mm" />
-      <line class="matrix bold" x1="7in" y1="2pc" x2="7in" y2="297mm" />
-      <line class="matrix" x1="7.1in" y1="2pc" x2="7.1in" y2="297mm" />
-      <line class="matrix" x1="7.2in" y1="2pc" x2="7.2in" y2="297mm" />
-      <line class="matrix" x1="7.3in" y1="2pc" x2="7.3in" y2="297mm" />
-      <line class="matrix" x1="7.4in" y1="2pc" x2="7.4in" y2="297mm" />
-      <line class="matrix" x1="7.5in" y1="2pc" x2="7.5in" y2="297mm" />
-      <line class="matrix" x1="7.6in" y1="2pc" x2="7.6in" y2="297mm" />
-      <line class="matrix" x1="7.7in" y1="2pc" x2="7.7in" y2="297mm" />
-      <line class="matrix" x1="7.8in" y1="2pc" x2="7.8in" y2="297mm" />
-      <line class="matrix" x1="7.9in" y1="2pc" x2="7.9in" y2="297mm" />
-      <line class="matrix bold" x1="8in" y1="2pc" x2="8in" y2="297mm" />
-      <line class="matrix" x1="8.1in" y1="2pc" x2="8.1in" y2="297mm" />
-    </g>
-    <g id="y-label" class="my">
-      <text x="0.15in" y="2.25pc">2</text>
-      <text x="0.15in" y="3.25pc">3</text>
-      <text x="0.15in" y="4.25pc">4</text>
-      <text x="0.15in" y="5.25pc">5</text>
-      <text x="0.15in" y="6.25pc">6</text>
-      <text x="0.15in" y="7.25pc">7</text>
-      <text x="0.15in" y="8.25pc">8</text>
-      <text x="0.15in" y="9.25pc">9</text>
-      <text x="0.15in" y="10.25pc">10</text>
-      <text x="0.15in" y="11.25pc">11</text>
-      <text x="0.15in" y="12.25pc">12</text>
-      <text x="0.15in" y="13.25pc">13</text>
-      <text x="0.15in" y="14.25pc">14</text>
-      <text x="0.15in" y="15.25pc">15</text>
-      <text x="0.15in" y="16.25pc">16</text>
-      <text x="0.15in" y="17.25pc">17</text>
-      <text x="0.15in" y="18.25pc">18</text>
-      <text x="0.15in" y="19.25pc">19</text>
-      <text x="0.15in" y="20.25pc">20</text>
-      <text x="0.15in" y="21.25pc">21</text>
-      <text x="0.15in" y="22.25pc">22</text>
-      <text x="0.15in" y="23.25pc">23</text>
-      <text x="0.15in" y="24.25pc">24</text>
-      <text x="0.15in" y="25.25pc">25</text>
-      <text x="0.15in" y="26.25pc">26</text>
-      <text x="0.15in" y="27.25pc">27</text>
-      <text x="0.15in" y="28.25pc">28</text>
-      <text x="0.15in" y="29.25pc">29</text>
-      <text x="0.15in" y="30.25pc">30</text>
-      <text x="0.15in" y="31.25pc">31</text>
-      <text x="0.15in" y="32.25pc">32</text>
-      <text x="0.15in" y="33.25pc">33</text>
-      <text x="0.15in" y="34.25pc">34</text>
-      <text x="0.15in" y="35.25pc">35</text>
-      <text x="0.15in" y="36.25pc">36</text>
-      <text x="0.15in" y="37.25pc">37</text>
-      <text x="0.15in" y="38.25pc">38</text>
-      <text x="0.15in" y="39.25pc">39</text>
-      <text x="0.15in" y="40.25pc">40</text>
-      <text x="0.15in" y="41.25pc">41</text>
-      <text x="0.15in" y="42.25pc">42</text>
-      <text x="0.15in" y="43.25pc">43</text>
-      <text x="0.15in" y="44.25pc">44</text>
-      <text x="0.15in" y="45.25pc">45</text>
-      <text x="0.15in" y="46.25pc">46</text>
-      <text x="0.15in" y="47.25pc">47</text>
-      <text x="0.15in" y="48.25pc">48</text>
-      <text x="0.15in" y="49.25pc">49</text>
-      <text x="0.15in" y="50.25pc">50</text>
-      <text x="0.15in" y="51.25pc">51</text>
-      <text x="0.15in" y="52.25pc">52</text>
-      <text x="0.15in" y="53.25pc">53</text>
-      <text x="0.15in" y="54.25pc">54</text>
-      <text x="0.15in" y="55.25pc">55</text>
-      <text x="0.15in" y="56.25pc">56</text>
-      <text x="0.15in" y="57.25pc">57</text>
-      <text x="0.15in" y="58.25pc">58</text>
-      <text x="0.15in" y="59.25pc">59</text>
-      <text x="0.15in" y="60.25pc">60</text>
-      <text x="0.15in" y="61.25pc">61</text>
-      <text x="0.15in" y="62.25pc">62</text>
-      <text x="0.15in" y="63.25pc">63</text>
-      <text x="0.15in" y="64.25pc">64</text>
-    </g>
-    <g id="y-lines">
-      <line class="matrix" x1="0.2in" y1="2pc" x2="210mm" y2="2pc" />
-      <line class="matrix" x1="0.2in" y1="3pc" x2="210mm" y2="3pc" />
-      <line class="matrix" x1="0.2in" y1="4pc" x2="210mm" y2="4pc" />
-      <line class="matrix" x1="0.2in" y1="5pc" x2="210mm" y2="5pc" />
-      <line class="matrix" x1="0.2in" y1="6pc" x2="210mm" y2="6pc" />
-      <line class="matrix" x1="0.2in" y1="7pc" x2="210mm" y2="7pc" />
-      <line class="matrix" x1="0.2in" y1="8pc" x2="210mm" y2="8pc" />
-      <line class="matrix" x1="0.2in" y1="9pc" x2="210mm" y2="9pc" />
-      <line class="matrix bold" x1="0.2in" y1="10pc" x2="210mm" y2="10pc" />
-      <line class="matrix" x1="0.2in" y1="11pc" x2="210mm" y2="11pc" />
-      <line class="matrix" x1="0.2in" y1="12pc" x2="210mm" y2="12pc" />
-      <line class="matrix" x1="0.2in" y1="13pc" x2="210mm" y2="13pc" />
-      <line class="matrix" x1="0.2in" y1="14pc" x2="210mm" y2="14pc" />
-      <line class="matrix" x1="0.2in" y1="15pc" x2="210mm" y2="15pc" />
-      <line class="matrix" x1="0.2in" y1="16pc" x2="210mm" y2="16pc" />
-      <line class="matrix" x1="0.2in" y1="17pc" x2="210mm" y2="17pc" />
-      <line class="matrix" x1="0.2in" y1="18pc" x2="210mm" y2="18pc" />
-      <line class="matrix" x1="0.2in" y1="19pc" x2="210mm" y2="19pc" />
-      <line class="matrix bold" x1="0.2in" y1="20pc" x2="210mm" y2="20pc" />
-      <line class="matrix" x1="0.2in" y1="21pc" x2="210mm" y2="21pc" />
-      <line class="matrix" x1="0.2in" y1="22pc" x2="210mm" y2="22pc" />
-      <line class="matrix" x1="0.2in" y1="23pc" x2="210mm" y2="23pc" />
-      <line class="matrix" x1="0.2in" y1="24pc" x2="210mm" y2="24pc" />
-      <line class="matrix" x1="0.2in" y1="25pc" x2="210mm" y2="25pc" />
-      <line class="matrix" x1="0.2in" y1="26pc" x2="210mm" y2="26pc" />
-      <line class="matrix" x1="0.2in" y1="27pc" x2="210mm" y2="27pc" />
-      <line class="matrix" x1="0.2in" y1="28pc" x2="210mm" y2="28pc" />
-      <line class="matrix" x1="0.2in" y1="29pc" x2="210mm" y2="29pc" />
-      <line class="matrix bold" x1="0.2in" y1="30pc" x2="210mm" y2="30pc" />
-      <line class="matrix" x1="0.2in" y1="31pc" x2="210mm" y2="31pc" />
-      <line class="matrix" x1="0.2in" y1="32pc" x2="210mm" y2="32pc" />
-      <line class="matrix" x1="0.2in" y1="33pc" x2="210mm" y2="33pc" />
-      <line class="matrix" x1="0.2in" y1="34pc" x2="210mm" y2="34pc" />
-      <line class="matrix" x1="0.2in" y1="35pc" x2="210mm" y2="35pc" />
-      <line class="matrix" x1="0.2in" y1="36pc" x2="210mm" y2="36pc" />
-      <line class="matrix" x1="0.2in" y1="37pc" x2="210mm" y2="37pc" />
-      <line class="matrix" x1="0.2in" y1="38pc" x2="210mm" y2="38pc" />
-      <line class="matrix" x1="0.2in" y1="39pc" x2="210mm" y2="39pc" />
-      <line class="matrix bold" x1="0.2in" y1="40pc" x2="210mm" y2="40pc" />
-      <line class="matrix" x1="0.2in" y1="41pc" x2="210mm" y2="41pc" />
-      <line class="matrix" x1="0.2in" y1="42pc" x2="210mm" y2="42pc" />
-      <line class="matrix" x1="0.2in" y1="43pc" x2="210mm" y2="43pc" />
-      <line class="matrix" x1="0.2in" y1="44pc" x2="210mm" y2="44pc" />
-      <line class="matrix" x1="0.2in" y1="45pc" x2="210mm" y2="45pc" />
-      <line class="matrix" x1="0.2in" y1="46pc" x2="210mm" y2="46pc" />
-      <line class="matrix" x1="0.2in" y1="47pc" x2="210mm" y2="47pc" />
-      <line class="matrix" x1="0.2in" y1="48pc" x2="210mm" y2="48pc" />
-      <line class="matrix" x1="0.2in" y1="49pc" x2="210mm" y2="49pc" />
-      <line class="matrix bold" x1="0.2in" y1="50pc" x2="210mm" y2="50pc" />
-      <line class="matrix" x1="0.2in" y1="51pc" x2="210mm" y2="51pc" />
-      <line class="matrix" x1="0.2in" y1="52pc" x2="210mm" y2="52pc" />
-      <line class="matrix" x1="0.2in" y1="53pc" x2="210mm" y2="53pc" />
-      <line class="matrix" x1="0.2in" y1="54pc" x2="210mm" y2="54pc" />
-      <line class="matrix" x1="0.2in" y1="55pc" x2="210mm" y2="55pc" />
-      <line class="matrix" x1="0.2in" y1="56pc" x2="210mm" y2="56pc" />
-      <line class="matrix" x1="0.2in" y1="57pc" x2="210mm" y2="57pc" />
-      <line class="matrix" x1="0.2in" y1="58pc" x2="210mm" y2="58pc" />
-      <line class="matrix" x1="0.2in" y1="59pc" x2="210mm" y2="59pc" />
-      <line class="matrix bold" x1="0.2in" y1="60pc" x2="210mm" y2="60pc" />
-      <line class="matrix" x1="0.2in" y1="61pc" x2="210mm" y2="61pc" />
-      <line class="matrix" x1="0.2in" y1="62pc" x2="210mm" y2="62pc" />
-      <line class="matrix" x1="0.2in" y1="63pc" x2="210mm" y2="63pc" />
-      <line class="matrix" x1="0.2in" y1="64pc" x2="210mm" y2="64pc" />
-      <line class="matrix" x1="0.2in" y1="65pc" x2="210mm" y2="65pc" />
-    </g>
-  </g>
-</svg>
