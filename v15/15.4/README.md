@@ -1,7 +1,7 @@
 4D v15.4 
 ---
 
-Nightly Build ``207962``
+Nightly Build ``208269``
 
 [4D v15.3 Hotfix 1](https://github.com/4D-JP/release-notes/tree/master/v15/15.3/hf1)の修正事項もご覧ください。
 
