@@ -23,7 +23,7 @@ Release Notes
 
 * v15.4
 
-```2017-02-01.208269``` [4D v15.3](https://github.com/4D-JP/release-notes/blob/master/v15/15.4/README.md)
+```2017-02-01.208269``` [4D v15.4](https://github.com/4D-JP/release-notes/blob/master/v15/15.4/README.md)
 
 * v15.3
 
