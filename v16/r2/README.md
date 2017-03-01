@@ -114,3 +114,34 @@ End if
 * ACI0096150  macOS Sierraのみ。4D Writeエリアをクリックしてアクティブにすると，アプリケーションがクラッシュしました。TouchBar搭載マシンでなければ問題ありません。
 
 * ACI0073896 ``PRINT SELECTION``で印刷を実行した場合，プリントダイアログに入力した終了ページ番号は反映されますが，開始ベージ番号は無視されました。
+
+* ACI0095427 Windows 10のみ。リストボックスのセルや一般的なテキスト入力オブジェクト（変数またはフィールドに）日本語入力メソッドを使用してテキストを入力した場合，文末の文字がスペース（全角または半角）だとカーソルの点滅が停止し，カーソルの位置がわからなくなります。
+
+* ACI0095432 4D Write ProからエクスポートしたMIMEテキストは，(RFC2822)[https://tools.ietf.org/html/rfc2822]で勧められているように，1行の長さが998ですが，一部のメールサーバーは，78行以内でなければメッセージを処理することができません。
+
+* ACI0095452 クイックレポートエディター上でセルを選択しても，ツールバーの状態が更新されませんでした。
+
+* ACI0095463 保存オプションが『データファイルの中』に設定されている場合，ストラクチャエディター上でフィールドのタイプをオブジェクトからテキストに変更することができませんでした。テキストではなく，文字列になりました。 保存オプションが『レコードと一緒』に設定されていれば，フィールドのタイプをオブジェクトからテキストに変更することができます。しかし，タイプをオブジェクトの戻すと，保存オプションも『データファイルの中』に戻りました。
+
+* ACI0095490 Mac版の32ビットクライアントからWindows版の64ビットサーバーに何度も接続を試みていると，ランタイムエラー``-50``が返されることがありました。通常の操作では，なかなか再現しません。スクリプトを使用して，接続と切断を高速に繰り返すと，再現性が上がります。ネットワークレイヤー『旧式』で問題が発生します。クライアント/サーバーの接続タイムアウトは1時間くらいに設定すると発生しやすいようです。
+
+**参考**: ``4DLink``ファイルを用意し，下記のようなAppleScriptでサーバーに接続することができます。
+
+```applescript
+set x to 0
+repeat 20 times
+    tell application "Finder"
+    activate
+    open document file "$(DatabaseName).4DLink" of ¬
+    folder "Remote" of folder "Favorites v16" of folder "4D" of ¬
+    folder "Application Support" of folder "Library" of ¬
+    folder $(UserName) of folder "Users" of startup disk
+    delay (10)
+    tell application "4D"
+        quit
+    end tell
+    set x to x + 1
+    display notification (x)
+    end tell
+end repeat
+```
