@@ -131,7 +131,7 @@ vv:=True | False
 
 * ACI0096053 Windows版のみ。4D Viewのツールバーにあるフォーミュラーエディターが黒く表示されました。
 
-* ACI0095746 [SET DATABASE PARAMETER](http://doc.4d.com/4Dv16/4D/16/SET-DATABASE-PARAMETER.301-3036270.ja.html)に定数``Circular log limitation``と値``1``は，ログ（サーバーリクエストログ・Webログ・デバッグログ・クライアントリクエストログ・診断ログ）作成を有効にした後でなければ，ログファイル数の最大値を制限しませんでした。
+* ACI0095746 [SET DATABASE PARAMETER](http://doc.4d.com/4Dv16/4D/16/SET-DATABASE-PARAMETER.301-3036270.ja.html)の定数``Circular log limitation``と値``1``は，ログ（サーバーリクエストログ・Webログ・デバッグログ・クライアントリクエストログ・診断ログ）作成を有効にした後でなければ，ログファイル数の最大値を制限しませんでした。
 
 * ACI0096082 数値フィールドにフォーマットが適用されており，値の桁数がフォーマットの桁数に満たない場合，水平揃えが常に「右揃え」になりました。
 
