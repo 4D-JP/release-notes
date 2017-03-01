@@ -140,5 +140,3 @@ vv:=True | False
 * ACI0095237 [Convert path system to POSIX](http://doc.4d.com/4Dv16/4D/16/Convert-path-POSIX-to-system.301-3036724.ja.html)は``#``を``%23``に変換しませんでした。
 
 * ACI0095681 リストボックスのセルの背景色は，透過に設定されていても，テキスト入力中はホワイトになりました。
-
-**注記**: このコマンドはRバージョンで導入されました。v15.xでは，エラーが返されるべきでした。
