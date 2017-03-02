@@ -7,7 +7,7 @@ Release Notes
 
 ###Latest Stable
 
-```2017-03-01.209177``` [4D v16](https://github.com/4D-JP/release-notes/blob/master/v16/16.1/README.md)
+```2017-03-01.209177``` [4D v16 Hotfix 1](https://github.com/4D-JP/release-notes/blob/master/v16/16.1/README.md)
 
 ```2017-02-28.209128``` [4D v15.4 Hotfix 1](https://github.com/4D-JP/release-notes/tree/master/v15/15.4/hf1/README.md)
 
