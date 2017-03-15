@@ -3,17 +3,17 @@ Release Notes
 
 ###Latest Nightly Build
 
-```2017-03-07.209341``` [4D v16 R2](https://github.com/4D-JP/release-notes/blob/master/v16/r2/README.md)
+``2017-03-07.209341`` [4D v16 R2](https://github.com/4D-JP/release-notes/blob/master/v16/r2/README.md)
 
-```2017-03-09.209433``` [4D v16](https://github.com/4D-JP/release-notes/blob/master/v16/16.0/hf2/README.md)
+``2017-03-09.209433`` [4D v16](https://github.com/4D-JP/release-notes/blob/master/v16/16.0/hf2/README.md)
 
-```2017-03-09.209431``` [4D v15](https://github.com/4D-JP/release-notes/tree/master/v15/15.4/hf2/README.md)
+``2017-03-09.209431`` [4D v15](https://github.com/4D-JP/release-notes/tree/master/v15/15.4/hf2/README.md)
 
 ###Latest Stable
 
-```2017-03-01.209177``` [4D v16.0 Hotfix 1](https://github.com/4D-JP/release-notes/blob/master/v16/16.0/hf1/README.md)
+``2017-03-01.209177`` [4D v16.0 Hotfix 1](https://github.com/4D-JP/release-notes/blob/master/v16/16.0/hf1/README.md)
 
-```2017-02-28.209128``` [4D v15.4 Hotfix 1](https://github.com/4D-JP/release-notes/tree/master/v15/15.4/hf1/README.md)
+``2017-02-28.209128`` [4D v15.4 Hotfix 1](https://github.com/4D-JP/release-notes/tree/master/v15/15.4/hf1/README.md)
 
 ---
 
