@@ -3,7 +3,7 @@ Release Notes
 
 ### Latest Nightly Build
 
-``2017-03-09.209431`` [4D v15](https://github.com/4D-JP/release-notes/tree/master/v15/15.4/hf2/README.md)
+
 
 ### Latest Stable
 
