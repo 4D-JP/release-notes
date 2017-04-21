@@ -3,7 +3,9 @@ Release Notes
 
 ### Latest Nightly Build
 
-``2017-04-20.210948`` [4D v15.x]
+``2017-04-07.210503`` [4D v16.x]
+
+``2017-04-20.210948`` [4D v15.x](https://github.com/4D-JP/release-notes/tree/master/v15/15.5)
 
 ### Latest Stable
 
