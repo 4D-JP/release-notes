@@ -3,7 +3,7 @@ Release Notes
 
 ### Latest Nightly Build
 
-
+``2017-04-20.210948`` [4D v15.x]
 
 ### Latest Stable
 
