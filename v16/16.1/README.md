@@ -1,10 +1,14 @@
 ## 4D v16.1 
 
-``212094``
+``212223``
 
 [4D v16.0 Hotfix 2](https://github.com/4D-JP/release-notes/blob/master/v16/16.0/hf2/)および[4D v16.0 Hotfix 1](https://github.com/4D-JP/release-notes/blob/master/v16/16.0/hf1/)の修正事項もご覧ください。
 
 ![jp](https://cloud.githubusercontent.com/assets/10509075/16182979/016305e0-36e7-11e6-816b-2335cc6f0abb.png)
+
+* ACI0095296 Mac 64ビット版のみ。"ヒラギノ角ゴシック ``W0``から``W9``などのフォントは，ツールボックスのスタイルシートページに表示されませんでした。
+
+* ACI0096815 Webプロセスの``DIGETST``認証（4Dパスワードを含む）を有効にした場合，ブラウザがパスワード入力ダイアログを表示するまでに何十秒も待たされました。
 
 * ACI0096617 Mac 64ビット版のみ。詳細フォーム使用中にエラーダイアログが表示された場合，以後，日本語入力ができなくなりました。
 
@@ -171,3 +175,13 @@ ie4uinit.exe -ClearIconCache
 * ACI0096734 Mac版のみ。日付およびオブジェクト型のデータが``WA Evaluate Javascript``に認識されないことがありました。システムWebエリア特有の問題です。
 
 * ACI0096690 `` SCREEN DEPTH``の定数名に廃止予定の識別子である``_o_``が付けられていませんでした。
+
+* ACI0096787 ポップアップウィンドウに続けてアラートダイアログを表示した場合，ウィンドウ以外の場所をクリックしても，ポップアップウィンドウが閉じられませんでした。
+
+* ACI0096625 Windows版のみ。キリル文字など，標準的な英数字以外がパスに含まれる場合，``The ICU framework is malformed. Please verify 4D installation.``というエラーが表示され，4Dが正常に起動できませんでした。
+
+**注記**: ICUライブラリの[不具合](http://bugs.icu-project.org/trac/ticket/6539)が関係しています。修正により，キリル文字を使用するシステム言語でも起動できるように，``ICU``, ``Hunspell``, ``Altura``, ``WebKit``などのライブラリをロードする方法が見直されました。
+
+* ACI0096501 Windows 32ビット版のみ。統合Webエリアにフォーカスが表示されている場合，他の4Dフォームオブジェクトをクリックしても，フォーカスが移動しませんでした。
+
+* ACI0095160 ``HTTP Request``または``HTTP Get``でJSONテキストを受信した場合，途中でデータが切れていることがありました。HTTPヘーダー``Transfer-Encoding``が``chuncked``のときに発生します。
