@@ -296,3 +296,19 @@ INTO :$nom_exp, :vAdresse_1, :vAdresse_2, :vCode_Postal, :vCommune;
 **注記**: WebKitが修正されました。
 
 * ACI0095842 ライセンス管理画面には，「4D Write」「4D View」とではなく，「4D Write | 4D Write Pro」「4D View | 4D View Pro」と表示されるべきでした。
+
+* ACI0096527 MSCの情報ページは，ストラクチャファイルのパスが表示されるべき場所にデータファイルのパスが表示されました。
+
+* ACI0096296 ``Transaction active``は，フランス語版のコマンド名でした。英語版のコマンド名は``Active transaction``です。
+
+* ACI0095576 Mac版のみ。``Select document``の``File name entry``オプションで``jpeg``と``jpg``のように同じ種類のファイルに関連付けられた複数の拡張子を渡した場合，選択されたファイルに拡張子が重複して追加されました。
+
+ACI0091986	Importing a table in MS Access that has a text field with ODBC driver doesn't work correctly: the text is unexpectedly truncated.
+
+* ACI0089884 ``ST SET PLAIN TEXT``コマンドは，``&``, ``<``, ``>``のような文字をHTMLに変換しませんでした。
+
+**注記**: 実際には，挿入ではなく，出力の問題でした。スタイル付きテキストの内容が``<span>``タグに囲われていないテキストであり，かつ，そのテキストが``&``, ``<``, ``>``のような文字を含んでいる場合，内容がHTMLとして出力されませんでした。
+
+* ACI0095351 ``JSON Parse``であれば，日付がUTCからローカル日付に変換されますが， ``JSON TO SELECTION``ではUTCの日付がそのままがローカル日付として返されました。
+
+* ACI0096008	``/a/b/c/;x``のようにセミコロンが含まれるURLをHTTPクライアントでリクエストした場合，セミコロン以降の文字列が切り捨てられました。[RFC 3986](http://www.ietf.org/rfc/rfc3986.txt)によれば，セミコロンは有効なURL文字です。
