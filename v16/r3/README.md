@@ -238,3 +238,61 @@ SET PRINT OPTION(Legacy printing layer option;1)
 * ACI0094057 Windows版のみ。Word文書を4D Writeで開くと，``PICT``形式以外の画像が失われました。``BMP``，``JPEG``，``PNG``，``TIFF``画像が文書に含まれていると「サポートされないイメージ形式です」というエラーが表示されます。
 
 * ACI0085050 Bootcampで起動したWindowsをMacのRetinaディスプレイに表示した場合，デバッガのツールバーが表示されませんでした。通常のWindowsでは問題ありません。
+
+* ACI0096786 ピクチャポップアップメニューに値を代入しても，表示が更新されませんでした。
+
+* ACI0096773 ``OBJECT SET ENABLED``コマンドでポップアップメニューのenabled状態を制御することができませんでした。
+
+* ACI0096690 ``SCREEN DEPTH``コマンドの定数に廃止予定であることを示す接頭辞``_o_``が付けられていませんでした。
+
+* ACI0096833 Windows 64ビット版のみ。統合Webエリアを使用することができませんでした。デバッグ版のDLL``MSVC120D.dll``をロードしようとしているようです。
+
+* ACI0096823 Windows 64ビット版のみ。URLのプロトコルを省略した場合（例：``google.com``），Webエリアに何も表示されませんでした。
+
+* ACI0096794 4D Write Proウィジェットの「フレーム」タブをクリックすると，エラーが表示されました。
+
+* ACI0096727 Windows版のみ。``Timestamp``の精度に問題がありました。たとえば，1分間連続でコマンドを実行しても，ミリ秒に``000`から``999``の値がすべて返されませんでした。
+
+* ACI0096753 Windows 64ビット版のみ。``PRINT SETTINGS``で表示した印刷ダイアログのプレビューのチェックボックスがありませんでした。
+
+* ACI0096611 Windows 64ビット版のみ。極細線が32ビット版よりも太く出力されました。
+
+* ACI0096499 Mac 64ビット版のみ。ビルドしたデスクトップ版アプリケーションの「終了」メニューは常にdisabled状態でした。
+
+* ACI0096498 32ビット版のみ。ビルドしたデスクトップ版アプリケーションの終了時に表示されるスポンサーメッセージの直前にアプリケーションが異常終了しました。
+
+* ACI0096539
+``HTTP Request``でBLOB以外の変数タイプで``UTF-8``エンコーディングのウムラウト文字を受信した場合，文字が正しく変換されませんでした。
+
+**注記**: 修正は``PROCESS 4D TAGS``の振る舞いにも影響があります。
+
+* ACI0096527 MSCダイアログの情報ページには，ストラクチャファイルのパスが表示されるべき場所にデータファイルのパスが表示されていました。
+
+* ACI0096524 32ビット版のラベルエディターで作成した定義ファイル（拡張子``.4LB``）を64ビット版で開くことができませんでした。
+
+* ACI0096455 Windows 64ビット版のみ。``Alt``+``0``+``1``+``8``+``5``あるいは``Alt``+``0``+``2``+``3``+``4``などのキーシーケンスで入力できるはずの文字が入力できませんでした。意図したのとは違う文字が入力されます。ポーランド語・セルビア語・チェコ語などで使用する文字です。
+
+* ACI0096434 特定のSQLコードを``Begin SQL``および``End SQL``で括ってメソッドエディターにペーストすると，アプリケーションが終了しました。
+
+```sql
+SeLeCT nom, adresse, adresse2, code_postal, commune
+FROM SQL_tiers,SQL_TYPe_TIeRS,SQL_APPARTeNANCe_TYPe_TIeRS
+WHeRe (SQL_APPARTeNANCe_TYPe_TIeRS.IDTIeRS=SQL_TIeRS.IDTIeRS)
+AND (SQL_APPARTeNANCe_TYPe_TIeRS.IDTYPe_TIeRS=SQL_TYPe_TIeRS.IDTYPe_TIeRS)
+AND(type_tiers = 'GDS')
+AND (SQL_APPARTeNANCe_TYPe_TIeRS.Date_fin_appartenance<>'')
+AND (SQL_TIeRS.Code_postal LIKe <<$departement%>>)
+INTO :$nom_exp, :vAdresse_1, :vAdresse_2, :vCode_Postal, :vCommune;
+```
+
+* ACI0096431 4D Write Pro文書のセクションに対し，異なる第1ページが設定された別のセクションを挿入すると，アプリケーションがクラッシュしました。
+
+* ACI0096360 64ビット版のみ。``GRAPH``コマンドで作画したグラフは，線と点に同一のID（``ID_graph_xx``）が割り振られ，うまく制御することができませんでした。
+
+* ACI0096325 Mac版のみ。リストボックスの中央寄せヘッダーのタイトル表示位置が正しくありませんでした。ACI0095899が修正されたことの副作用です。
+
+* ACI0096137 macOS Sierra 10.12.1 (16B2657) のみ。一旦，デスクトップをクリックした後，Welcomeウィザードの背景部分をクリックすると，アプリケーションがクラッシュしました。リンクをクリックした場合は問題ありません。
+
+**注記**: WebKitが修正されました。
+
+* ACI0095842 ライセンス管理画面には，「4D Write」「4D View」とではなく，「4D Write | 4D Write Pro」「4D View | 4D View Pro」と表示されるべきでした。
