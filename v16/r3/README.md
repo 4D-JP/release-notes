@@ -305,7 +305,7 @@ INTO :$nom_exp, :vAdresse_1, :vAdresse_2, :vCode_Postal, :vCommune;
 
 * ACI0095576 Mac版のみ。``Select document``の``File name entry``オプションで``jpeg``と``jpg``のように同じ種類のファイルに関連付けられた複数の拡張子を渡した場合，選択されたファイルに拡張子が重複して追加されました。
 
-ACI0091986	Importing a table in MS Access that has a text field with ODBC driver doesn't work correctly: the text is unexpectedly truncated.
+* ACI0091986 テキスト型フィールドをMS AccessからODBC Driver経由でインポートすると，データが途中で切れていることがありました。
 
 * ACI0089884 ``ST SET PLAIN TEXT``コマンドは，``&``, ``<``, ``>``のような文字をHTMLに変換しませんでした。
 
