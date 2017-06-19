@@ -5,7 +5,6 @@
 
 [4D v15.4 Hotfix 1](https://github.com/4D-JP/release-notes/tree/master/v15/15.4/hf1)および[4D v15.4 Hotfix 2](https://github.com/4D-JP/release-notes/tree/master/v15/15.4/hf2)の修正事項もご覧ください。
 
-
 ![jp](https://cloud.githubusercontent.com/assets/10509075/16182979/016305e0-36e7-11e6-816b-2335cc6f0abb.png)
 
 * ACI0096586 特定のセキュアWebサーバーに対して``HTTP Requst``でアクセスすることができませんでした。
@@ -23,6 +22,8 @@
 **注記**: ``ACI0095160``の修正が関係しています。サーバーからデータが``chunked``で返された場合の対応が正しくありませんでした。
 
 ---
+
+* ACI0096804 フォルダー内に多数の項目が含まれる場合，``FTP_GetDirList ``が処理を完了するまで非常に時間がかかりました。以前のバージョンでは``0.250``秒ほどかかった処理が，Macでは数秒，Windowsでは数分を要しました。
 
 * ACI0096758 ``HTTP FIXER OPTION``コマンドで``HTTP compression``を``1``に変更しても，設定が反映されませんでした。
 
