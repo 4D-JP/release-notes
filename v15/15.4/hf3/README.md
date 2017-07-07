@@ -127,7 +127,7 @@ DOM CLOSE XML($Ref)
 
 * ACI0097008 ``CHECK LOG FILE``で表示されるアクティビティ解析ダイアログのリストボックスは，セルが入力不可ではありませんでした。MSCでは問題ありません。
 
-* ACI0096871 ``HTTP Get``の前に``HTTP AUTHENTICATE'``コマンドで``__Digest Authentication__``を使用してApacheサーバーに接続した場合，URIにクエリ文字列が含まれていると，URIの不一致エラーが返されました。
+* ACI0096871 ``HTTP Get``の前に``HTTP AUTHENTICATE'``コマンドで``Digest Authentication``を使用してApacheサーバーに接続した場合，URIにクエリ文字列が含まれていると，URIの不一致エラーが返されました。
 
 * ACI0096653 ``FTP_GetFileInfo``を実行するとエラー``10085``が返されました。
 
