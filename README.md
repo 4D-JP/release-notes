@@ -3,8 +3,6 @@ Release Notes
 
 ### Latest Nightly Build
 
-``2017-09-29.216142`` [4D v16 R4](https://github.com/4D-JP/release-notes/blob/master/v16/r4/)
-
 ``2017-09-28.216112`` [4D v16.x](https://github.com/4D-JP/release-notes/tree/master/v16/16.2/hf1/)
 
 ``2017-09-28.216071`` [4D v15.x](https://github.com/4D-JP/release-notes/tree/master/v15/15.5)
@@ -15,11 +13,15 @@ Release Notes
 
 ``2017-07-06.213080`` [4D v15.4 Hotfix 3](https://github.com/4D-JP/release-notes/tree/master/v15/15.4/hf3/)
 
-``2017-06-26.213331`` [4D v16 R3](https://github.com/4D-JP/release-notes/blob/master/v16/r3/)
+``2017-10-04.216142`` [4D v16 R4](https://github.com/4D-JP/release-notes/blob/master/v16/r4/)
 
 ---
 
 ### Archive
+
+* v16 R3
+
+``2017-06-26.213331`` [4D v16 R3](https://github.com/4D-JP/release-notes/blob/master/v16/r3/)
 
 * v16 R2
 
