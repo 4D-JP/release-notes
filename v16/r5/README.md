@@ -31,6 +31,34 @@
 
 ---
 
+* ACI0094994 SQLのサブクエリを実行すると，サーバーがしばらく応答しませんでした。
+
+**注記**: 内側の``SELECT``で数万件のレコードが合致した場合，``QUERY WITH ARRAY``のようなインデックス検索ではなく，シーケンシャル検索がテーブル全体に対して何度も実行していることが原因でした。
+
+例:
+
+```sql
+SELECT callback 
+FROM names 
+WHERE custid IN (
+	SELECT custid 
+	FROM invoices 
+	WHERE shipdate < '1990-01-01'
+)
+```
+
+ちなみに，上記の場合，修正前であっても，サブクエリに``DISTINCT``を指定すれば，最初に返されるレコード数が絞り込まれ（``WHERE``の結果は同じ），問題を回避することができます。
+
+```sql
+SELECT callback
+FROM names
+WHERE custid IN (
+	SELECT DISTINCT custid 
+	FROM invoices 
+	WHERE shipdate < '1990-01-01’
+)
+```
+
 * ACI0097278 Mac版のみ。選択リストが関連づけられたリストボックス列にタブ移動して上矢印キーでポップアップメニューを表示し，``return``キーでリスト項目を確定した場合，以後，その項目が変更できなくなりました。下矢印キーでは問題ありません。
 
 * ACI0097264 ``On Outside Call``イベントで``ACCEPT``コマンドを使用した場合，すぐにはフォームが閉じられず，次に発生したイベントで閉じられませんでした。
