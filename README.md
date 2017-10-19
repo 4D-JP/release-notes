@@ -23,7 +23,7 @@ Release Notes
 
 * v16 R4
 
-``2017-10-04.216142`` [4D v16 R4](https://github.com/4D-JP/release-notes/blob/master/v16/r4/)
+``2017-10-05.216142`` [4D v16 R4](https://github.com/4D-JP/release-notes/blob/master/v16/r4/)
 
 * v16 R3
 
