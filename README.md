@@ -15,7 +15,7 @@ Release Notes
 
 ``2017-07-06.213080`` [4D v15.4 Hotfix 3](https://github.com/4D-JP/release-notes/tree/master/v15/15.4/hf3/)
 
-``2017-10-18.216566`` [4D v16 R4](https://github.com/4D-JP/release-notes/blob/master/v16/r4/)
+``2017-10-18.216566`` [4D v16 R4](https://github.com/4D-JP/release-notes/blob/master/v16/r4/2/)
 
 ---
 
