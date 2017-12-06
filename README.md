@@ -11,6 +11,7 @@ Release Notes
 
 ### Latest Stable
 
+``2017-12-06.217894`` [4D v16.3](https://github.com/4D-JP/release-notes/tree/master/v16/16.3/)
 
 ``2017-10-27.216945`` [4D v15.5](https://github.com/4D-JP/release-notes/tree/master/v15/15.5/)
 
