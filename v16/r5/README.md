@@ -271,3 +271,5 @@ LISTBOX SET PROPERTY(*;"lb";lk auto row height;lk yes)
 * ACI0097693 ``APPEND TO ARRAY``に直接``OB Get``を渡した場合，シンタックスエラーが返されました。
 
 **注記**: ``OB Get``の返り値を指定する定数が省略されたときの振る舞い改善されました。オブジェクト記法が有効にされている場合，``Null``または未定義のプロパティは空の文字列が返されます（互換モード）。オブジェクト記法が有効にされていない場合，``Null``または未定義のプロパティが変換されずにそのまま返されます。16 R5では，標準の``String`` ``Num`` ``Date`` ``Time``関数で未定義の値が変換できる点に留意してください。 
+
+https://blog.4d.com/object-notation-improvement-after-customer-feedback/
