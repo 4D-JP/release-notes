@@ -311,3 +311,21 @@ https://blog.4d.com/object-notation-improvement-after-customer-feedback/
 * ACI0097167 デザインモード検索で更新日が「昨日以降」のオブジェクトを検索した場合の結果が正しくありませんでした。指定とは逆の条件でオブジェクトが返されました。
 
 * ACI0097654 Windows版のみ。``On Startup``データベースメソッドで``SHOW MENU BAR``あるいは``HIDE MENU BAR``を使用することができませんでした。
+
+* ACI0097798 オブジェクト記法を有効にした場合，一部のコードがコンパイルできなくなりました。下記はコンパイルができないコードの例です。
+
+```
+ALL RECORDS([Table_1]) 
+APPLY TO SELECTION([Table_1];[Table_1]Field_2:="123")
+```
+
+```
+QUERY([Table_1];[Table_1]Field_2="111";*)
+QUERY([Table_1]; | [Table_1]Field_2="222") //セミコロンが抜けている
+```
+
+```
+Case of 
+Else $toto:=1 
+End case
+```
