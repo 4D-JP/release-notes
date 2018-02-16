@@ -7,7 +7,7 @@ Release Notes
 
 ``2018-02-13.220405`` [4D v16 R6](https://github.com/4D-JP/release-notes/blob/master/v16/r6/)
 
-``2018-01-30.219852`` [4D v15.x](https://github.com/4D-JP/release-notes/blob/master/v15/15.6/)
+``2018-02-15.220486`` [4D v15.x](https://github.com/4D-JP/release-notes/blob/master/v15/15.6/)
 
 ### Latest Stable
 
