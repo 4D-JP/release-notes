@@ -314,7 +314,7 @@ https://blog.4d.com/object-notation-improvement-after-customer-feedback/
 
 * ACI0097517 ポインター変数に``Null``を代入した場合，そのポインターをデバッガーに表示させるとアプリケーションがクラッシュしました。
 
-* ACI0093494 ``[ARRAY TO SELECTION](http://doc.4d.com/4Dv16/4D/16.3/ARRAY-TO-SELECTION.301-3652156.ja.html)``または``[SELECTION TO ARRAY](http://doc.4d.com/4Dv16/4D/16.3/SELECTION-TO-ARRAY.301-3652157.ja.html)``の中間命令をループ文で構築した場合，実行は問題なく成功しますが，シンタックスチェックでエラーが返されました。
+* ACI0093494 [``ARRAY TO SELECTION``](http://doc.4d.com/4Dv16/4D/16.3/ARRAY-TO-SELECTION.301-3652156.ja.html)または[``SELECTION TO ARRAY``](http://doc.4d.com/4Dv16/4D/16.3/SELECTION-TO-ARRAY.301-3652157.ja.html)の中間命令をループ文で構築した場合，実行は問題なく成功しますが，シンタックスチェックでエラーが返されました。
 
 * ACI0097723 4D Write Pro文書に2個以上の表が組まれている場合，``ST INSERT TEXT``でセルにテキストを挿入すると，その行の高さ計算が正しくありませんでした。
 
