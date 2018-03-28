@@ -1,9 +1,12 @@
 4D v17.0
 ---
 
+![jp](https://cloud.githubusercontent.com/assets/10509075/16182979/016305e0-36e7-11e6-816b-2335cc6f0abb.png)
+
+
 * ACI0097676 Windows版のみ。日本語入力中に表示される変換文節の下線には，太い線と細い線がありますが，リストボックスのセル内でテキストを編集しているときには，下線の位置がセルの下端に接近し過ぎているため，太さの違いが識別ができませんでした。DirectWriteモードでリストボックスをレンダリングしている場合に問題が発生します。GDIモードでは問題ありません。
 
-![jp](https://cloud.githubusercontent.com/assets/10509075/16182979/016305e0-36e7-11e6-816b-2335cc6f0abb.png)
+---
 
 * ACI0097992 Windows版のみ。4D Write ProでTrue Typeフォントが使用できませんでした。
 
