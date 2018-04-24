@@ -2,6 +2,8 @@
 
 ![jp](https://cloud.githubusercontent.com/assets/10509075/16182979/016305e0-36e7-11e6-816b-2335cc6f0abb.png)
 
+* ACI0098120 日本語版のみ。``4DPop XLIFF.4dbase``起動時にエラーが返されました。XLIFFファイルに誤りがありました。
+
 * ACI0097800 コンパイルモードでBLOB配列をプラグインコマンドに渡すことができませんでした。
 
 * ACI0097890 日付ピッカーウィジェットをクリックしても，``On Data Change``イベントが発生しませんでした。
