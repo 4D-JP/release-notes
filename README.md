@@ -9,7 +9,7 @@ Release Notes
 
 ### Latest Stable
 
-``2018-04-24.222920`` [4D v16.3 Hotfix 3](https://github.com/4D-JP/release-notes/tree/master/v16/16.3/hf3/)
+``2018-04-24.222876`` [4D v16.3 Hotfix 3](https://github.com/4D-JP/release-notes/tree/master/v16/16.3/hf3/)
 
 ``2018-04-24.222813`` [4D v15.6](https://github.com/4D-JP/release-notes/tree/master/v15/15.6/)
 
