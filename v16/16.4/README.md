@@ -33,8 +33,7 @@
 
 * ACI0098264 Windows 10 アップデート ``1803``以降，サービスとして登録された4D Serverの起動時にエラー``193 0xC1``が返されるようになりました。ビルドして署名したサーバーアプリケーションをサービスとして起動した場合にだけ問題が発生します。
 
-* ACI0098236 Windows版のみ。Microsoftの[自己署名証明書](https://msdn.microsoft.com/en-
-us/library/windows/desktop/jj835832(v=vs.85).aspx)を発行して[署名ツール](https://msdn.microsoft.com/en-us/library/aa387764.aspx)で64ビット版のOEMサーバーアプリケーションを署名することができませんでした。
+* ACI0098236 Windows版のみ。Microsoftの[自己署名証明書](https://msdn.microsoft.com/en-us/library/windows/desktop/jj835832.aspx)を発行して[署名ツール](https://msdn.microsoft.com/en-us/library/aa387764.aspx)で64ビット版のOEMサーバーアプリケーションを署名することができませんでした。
 
 **注記**: 回避策として[``delcert``](https://github.com/MadhukarMoogala/delcert)などで証明書を取り除いてから改めてサーバーアプリケーションに署名することができます。
 
