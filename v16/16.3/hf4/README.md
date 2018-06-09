@@ -44,5 +44,3 @@
 * ACI0098237 ``SEND RECORD``で書き出したv2004のレコードをv14以降の``RECEIVE RECORD``で読み込もうとした場合，アプリケーションがクラッシュしました。
 
 * ACI0097938 Windows Server 2008 R2，Windows Server 2012のみ。特定のマシンでは``Graphics.dll``が原因でアプリケーションがクラッシュしました。
-
-* ACI0098278 4D Write文書を4D Write Proに変換した後，テキストが失われてしまい，空のページになってしまうことがありました。
