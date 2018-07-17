@@ -9,7 +9,7 @@ Release Notes
 
 ``2018-07-05.225365`` [4D v17.0](https://github.com/4D-JP/release-notes/tree/master/v17/17.0/)
 
-``2018-06-08.224100`` [4D v16.3 Hotfix 4](https://github.com/4D-JP/release-notes/tree/master/v16/16.3/hf4/)
+``2018-07-16.225531`` [4D v16.3 Hotfix 5](https://github.com/4D-JP/release-notes/tree/master/v16/16.3/hf5/)
 
 ---
 
@@ -37,6 +37,7 @@ Release Notes
 
 * v16.3
 
+``2018-06-08.224100`` [4D v16.3 Hotfix 4](https://github.com/4D-JP/release-notes/tree/master/v16/16.3/hf4/)
 
 ``2018-04-24.222876`` [4D v16.3 Hotfix 3](https://github.com/4D-JP/release-notes/tree/master/v16/16.3/hf3/)
 
