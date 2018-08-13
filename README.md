@@ -5,19 +5,23 @@ Release Notes
 
 ``2018-08-09.226383`` [4D v17 R2](https://github.com/4D-JP/release-notes/tree/master/v17/r2/) 
 
-``2018-08-09.226400`` [4D v17.x](https://github.com/4D-JP/release-notes/tree/master/v17/17.0/hf1/)
+``2018-08-09.226400`` [4D v17.x](https://github.com/4D-JP/release-notes/tree/master/v17/17.0/hf2/)
 
 ``2018-08-11.226441`` [4D v16.x](https://github.com/4D-JP/release-notes/tree/master/v16/16.4/)
 
 ### Latest Stable
 
-``2018-07-05.225365`` [4D v17.0](https://github.com/4D-JP/release-notes/tree/master/v17/17.0/)
+``2018-08-13.226237`` [4D v17.0 Hotfix 1](https://github.com/4D-JP/release-notes/tree/master/v17/17.0/hf1/)
 
 ``2018-07-16.225531`` [4D v16.3 Hotfix 5](https://github.com/4D-JP/release-notes/tree/master/v16/16.3/hf5/)
 
 ---
 
 ### Archive
+
+* v17.0
+
+``2018-07-05.225365`` [4D v17.0](https://github.com/4D-JP/release-notes/tree/master/v17/17.0/)
 
 * v16 R6
 
