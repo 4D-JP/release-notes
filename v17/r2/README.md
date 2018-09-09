@@ -287,3 +287,28 @@ QUERY BY FORMULA([Table_1];([Table_1]Champ_2>sousmethode ($voObjet.vdDate)))
 * ACI0098447 Mac版のみ。macOS 10.12 Sierraでは，新しいHelper Toolがインストールできませんでした。管理者パスワード入力ダイアログは表示されず，『ツールのインストール中にエラーが発生しました』という内容のメッセージが表示されました。Helper Toolは，実行メニューまたは``WEB START SERVER``コマンドを使用すると，必要に応じてアップデートされます（起動時にサーバーを開始するように設定されている場合はアップデートされません）。
 
 * ACI0098526 ORDAでNフィールドに相当するリレーション属性を更新しようとすると，指定した値ではなく，``Null``が代入されました。値を確認して，もう一度，同じ値を代入すれば，今度は成功します。あるいは，値を代入する代わりに，1レコードに相当するエンティティを代入すれば，問題を回避することができます。
+
+* ACI0098513 コード補完リストにキーワードの``While``が表示されませんでした。
+
+* ACI0098481
+
+クライアント/サーバー版のみ。ORDAの``fromCollection()`` 
+
+に渡されたプライマリーキーが1フィールドに相当するデータクラスに存在しない場合，新規エンティティが作成され，そのプライマリーキーには``Null``が代入されました。この場合，新規エンティティは作成されるべきではありません。
+
+```
+C_OBJECT($dataclass1;$result)
+$dataclass1:=ds.IA_employee
+
+$t1_Collection:=New collection
+$t1_obj:=New object
+$t1_obj.ID:=7
+$t1_obj.employer:=New object()
+$t1_obj.employer.ID:=10 //doesn't exist in the dataclass "IA_company"
+$t1_obj.firstName:="Zoro"
+$t1_Collection.push($t1_obj)
+$result:=$dataclass1.fromCollection($t1_Collection)
+ASSERT(Undefined($result[0].employer);"employer should not be created")
+```
+
+* ACI0098054 共有コレクションに共有オブジェクトを追加し，``Use``/``End use``構文の中でその共有オブジェクトをロックした状態で``New process``を使用して起動したプロセスをデバッグしようとすると，デバッガウィンドウがフリーズしました。
