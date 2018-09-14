@@ -7,7 +7,7 @@ Release Notes
 
 ``2018-09-11.227149`` [4D v17.x](https://github.com/4D-JP/release-notes/tree/master/v17/17.1/)
 
-``2018-09-07.227099`` [4D v16.x](https://github.com/4D-JP/release-notes/tree/master/v16/16.4/hf1)
+``2018-09-14.227296`` [4D v16.x](https://github.com/4D-JP/release-notes/tree/master/v16/16.4/hf1)
 
 ### Latest Stable
 
