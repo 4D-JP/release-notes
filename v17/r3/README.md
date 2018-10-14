@@ -170,3 +170,49 @@
 * ACI0097377 4D Viewに貼り付けられた画像をコンテキストメニューの『クリア』で消去し，入力を確定した後，同じレコードを開いてピクチャーの参照をダブルクリックし，ピクチャー属性の『縦横比を保持』を有効にすると，アプリケーションがクラッシュしました。
 
 * ACI0090544 ``IMAP_Search``の第2パラメーターに空の文字列を渡すとアプリケーションがクラッシしました。
+
+* ACI0098257 エンティティセレクションに対して``entitySelection.distinct``を実行した場合，日付フィールドの値は文字列で返されました。
+
+* ACI0098206 フォームスキーマ（``formsSchema.json``）にリスト項目のプロパティ（スタイル・アイコン・カラー・ダブルクリック・複数項目選択可）が存在しませんでした。
+
+```json
+"action": { // standard action name associated to the item
+"type": "string"
+},
+"textDecoration": {
+"enum": ["none", "underline"]
+},
+"fontWeight": {
+"enum": ["normal", "bold"]
+},
+"fontStyle": {
+"enum": ["normal", "italic"]
+},
+"stroke": { // text color
+"$ref": "#/definitions/types/color"
+},
+"icon": { // path to the icon
+"$ref": "#/definitions/types/picture"
+}
+```
+
+* ACI0097769 サーバーの管理画面で新規接続を拒否に設定した場合，既存のクライアント接続が切断されました。
+
+* ACI0097767 ``OBJECT DUPLICATE``でページ``0``に配置されたフォームオブジェクトを複製した場合，入力ができなくなりました。
+
+* ACI0096700 アプリケーションを再起動した場合，フォームエディターのプロパティリストでヘルプTipsや入力フィルターのポップアップメニューが操作できなくなりました。
+
+* ACI0096435 SQLでJOINとORDER BYを併用した場合，``DESC``を指定しても``ASC``で並び替えが実行されました。
+
+```
+ARRAY DATE($ad_Birth;0)
+
+Begin SQL
+SELECT P.Birth FROM Person P
+JOIN Company C ON C.ID=P.Id_company
+ORDER BY 1 DESC 
+INTO :$ad_Birth;
+End SQL
+```
+
+* ACI0090572 ``Components``フォルダーにインストールされたコンポーネントの公開メソッド名をメソッドエディターでなぞっても，ヘルプTipsが表示されませんでした。SVGコンポーネントなどのプリインストールされたコンポーネントでは問題ありません。
