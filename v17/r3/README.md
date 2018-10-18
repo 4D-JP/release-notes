@@ -175,7 +175,7 @@
 
 * ACI0098206 フォームスキーマ（``formsSchema.json``）にリスト項目のプロパティ（スタイル・アイコン・カラー・ダブルクリック・複数項目選択可）が存在しませんでした。
 
-```json
+```js
 "action": { // standard action name associated to the item
 "type": "string"
 },
