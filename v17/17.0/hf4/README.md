@@ -1,10 +1,6 @@
 4D v17.0 Hotfix 4
 ---
 
-![jp](https://cloud.githubusercontent.com/assets/10509075/16182979/016305e0-36e7-11e6-816b-2335cc6f0abb.png)
-
----
-
 * ACI0098832 ``xerces``ライブラリのアップデート前のバージョンと比較して``DOM find XML element``がかなり遅くなりました（8-10倍）。
 
 * ACI0098767 64ビット版のみ。アプリケーションと同じフォルダーに「GPUCache」というファイルが作成されました。
