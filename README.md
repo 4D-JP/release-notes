@@ -5,7 +5,7 @@ Release Notes
 
 ``2018-12-12.231064`` [4D v17 R3](https://github.com/4D-JP/release-notes/tree/master/v17/r3/) 
 
-``2018-12-07.230889`` [4D v17.x](https://github.com/4D-JP/release-notes/tree/master/v17/17.1/)
+``2018-12-12.231059`` [4D v17.x](https://github.com/4D-JP/release-notes/tree/master/v17/17.1/)
 
 ``2018-12-07.230893`` [4D v16.x](https://github.com/4D-JP/release-notes/tree/master/v16/16.4/hf1)
 
