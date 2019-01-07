@@ -3,11 +3,11 @@ Release Notes
 
 ### Latest Nightly Build
 
-``2018-12-14.231150`` [4D v17 R3](https://github.com/4D-JP/4D-jp.github.io/blob/master/_posts/2018-12-25-release-note-version-17r3.md) 
+[4D v17 R3](https://github.com/4D-JP/4D-jp.github.io/blob/master/_posts/2018-12-25-release-note-version-17r3.md) 
 
-``2018-12-12.231059`` [4D v17.x](https://github.com/4D-JP/4D-jp.github.io/blob/master/_posts/2018-12-12-release-note-version-17-latest.md)
+[4D v17.x](https://github.com/4D-JP/4D-jp.github.io/blob/master/_posts/2018-12-12-release-note-version-17-latest.md)
 
-``2018-12-11.231031`` [4D v16.x](https://github.com/4D-JP/4D-jp.github.io/blob/master/_posts/2018-12-11-release-note-version-16-latest.md)
+[4D v16.x](https://github.com/4D-JP/4D-jp.github.io/blob/master/_posts/2018-12-11-release-note-version-16-latest.md)
 
 ### Latest Stable
 
